@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  <%= stylesheet_link_tag 'home/bootstrap.min' %>
+  <%= stylesheet_link_tag 'home/jquery.fancybox' %>
+  <%= stylesheet_link_tag 'home/select-style' %>
+  <%= stylesheet_link_tag 'home/style' %>
+  <%= stylesheet_link_tag 'home/flexslider' %>
+  <%= stylesheet_link_tag 'home/responsive' %>
+  <%= stylesheet_link_tag 'home/huan' %>
+  <%= stylesheet_link_tag 'home/chosen.min' %>
+  <%= stylesheet_link_tag 'dropify/dropify' %>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet"> 
+</head>
+<body class="register-01">
+  <div class="wapper">
+    <%= render "layouts/header"%>
+    <div class="home-banner-section">
+      <h1 class="text-center home-banner-title">Your Destination To Choose Active and Skilled Talents</h1>
+    </div>
+    <div class="home-top-section content"> 
+      <div class="home-second-section"> 
+        <div class="container">
+          <h3 class='title-section text-center'>Use Our Micro-targeting features to reach the right talents</h3>
+          <div class="row">
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <!-- <img src="images/popup-image.png" alt="..."> -->
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Explore passive talents</h3>
+                  <p>Not just active talents, you can gain access to passive talents as well from our database. We will help you in finding the right talent. Irrespective of whether you look for a talent for a temporary position or permanent position, this is your right destination to find one.</p> 
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Excellent platform</h3>
+                  <p>We are here to provide the excellent platform both for employers and job seekers. If you are a job seeker, looking for the best job to meet your needs either on a short-term or on a long-term basis, you can find one in this platform</p> 
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Easy to use</h3>
+                  <p>You can get started to work with us within just a few minutes of sign up time. All we need from you is to you is to know about your key positions if you are an employer. If you are a job seeker, just share details about your talents. Our team will work with you to meet your requirements rightly.</p> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-third-section">
+        <div id="content_box">
+          <div class="cd-background-wrapper"> 
+            <ul class="staff-list">
+              <li  class="layer" data-depth="0.2">
+                <span class="hexa" >&#x2B22;</span>
+                <span class="hexa1" >&#x2B22;</span> 
+                <span class="hexa2" >&#x2B22;</span> 
+                <span class="hexa3" >&#x2B22;</span> 
+                <span class="hexa4" >&#x2B22;</span> 
+                <span class="hexa5" >&#x2B22;</span> 
+                <span class="hexa6" >&#x2B22;</span> 
+                <span class="hexa7" >&#x2B22;</span> 
+              </li>
+            </ul>
+          </div> 
+          <div class="container home-third-content">
+            <h3 class='title-section text-center'>Find talents or jobs in any of the 15 categories below</h3>
+            <p class="sub-title-section text-center">8 categories. Thousands of jobs.</p>
+            <div class="row">
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Food & Beverages</p>
+                </div>
+              </div>  
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>BD</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Administrative</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Design</p>
+                </div>  
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Fashion</p>
+                </div>
+              </div>  
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Cinema and Video</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Games</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Journalism</p>
+                </div>  
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+      <div class='home-four-section'>
+        <div class="container">
+          <div class='get-started-section text-center'>
+            <div class="title-btn">
+              <h3 class='title-section text-center'>Ready to Get Started?</h3>
+              <p class="sub-title-section text-center">We triple-check candidates to ensure quality! Just start with confidence.</p>
+              <p><a href="/register" class="waves-effect fancybox">Register now</a></p>
+            </div>
+            <div class="partner-logo">
+              <ul>
+                <li><%= image_tag "logo_p1.png" %></li>
+                <li><%= image_tag "logo_p2.png" %></li>
+                <li><%= image_tag "logo_p3.png" %></li>
+                <li><%= image_tag "logo_p4.png" %></li>
+                
+              </ul>
+              <p>17,000 customers and counting. Helping the very best web and mobile businesses communicate with their customers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <%= render "layouts/footer"%>
+  </div><!-- wapper -->
+  <% if current_user.type_user == "employer" %>
+  <div id="hidden-employer" style="display:none; width: 570px;">
+    <%= form_for(:completeprofile, html: {:multipart => true}, :url => {:controller => 'home', :action => 'complete_profile_employer'}) do |f| %>
+    <div class="tab-content">   
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Step 1</a></li>
+            <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
+            <li><a href="#tab4" data-toggle="tab">Step 4</a></li>
+            <li><a href="#tab5" data-toggle="tab">Step 5</a></li>
+        </ul>
+        <div class="tab-pane active" id="tab1">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>1. Upload your photo</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 1%;"></span>
+                </div>
+                
+                <div class="register-form">
+                     <div class="form-group">
+                                <% if Profile.where(user_id: session[:user_id]).count.positive?%>
+                                    <% @profile = Profile.find(session[:user_id]) %>
+                                    <% if @profile.company_logo_file_name != nil %>
+                                    <% @logo = @profile.company_logo.url %>
+                                    <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100",:"data-default-file" => @logo.slice(0..(@logo.index('g?'))), :"data-width" => "510"%>
+                                    <% end %>
+                                <% if @profile.company_logo_file_name == nil %>
+                                <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100", :"data-width" => "510"%>
+                                <% end%> 
+                                <% else %>
+                                    <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100", :"data-width" => "510"%> 
+                                <% end %>  
+                      </div>
+                      <p>Please choose a 500 x 500 pixels company profile picture.</p>
+                      <p>Click next if you want remain using this photo as your company profile picture.</p>
+                      <div class="submit">
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                    
+                </div><!-- .register-form -->
+            </div>
+        </div><!-- .tab-1 -->
+        <div class="tab-pane" id="tab2">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>2. Enter your company basic info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 50%;"></span>
+                </div>
+                <div class="register-form">
+                         <div class="form-group">
+                            <label>Company Name</label>
+                             <%= f.text_field :companyname, :class=>"form-control"%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Headline(e.g. Internet and computer software)</label>
+                             <%= f.text_field :headline, :class=>"form-control"%>
+                        </div><!-- .form-group -->
+                         <div class="form-group">
+                                <label>Short Description of Your Company</label>
+                                <%= f.text_area :description, :class=>"form-control", :rows => 5 %>
+                            </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Size</label>
+                            <div class="styled-select slate">
+                                <%= select_tag(:companysize, 
+                                            options_for_select([ 
+                                                                ['1 Employee', '1 Employee'], 
+                                                                ['2 Employees', '2 Employees'],
+                                                                ['3 Employees', '3 Employees'],
+                                                                ['4 Employees','4 Employees'],
+                                                                ['5 Employees','5 Employees'],
+                                                                ['6 Employees','6 Employees'],
+                                                                ['7 Employees','7 Employees'],
+                                                                ['8 Employees','8 Employees'],
+                                                                ['9 Employees','9 Employees'],
+                                                                ['10 Employees','10 Employees']
+                                                                ]), :class=>"form-control race" ) %>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-2 -->
+         <div class="tab-pane" id="tab3">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>3. Enter your company contact</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 100%;"></span>
+                </div>
+                <div class="register-form">
+                        <div class="form-group">
+                            <label>Company Address</label>
+                             <%= f.text_field :companyaddress, :class=>"form-control"%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Email</label>
+                             <%= f.text_field :companyemail, :class=>"form-control"%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Contact</label>
+                             <%= f.text_field :companycontact, :class=>"form-control"%>
+                        </div><!-- .form-group -->
+                         <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <button type="submit" class="btn btn-default waves-effect">Save</button>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-3 -->
+    </div><!-- .tab-content -->
+  <% end %>
+</div>
+<% end %>
+<% if current_user.type_user == "parttimer"%>
+<div id="hidden-parttimer" style="display:none; width: 570px;">
+    <form class="complete-parttimer">
+    <div class="tab-content">   
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Step 1</a></li>
+            <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
+            <li><a href="#tab4" data-toggle="tab">Step 4</a></li>
+            <li><a href="#tab5" data-toggle="tab">Step 5</a></li>
+        </ul>
+        <div class="tab-pane active" id="tab1">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>1. Upload your photo</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 1%;"></span>
+                </div>
+                
+                <div class="register-form">
+                     <div class="form-group">
+                        <input type="file" name="avatar" class="dropify Input-Field" accept="image/*" data-height="100" data-width="510">     
+                      </div>
+                      <p>Please choose a 500 x 500 pixels company profile picture.</p>
+                      <p>Click next if you want remain using this photo as your company profile picture.</p>
+                      <div class="submit">
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                    
+                </div><!-- .register-form -->
+            </div>
+        </div><!-- .tab-1 -->
+        <div class="tab-pane" id="tab2">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>2. Enter your basic info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 50%;"></span>
+                </div>
+                <div class="register-form">
+                         <div class="form-group">
+                            <label>Your Date of Birth</label>
+                            
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                              <label>Nationality</label>
+                              <div class="styled-select">
+                                  <select class="form-control chosen-select" name="nationality"  data-placeholder="-- select one --" >
+                                    <option value=""></option>
+                                    <option value="afghan">Afghan</option>
+                                    <option value="albanian">Albanian</option>
+                                    <option value="algerian">Algerian</option>
+                                    <option value="american">American</option>
+                                    <option value="andorran">Andorran</option>
+                                    <option value="angolan">Angolan</option>
+                                    <option value="antiguans">Antiguans</option>
+                                    <option value="argentinean">Argentinean</option>
+                                    <option value="armenian">Armenian</option>
+                                    <option value="australian">Australian</option>
+                                    <option value="austrian">Austrian</option>
+                                    <option value="azerbaijani">Azerbaijani</option>
+                                    <option value="bahamian">Bahamian</option>
+                                    <option value="bahraini">Bahraini</option>
+                                    <option value="bangladeshi">Bangladeshi</option>
+                                    <option value="barbadian">Barbadian</option>
+                                    <option value="barbudans">Barbudans</option>
+                                    <option value="batswana">Batswana</option>
+                                    <option value="belarusian">Belarusian</option>
+                                    <option value="belgian">Belgian</option>
+                                    <option value="belizean">Belizean</option>
+                                    <option value="beninese">Beninese</option>
+                                    <option value="bhutanese">Bhutanese</option>
+                                    <option value="bolivian">Bolivian</option>
+                                    <option value="bosnian">Bosnian</option>
+                                    <option value="brazilian">Brazilian</option>
+                                    <option value="british">British</option>
+                                    <option value="bruneian">Bruneian</option>
+                                    <option value="bulgarian">Bulgarian</option>
+                                    <option value="burkinabe">Burkinabe</option>
+                                    <option value="burmese">Burmese</option>
+                                    <option value="burundian">Burundian</option>
+                                    <option value="cambodian">Cambodian</option>
+                                    <option value="cameroonian">Cameroonian</option>
+                                    <option value="canadian">Canadian</option>
+                                    <option value="cape verdean">Cape Verdean</option>
+                                    <option value="central african">Central African</option>
+                                    <option value="chadian">Chadian</option>
+                                    <option value="chilean">Chilean</option>
+                                    <option value="chinese">Chinese</option>
+                                    <option value="colombian">Colombian</option>
+                                    <option value="comoran">Comoran</option>
+                                    <option value="congolese">Congolese</option>
+                                    <option value="costa rican">Costa Rican</option>
+                                    <option value="croatian">Croatian</option>
+                                    <option value="cuban">Cuban</option>
+                                    <option value="cypriot">Cypriot</option>
+                                    <option value="czech">Czech</option>
+                                    <option value="danish">Danish</option>
+                                    <option value="djibouti">Djibouti</option>
+                                    <option value="dominican">Dominican</option>
+                                    <option value="dutch">Dutch</option>
+                                    <option value="east timorese">East Timorese</option>
+                                    <option value="ecuadorean">Ecuadorean</option>
+                                    <option value="egyptian">Egyptian</option>
+                                    <option value="emirian">Emirian</option>
+                                    <option value="equatorial guinean">Equatorial Guinean</option>
+                                    <option value="eritrean">Eritrean</option>
+                                    <option value="estonian">Estonian</option>
+                                    <option value="ethiopian">Ethiopian</option>
+                                    <option value="fijian">Fijian</option>
+                                    <option value="filipino">Filipino</option>
+                                    <option value="finnish">Finnish</option>
+                                    <option value="french">French</option>
+                                    <option value="gabonese">Gabonese</option>
+                                    <option value="gambian">Gambian</option>
+                                    <option value="georgian">Georgian</option>
+                                    <option value="german">German</option>
+                                    <option value="ghanaian">Ghanaian</option>
+                                    <option value="greek">Greek</option>
+                                    <option value="grenadian">Grenadian</option>
+                                    <option value="guatemalan">Guatemalan</option>
+                                    <option value="guinea-bissauan">Guinea-Bissauan</option>
+                                    <option value="guinean">Guinean</option>
+                                    <option value="guyanese">Guyanese</option>
+                                    <option value="haitian">Haitian</option>
+                                    <option value="herzegovinian">Herzegovinian</option>
+                                    <option value="honduran">Honduran</option>
+                                    <option value="hungarian">Hungarian</option>
+                                    <option value="icelander">Icelander</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="indonesian">Indonesian</option>
+                                    <option value="iranian">Iranian</option>
+                                    <option value="iraqi">Iraqi</option>
+                                    <option value="irish">Irish</option>
+                                    <option value="israeli">Israeli</option>
+                                    <option value="italian">Italian</option>
+                                    <option value="ivorian">Ivorian</option>
+                                    <option value="jamaican">Jamaican</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="jordanian">Jordanian</option>
+                                    <option value="kazakhstani">Kazakhstani</option>
+                                    <option value="kenyan">Kenyan</option>
+                                    <option value="kittian and nevisian">Kittian and Nevisian</option>
+                                    <option value="kuwaiti">Kuwaiti</option>
+                                    <option value="kyrgyz">Kyrgyz</option>
+                                    <option value="laotian">Laotian</option>
+                                    <option value="latvian">Latvian</option>
+                                    <option value="lebanese">Lebanese</option>
+                                    <option value="liberian">Liberian</option>
+                                    <option value="libyan">Libyan</option>
+                                    <option value="liechtensteiner">Liechtensteiner</option>
+                                    <option value="lithuanian">Lithuanian</option>
+                                    <option value="luxembourger">Luxembourger</option>
+                                    <option value="macedonian">Macedonian</option>
+                                    <option value="malagasy">Malagasy</option>
+                                    <option value="malawian">Malawian</option>
+                                    <option value="malaysian">Malaysian</option>
+                                    <option value="maldivan">Maldivan</option>
+                                    <option value="malian">Malian</option>
+                                    <option value="maltese">Maltese</option>
+                                    <option value="marshallese">Marshallese</option>
+                                    <option value="mauritanian">Mauritanian</option>
+                                    <option value="mauritian">Mauritian</option>
+                                    <option value="mexican">Mexican</option>
+                                    <option value="micronesian">Micronesian</option>
+                                    <option value="moldovan">Moldovan</option>
+                                    <option value="monacan">Monacan</option>
+                                    <option value="mongolian">Mongolian</option>
+                                    <option value="moroccan">Moroccan</option>
+                                    <option value="mosotho">Mosotho</option>
+                                    <option value="motswana">Motswana</option>
+                                    <option value="mozambican">Mozambican</option>
+                                    <option value="namibian">Namibian</option>
+                                    <option value="nauruan">Nauruan</option>
+                                    <option value="nepalese">Nepalese</option>
+                                    <option value="new zealander">New Zealander</option>
+                                    <option value="ni-vanuatu">Ni-Vanuatu</option>
+                                    <option value="nicaraguan">Nicaraguan</option>
+                                    <option value="nigerien">Nigerien</option>
+                                    <option value="north korean">North Korean</option>
+                                    <option value="northern irish">Northern Irish</option>
+                                    <option value="norwegian">Norwegian</option>
+                                    <option value="omani">Omani</option>
+                                    <option value="pakistani">Pakistani</option>
+                                    <option value="palauan">Palauan</option>
+                                    <option value="panamanian">Panamanian</option>
+                                    <option value="papua new guinean">Papua New Guinean</option>
+                                    <option value="paraguayan">Paraguayan</option>
+                                    <option value="peruvian">Peruvian</option>
+                                    <option value="polish">Polish</option>
+                                    <option value="portuguese">Portuguese</option>
+                                    <option value="qatari">Qatari</option>
+                                    <option value="romanian">Romanian</option>
+                                    <option value="russian">Russian</option>
+                                    <option value="rwandan">Rwandan</option>
+                                    <option value="saint lucian">Saint Lucian</option>
+                                    <option value="salvadoran">Salvadoran</option>
+                                    <option value="samoan">Samoan</option>
+                                    <option value="san marinese">San Marinese</option>
+                                    <option value="sao tomean">Sao Tomean</option>
+                                    <option value="saudi">Saudi</option>
+                                    <option value="scottish">Scottish</option>
+                                    <option value="senegalese">Senegalese</option>
+                                    <option value="serbian">Serbian</option>
+                                    <option value="seychellois">Seychellois</option>
+                                    <option value="sierra leonean">Sierra Leonean</option>
+                                    <option value="singaporean">Singaporean</option>
+                                    <option value="slovakian">Slovakian</option>
+                                    <option value="slovenian">Slovenian</option>
+                                    <option value="solomon islander">Solomon Islander</option>
+                                    <option value="somali">Somali</option>
+                                    <option value="south african">South African</option>
+                                    <option value="south korean">South Korean</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="sri lankan">Sri Lankan</option>
+                                    <option value="sudanese">Sudanese</option>
+                                    <option value="surinamer">Surinamer</option>
+                                    <option value="swazi">Swazi</option>
+                                    <option value="swedish">Swedish</option>
+                                    <option value="swiss">Swiss</option>
+                                    <option value="syrian">Syrian</option>
+                                    <option value="taiwanese">Taiwanese</option>
+                                    <option value="tajik">Tajik</option>
+                                    <option value="tanzanian">Tanzanian</option>
+                                    <option value="thai">Thai</option>
+                                    <option value="togolese">Togolese</option>
+                                    <option value="tongan">Tongan</option>
+                                    <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                                    <option value="tunisian">Tunisian</option>
+                                    <option value="turkish">Turkish</option>
+                                    <option value="tuvaluan">Tuvaluan</option>
+                                    <option value="ugandan">Ugandan</option>
+                                    <option value="ukrainian">Ukrainian</option>
+                                    <option value="uruguayan">Uruguayan</option>
+                                    <option value="uzbekistani">Uzbekistani</option>
+                                    <option value="venezuelan">Venezuelan</option>
+                                    <option value="vietnamese">Vietnamese</option>
+                                    <option value="welsh">Welsh</option>
+                                    <option value="yemenite">Yemenite</option>
+                                    <option value="zambian">Zambian</option>
+                                    <option value="zimbabwean">Zimbabwean</option>
+                                  </select>
+                              </div>
+                          </div><!-- .form-group -->
+
+                        <div class="form-group">
+                              <label>Race</label>
+                              <div class="styled-select slate">
+                                  <select class="form-control race" name="race">
+                                      <option value="">-- select one --</option>
+                                      <option value="malay">Malay</option>
+                                      <option value="chinese">Chinese</option>
+                                      <option value="indian">Indian</option>
+                                      <option value="others">Others</option>
+                                  </select>
+                              </div>
+                          </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="radio" id="male" value="Male" checked><span></span> Male
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="radio" id="female" value="Female" ><span></span> Female
+                            </label>
+                        </div><!-- .form-group -->
+                        
+                        <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                     
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-2 -->
+         <div class="tab-pane" id="tab3">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>3. Enter your education info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 100%;"></span>
+                </div>
+                <div class="register-form">
+                 <div class="form-group">
+                              <label>Education level</label>
+                              <div class="styled-select slate">
+                                  <select class="form-control race" name="education">
+                                      <option value="">Please select your education level</option>
+                                      <option value="SPM">Primary</option>
+                                      <option value="STPM">Secondary</option>
+                                      <option value="college">STPM</option>
+                                      <option value="university">Diploma</option>
+                                      <option value="master-or-above">Degree or above</option>
+                                  </select>
+                              </div>
+                          </div><!-- .form-group -->
+                        <div class="form-group langguage">
+                            <label>Langguage</label>
+                            <div class="checkbox">
+                              <label>
+                                <input name="malaysia" value="malaysia" type="checkbox"><span></span> Bahasa Malaysia
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input value="chinese" name="chinese" type="checkbox"><span></span> Chinese
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input value="english" name="english" id="english" type="checkbox"><span></span> English
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input value="tamil" name ="tamil" type="checkbox"> <span></span> Tamil
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input value="cantonese" name="cantonese" type="checkbox"><span></span> Cantonese
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input value="hokkien" name="hokkien" type="checkbox"><span></span> Hokkien
+                              </label>
+                            </div>
+                        </div>
+                         <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <button type="submit" class="btn btn-default waves-effect">Save</button>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-3 -->
+    </div><!-- .tab-content -->
+  </form>
+</div>
+<% end %>
+<div class="wapper" id="formthankyou">
+        <div class="auto-container">
+            <div class="register-success" id="registersuccess">
+                <div class="success">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div><!-- .success -->
+                <div class="text-success">
+                    <h1>Thank you for updating us!</h1>
+                </div><!-- .text-success -->
+                  <div class="btn-post-jobs-now">
+                      <button onclick="register_success()" type="submit" class="btn btn-default post-jobs-now waves-effect">
+                      <% if current_user[:type_user] == "employer"%>
+                        Close
+                      <% else %>
+                        Find Jobs Now
+                      <% end %>
+                      </button>
+                  </div>
+            </div><!-- .notification -->
+        </div><!-- .auto-container -->
+    </div><!-- .wapper -->
+
+    <script type="text/javascript">
+        function register_success(){
+            window.location.href ="/job-listing"
+        }
+    </script>
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<%= javascript_include_tag "home/jquery.fancybox" %>
+<%= javascript_include_tag "home/jquery.nice-select.min" %>
+<%= javascript_include_tag "home/ware" %>
+<%= javascript_include_tag "home/parallax" %>
+<%= javascript_include_tag "home/jquery.countdown" %>
+<%= javascript_include_tag "home/chosen.jquery.min" %>
+<%= javascript_include_tag "home/parttimebee-custom" %>
+<%= javascript_include_tag "dropify/dropify" %>
+<%= render 'layouts/verify_phone_2_step.html.erb'%>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('form').submit(function(event) {
+      $.ajax({
+        type: 'get',
+        url:'/home/complete_profile_parttimer' + '?avatar_name=' + $('.dropify')[0].files[0].name +'&avatar_size=' + $('.dropify')[0].files[0].size +'&avatar_type=' + $('.dropify')[0].files[0].type,
+        dataType:'html',
+        processData:false,
+        success:function (data) {
+          container.append(data);
+          $(".shadow").hide();
+          $("#ajax_loader").hide();
+        }
+      });
+      event.preventDefault();
+      $('form').hide();
+      jQuery.fancybox("#formthankyou");
+    });
+  });
+</script>
+<script>
+            $(document).ready(function(){
+                // Basic
+                $('.dropify').dropify();
+
+                // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+                var drDestroy = $('#input-file-to-destroy').dropify();
+                drDestroy = drDestroy.data('dropify')
+                $('#toggleDropify').on('click', function(e){
+                    e.preventDefault();
+                    if (drDestroy.isDropified()) {
+                        drDestroy.destroy();
+                    } else {
+                        drDestroy.init();
+                    }
+                })
+            });
+        </script>
+        <% if current_user %>
+          <% current_user.time_login += 1%>
+          <% current_user.save %>
+          <% if current_user.complete_profile == 0%>
+            <% if current_user.time_login <= 113%>
+                  <script type="text/javascript">
+                    jQuery(document).ready(function() {
+                         setTimeout(function () {
+                          <% if current_user.type_user == "employer"%>
+                                jQuery.fancybox("#hidden-employer");
+                          <% end %>
+                          <% if current_user.type_user == "parttimer"%>
+                                jQuery.fancybox("#hidden-parttimer");
+                          <% end %>
+                              }, 1000);
+                         jQuery('.fancybox').fancybox();
+                      });
+                  </script>
+            <% end %>
+          <% end %>
+        <% end %>
+          
+ <style type="text/css">
+   
+  .home-third-section{
+    padding:0!important; 
+    overflow: hidden;
+    position: relative;
+  }
+  .home-third-section .home-third-content{
+    padding: 70px 0;
+  }
+   .hexa{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+     color: #85cdf0;
+    font-size: 400px;
+    left: -4%;
+    line-height: 400px;
+    position: absolute;
+    top: -12%;
+  transform: rotate(-198deg);
+  }
+  .hexa1{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+    color: #fbc2eb;
+    font-size: 230px;
+    left: 30%;
+    line-height: 230px;
+    position: absolute;
+    top: 1%;
+    transform: rotate(-198deg);
+  } 
+  .hexa2{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+    color: #5ee7df;
+    font-size: 230px;
+    left: -4%;
+    line-height: 230px;
+    position: absolute;
+    top: 77%;
+  transform: rotate(-198deg);
+  } 
+  .hexa3{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+    color: #ffd5a2;
+    font-size: 300px;
+    left: 34%;
+    line-height: 300px;
+    position: absolute;
+    top: 98%;
+  transform: rotate(-198deg);
+  } 
+  .hexa4{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+    color: #5ee7df;
+  font-size: 150px;
+  line-height: 150px;
+  left: 78%;
+  top: 13%;
+  position: absolute;
+  transform: rotate(-198deg);
+  } 
+  .hexa5{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+      color: #ffd5a2;
+    font-size: 270px;
+    left: 92%;
+    line-height: 270px;
+    position: absolute;
+    top: -6%;
+  transform: rotate(-198deg);
+  } 
+  .hexa6{ 
+    -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+    color: #85cdf0;
+    font-size: 200px;
+    line-height: 200px;
+    position: absolute;
+    right: -2%;
+    top: 51%;
+  transform: rotate(-198deg);
+  } 
+  .hexa7{  
+  color: #b490ca;
+    font-size: 350px;
+    line-height: 350px;
+    position: absolute;
+    right: -5%;
+    top: 83%;
+  transform: rotate(-198deg);
+  -ms-transform: rotate(-198deg);/* IE 9 */
+    -webkit-transform: rotate(-198deg); /* Chrome, Safari, Opera */ 
+  } 
+  ul.staff-list {
+    height: 100%;
+  }
+  .cd-background-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+ </style>
+</body>
+
+</html>

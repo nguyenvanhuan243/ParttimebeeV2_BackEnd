@@ -1,0 +1,2 @@
+class Quotajob < ApplicationRecord
+end

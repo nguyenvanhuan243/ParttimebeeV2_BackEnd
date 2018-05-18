@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Updating</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content='Search result page'/>
+    <%= stylesheet_link_tag 'home/flexslider' %>
+    <%= stylesheet_link_tag 'home/bootstrap.min' %>
+    <%= stylesheet_link_tag 'home/responsive' %>
+    <%= stylesheet_link_tag 'home/style' %>
+</head>
+<body class="updating" id="registersuccess">
+    <div class="wapper">
+        <div class="auto-container">
+            <div class="register-success" id="registersuccess">
+                <div class="success">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div><!-- .success -->
+                <div class="text-success">
+                    <h1>Thank you for updating us!</h1>
+                </div><!-- .text-success -->
+                  <div class="btn-post-jobs-now">
+                      <% if current_user[:type_user] == "employer"%>
+                      <button onclick="register_success_employer()" type="submit" class="btn btn-default post-jobs-now waves-effect">
+                        Close
+                      <% else %>
+                      <button onclick="register_success_parttimer()" type="submit" class="btn btn-default post-jobs-now waves-effect">
+                        Find Jobs Now
+                      <% end %>
+                      </button>
+                  </div>
+            </div><!-- .notification -->
+        </div><!-- .auto-container -->
+    </div><!-- .wapper -->
+    <script type="text/javascript">
+        function register_success_parttimer(){
+            window.location.href ="/job-listing"
+        }
+        function register_success_employer() {
+            window.location.href = "/"
+        }
+    </script>
+    <%= javascript_include_tag "home/jquery" %>
+    <%= javascript_include_tag "home/bootstrap.min" %>
+    <%= javascript_include_tag "home/jquery.flexslider" %>
+    <%= javascript_include_tag"home/ware"%>
+</body>
+</html>

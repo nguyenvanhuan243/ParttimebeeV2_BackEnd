@@ -1,0 +1,19 @@
+<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+    <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+        <% if @user.full_name.nil?%>
+            Hi UserName!
+        <% else %>
+            Hi <%=@user.full_name %>!
+        <% end %>
+    </td>
+</tr>
+<tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+    <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+            <% if @user.type_user == 'employer'%>
+                Welcome to Part-time Bee! Let’s start posting job now!
+            <% else %>
+                Welcome to Part-time Bee! Let’s start searching job now!
+            <% end%>       
+    </td>
+</tr>
+                               

@@ -1,0 +1,52 @@
+<div class='special-main'> 	
+	<div class="auto-container">
+		<div class="special-content">
+			<% if flash[:block_account_user] %>
+                <div class="alert alert-danger">
+                    <center><%= flash[:block_account_user] %></center>
+                </div>
+            <% end %>
+            <% if flash[:confirmed] %>
+                <div class="alert alert-danger">
+                    <center><%= flash[:confirmed] %></center>
+                </div>
+            <% end %>
+			<div class="login-form-content special-form-content">
+				<%= form_for(:login, :url => {:controller => 'login', :action => 'user_login', :class => 'login-form'}) do |f| %>
+				 	<% if flash[:notify_login_fail] %>
+				 		<div class="alert alert-danger error-message" role="alert">
+				 			Sorry, we couldn’t find a user with that email and password combination.<br>
+				 			Please double-check and try again
+				 			<a class="close-alert" href="#">x</a>
+				 		</div>
+				 	<% end %>
+					<div class="form-group">
+						<label for="user-email">Email</label>
+						<%= f.email_field :email, :class=>"form-control", :required => true %> 
+					</div>
+					<div class="form-group">
+						<label for="user-password">Password</label>
+						<%= f.password_field :password, :class=>"form-control", :required => true %> 
+					</div>
+					<button type="submit" class="btn btn-default login-btn">Log me in</button>
+					<div class="remember-acc">
+						<label class="remember-me pull-left">
+						<input type="checkbox"  value="" name="remobemer"><span></span> Remember me?
+						</label>
+						<div class="lost-password pull-right">
+						  	<a href="/forget-password" class="lost-password-link" title="Lost password">Forgot Your Password?</a>
+						</div>
+					</div>
+				<% end %>
+				<div class="or-seperate"><span>Or</span></div>
+				<div class="facebook-login">
+					<a href='/auth/facebook' class="facebook-login-btn btn btn-lg"><i class="fa fa-facebook-official" aria-hidden="true"></i><span>Login with Facebook</span></a>
+					<p>We’ll never post anything on Facebook without your permission.</p>
+				</div>
+			</div>	
+			<div class="new-sign-up text-center">
+				<p>New to Part-time Bee? <a href="/register" title="Sign up" class="sign-up-btn-link">Sign up</a></p>
+			</div>
+		</div>
+	</div>
+</div> 

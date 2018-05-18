@@ -1,0 +1,536 @@
+<div class="all-jobs">
+            <div class="auto-container box-all-jobs">
+                <div class="container">
+                    <h1>All Jobs</h1>   
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#applied-jobs" aria-controls="applied-jobs" role="tab" data-toggle="tab">Applied jobs
+                                <span><%= Applied.where(status_job: "applied", parttimer_id: current_user[:id]).count %>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation"><a href="#started-jobs" aria-controls="started-jobs" role="tab" data-toggle="tab">Awarded jobs<span><%= Applied.where(status_job: "awarded", parttimer_id: current_user.id).count%></span></a></li>
+                        <li role="presentation"><a href="#completed-jobs" aria-controls="completed-jobs" role="tab" data-toggle="tab">Completed jobs
+                        <span><%=Applied.where(status_job: "completed", parttimer_id: current_user.id).count %></span></a></li>
+                        <% @count_favorite_job = 0%>
+                        <% Job.all.each do |job|%>
+                          <% if Favoritejob.where(parttimer_id: current_user.id, job_id: job.id).count.positive?%>
+                              <% @count_favorite_job += 1%>
+                          <% end %>
+                        <% end %>
+                        <li role="presentation"><a href="#favorite-jobs" aria-controls="completed-jobs" role="tab" data-toggle="tab">Favorite jobs
+                        <span><%=@count_favorite_job%></span></a></li>
+                    </ul><!-- Nav tabs -->  
+                </div>
+            </div><!-- box-search-result -->
+        </div><!-- .All Jobs -->
+        <div class="content">
+            <div class="container">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="applied-jobs">
+                        <% @count_applied_job = Applied.where(status_job: "applied", parttimer_id: current_user[:id]).all%>
+                        <% @job_applied = @count_applied_job.paginate(:per_page => 10, :page => params[:page]) %>
+                        <% @job_applied.each do |applied| %>
+                        <% job = Job.where(id: applied[:job_id]).first%>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail" %>
+                                    </a>    
+                                </div><!-- .item-thumbnail -->
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-info">
+                                    <h2 class="title"><a href="/job-details/<%=job.id%>" title="Front-end Developer"><%= job[:title]%></a></h2>
+                                    <div class="option">
+                                        <div class="item-note"> 
+                                            <div class="promotion-flags">
+                                                <!-- <a href="#" class="btn btn-verified" title="Verified Employer">Verified Employer</a> -->
+                                                <% if job[:on_the_spot] == 'yes'%>
+                                                    <a href="#" class="btn btn-spot" title="On The Spot">On The Spot</a>
+                                                <% end %>
+                                                <% if job[:commission] == 'yes' %>
+                                                    <a href="#" class="btn btn-commission" title="Commission">Commission</a>
+                                                <% end %>
+                                            </div><!-- .promotion-flags -->
+                                        </div>
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                  <%= job[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                  <%= job[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                <%= job[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= job[:working_date_to].to_date.strftime("%d %B")%>                           
+                                            </span></span>
+                                            <p><span class="month">
+                                              <%=job[:vacancies]%>
+                                            </span> vacancies available</p>
+                                        </div><!-- .time-work -->
+                                    </div><!-- .option -->
+                                </div><!-- .box-content -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item-price-box">
+                                    <div class="right-box-3">
+                                        <div class="clock">
+                                            <!-- <span class="time-add pull-right">30 minutes ago</span> -->
+                                            <% @get_hour = Time.now.hour - job[:created_at].hour %>
+                                            <% @get_min = Time.now.min - job[:created_at].min%>
+                                            <% if @get_hour < 1 %>
+                                                <span class="time-add pull-right"><%=@get_min.to_i.abs%> minutes ago</span>
+                                            <% end %>
+                                            <% if @get_hour >= 1 %>
+                                                <span class="time-add pull-right"><%=@get_hour.to_i.abs%> hours ago</span>
+                                            <% end %>
+                                        </div><!-- .clock -->
+                                        <div class="cost">
+                                            <% if current_user == nil%>
+                                              <a href="/login" class="fa fa-heart like-btn pull-right" aria-hidden="true"></a>
+                                            <% else %>
+                                              <% if Favoritejob.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                                <%= link_to "",{controller: "job", action: "click_favorite_job_again", id: job[:id] }, class: "fa fa-heart like-btn-clicked pull-right" %>
+                                              <% else %>
+                                                <%= link_to "",{controller: "job", action: "click_favorite_job", id: job[:id] }, class: "fa fa-heart like-btn pull-right" %>
+                                              <% end %>
+                                            <% end %>
+                                            <div class="share pull-right">
+                                               <a class="share-click" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                <div id="foo" class="icon-share">
+                                                    <p>Share</p>
+                                                    <ul>
+                                                        <li>
+                                                          <a href="https://www.facebook.com/sharer.php?u=parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="http://twitter.com/share?text=&url=http://parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="https://plus.google.com/share?url=http%3A//www.parttimebee.my/job-details/<%= job[:id]%>">
+                                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="price pull-right">RM<%= job[:salary]%>/<%=job[:per_day]%> </span> 
+                                        </div><!-- .cost -->
+                                    </div><!-- right-box-3 -->
+                                </div><!-- .box-content -->
+                            </div><!-- .row -->
+                        </div><!-- .item -->
+                        <% end %>
+                        <div class="page-nav">
+                        <% if @count_applied_job.count > 10%>
+                            <nav aria-label="Page navigation">
+                              <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..@count_applied_job/10  %>
+                                    <li><a href="/worker-applied-job?applied-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul>   
+                            </nav>
+                        <% end %>
+                        </div><!-- .navigation -->
+                    </div><!-- .applied-jobs -->
+
+                    <div role="tabpanel" class="tab-pane" id="started-jobs">
+                        <% @count_awarded_job = Applied.where(status_job: "awarded", parttimer_id: current_user[:id]).all.count%>
+                        <% @job_awarded = Applied.where(status_job: "awarded", parttimer_id: current_user[:id]).all.paginate(:per_page => 10, :page => params[:page]) %>
+                        <% @job_awarded.each do |awarded| %>
+                        <% job = Job.where(id: awarded[:job_id]).first%>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .box-content -->
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-info">
+                                    <h2 class="title"><a href="/job-details/<%=job.id%>" title="Front-end Developer">
+                                        <%= job[:title]%>                     
+                                    </a></h2>
+                                    <div class="option">
+                                        <div class="item-note"> 
+                                            <div class="promotion-flags">
+
+                                                <!-- <a href="#" class="btn btn-verified" title="Verified Employer">Verified Employer</a> -->
+                                                <% if job[:on_the_spot] == "yes"%>    
+                                                    <a href="#" class="btn btn-spot" title="On The Spot">On The Spot</a>
+                                                <% end %>
+                                                
+                                                <% if job[:commission] == "yes" %>
+                                                    <a href="#" class="btn btn-commission" title="Commission">Commission</a>
+                                                <% end %>
+                                            </div><!-- .promotion-flags -->
+
+                                        </div>
+
+                                        <div class="tag-location">
+
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= job[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= job[:state]%>                      
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                <%= job[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= job[:working_date_to].to_date.strftime("%d %B")%>                           
+                                            </span></span>
+                                            <p><span class="month">
+                                                <%= job[:vacancies]%>
+                                            </span> vacancies available</p>
+                                        </div><!-- .time-work -->
+                                    </div><!-- .option -->
+                                </div><!-- .box-content -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item-price-box">
+                                    <div class="right-box-3">
+                                        <div class="clock">
+                                            <% @get_hour = Time.now.hour - job[:created_at].hour %>
+                                            <% @get_min = Time.now.min - job[:created_at].min%>
+                                            <% if @get_hour < 1 %>
+                                                <span class="time-add pull-right"><%=@get_min.to_i.abs%> minutes ago</span>
+                                            <% end %>
+                                            <% if @get_hour >= 1 %>
+                                                <span class="time-add pull-right"><%=@get_hour.to_i.abs%> hours ago</span>
+                                            <% end %>
+                                        </div><!-- .clock -->
+                                        <div class="cost">
+                                        <% if current_user == nil%>
+                                            <a href="/login" class="fa fa-heart like-btn pull-right" aria-hidden="true"></a>
+                                          <% else %>
+                                            <% if Favoritejob.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                              <%= link_to "",{controller: "job", action: "click_favorite_job_again", id: job[:id] }, class: "fa fa-heart like-btn-clicked pull-right" %>
+                                            <% else %>
+                                              <%= link_to "",{controller: "job", action: "click_favorite_job", id: job[:id] }, class: "fa fa-heart like-btn pull-right" %>
+                                            <% end %>
+                                          <% end %>
+                                            <div class="share pull-right">
+                                               <a class="share-click" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                <div id="foo" class="icon-share">
+                                                    <p>Share</p>
+                                                    <ul>
+                                                        <li>
+                                                          <a href="https://www.facebook.com/sharer.php?u=parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="http://twitter.com/share?text=&url=http://parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="https://plus.google.com/share?url=http%3A//www.parttimebee.my/job-details/<%= job[:id]%>">
+                                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="price pull-right">
+                                                RM<%= job[:salary]%>/<%=job[:per_day]%>
+                                            </span> 
+                                        </div><!-- .cost -->
+                                    </div><!-- right-box-3 -->
+                                </div><!-- .box-content -->
+                            </div><!-- .row -->
+                        </div><!-- .item -->
+                        <% end %>
+                        <div class="page-nav">
+                        <% if @count_awarded_job> 10%>
+                            <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..@count_awarded_job/10  %>
+                                    <li><a href="/worker-applied-job?started-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul> 
+                            </nav>
+                        <% end %>
+                        </div><!-- .navigation -->
+                    </div><!-- .started-jobs -->
+
+                    <div role="tabpanel" class="tab-pane" id="completed-jobs">
+                        <% @count = Applied.where(status_job: "completed", parttimer_id: current_user[:id]).all.count%>
+                        <% @job_completed = Applied.where(status_job: "completed", parttimer_id: current_user[:id]).all.paginate(:per_page => 10, :page => params[:page]) %>
+                        <% @job_completed.each do |completed| %>
+                        <% job = Job.where(id: completed[:job_id]).first%>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail" %>
+                                    </a>    
+                                </div><!-- .box-content -->
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-info">
+                                    <h2 class="title"><a href="/job-details/<%=job.id%>" title="Front-end Developer">Front-end Developer</a></h2>
+                                    <div class="option">
+                                        <div class="item-note"> 
+                                            <div class="promotion-flags">
+                                                <!-- <a href="#" class="btn btn-verified" title="Verified Employer">Verified Employer</a> -->
+                                                <a href="#" class="btn btn-spot" title="On The Spot">On The Spot</a>
+                                                <a href="#" class="btn btn-commission" title="Commission">Commission</a>
+                                            </div><!-- .promotion-flags -->
+                                        </div>
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= job[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= job[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                <%= job[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= job[:working_date_to].to_date.strftime("%d %B")%>                          
+                                            </span></span>
+                                            <p><span class="month">
+                                                <%= job[:vacancies]%>
+                                            </span> vacancies available</p>
+                                        </div><!-- .time-work -->
+                                    </div><!-- .option -->
+                                </div><!-- .box-content -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item-price-box">
+                                    <div class="right-box-3">
+                                        <div class="clock">
+                                            <span class="time-add pull-right">30 minutes ago</span>
+                                        </div><!-- .clock -->
+                                        <div class="cost">
+                                        <% if current_user == nil%>
+                                          <a href="/login" class="fa fa-heart like-btn pull-right" aria-hidden="true"></a>
+                                        <% else %>
+                                          <% if Favoritejob.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                            <%= link_to "",{controller: "job", action: "click_favorite_job_again", id: job[:id] }, class: "fa fa-heart like-btn-clicked pull-right" %>
+                                          <% else %>
+                                            <%= link_to "",{controller: "job", action: "click_favorite_job", id: job[:id] }, class: "fa fa-heart like-btn pull-right" %>
+                                          <% end %>
+                                        <% end %>
+                                            <div class="share pull-right">
+                                               <a class="share-click" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                <div id="foo" class="icon-share">
+                                                    <p>Share</p>
+                                                    <ul>
+                                                        <li>
+                                                          <a href="https://www.facebook.com/sharer.php?u=parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="http://twitter.com/share?text=&url=http://parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="https://plus.google.com/share?url=http%3A//www.parttimebee.my/job-details/<%= job[:id]%>">
+                                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="price pull-right">
+                                                RM<%= job[:salary]%>/<%=job[:per_day]%>
+                                            </span> 
+                                        </div><!-- .cost -->
+                                    </div><!-- right-box-3 -->
+                                </div><!-- .box-content -->
+                            </div><!-- .row -->
+                        </div><!-- .item -->
+                        <% end %>
+                        <div class="page-nav">
+                        <% if @count > 10%>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..@count/10  %>
+                                    <li><a href="/worker-applied-job?completed-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul>   
+                            </nav>
+                        <% end %>
+                        </div><!-- .navigation -->
+                    </div><!-- .completed-jobs -->
+
+                    <div role="tabpanel" class="tab-pane" id="favorite-jobs">
+                    <% @jobs = [] %>
+                    <% @favjobs = Favoritejob.where(parttimer_id: current_user.id).all%>
+                    <% @favjobs.each do |fav|%>
+                      <% @jobs << Job.where(id: fav.job_id) %>
+                    <% end %>
+                    <% @jobs = @jobs.flatten%>
+                    <% @jobss = @jobs.paginate(:page => params[:page], :per_page => 8) %>
+                    <% @jobss.each do |job| %>
+                  
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .box-content -->
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 item-info">
+                                    <h2 class="title"><a href="/job-details/<%=job.id%>" title="Front-end Developer">
+                                        <%= job[:title]%>                     
+                                    </a></h2>
+                                    <div class="option">
+                                        <div class="item-note"> 
+                                            <div class="promotion-flags">
+
+                                                <!-- <a href="#" class="btn btn-verified" title="Verified Employer">Verified Employer</a> -->
+                                                <% if job[:on_the_spot] == "yes"%>    
+                                                    <a href="#" class="btn btn-spot" title="On The Spot">On The Spot</a>
+                                                <% end %>
+                                                
+                                                <% if job[:commission] == "yes" %>
+                                                    <a href="#" class="btn btn-commission" title="Commission">Commission</a>
+                                                <% end %>
+                                            </div><!-- .promotion-flags -->
+
+                                        </div>
+
+                                        <div class="tag-location">
+
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= job[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= job[:working_address]%>                      
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                <%= job[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= job[:working_date_to].to_date.strftime("%d %B")%>                           
+                                            </span></span>
+                                            <p><span class="month">
+                                                <%= job[:vacancies]%>
+                                            </span> vacancies available</p>
+                                        </div><!-- .time-work -->
+                                    </div><!-- .option -->
+                                </div><!-- .box-content -->
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 item-price-box">
+                                    <div class="right-box-3">
+                                        <div class="clock">
+                                            <% @get_hour = Time.now.hour - job[:created_at].hour %>
+                                            <% @get_min = Time.now.min - job[:created_at].min%>
+                                            <% if @get_hour < 1 %>
+                                                <span class="time-add pull-right"><%=@get_min.to_i.abs%> minutes ago</span>
+                                            <% end %>
+                                            <% if @get_hour >= 1 %>
+                                                <span class="time-add pull-right"><%=@get_hour.to_i.abs%> hours ago</span>
+                                            <% end %>
+                                        </div><!-- .clock -->
+                                        <div class="cost">
+                                        <% if current_user == nil%>
+                                          <a href="/login" class="fa fa-heart like-btn pull-right" aria-hidden="true"></a>
+                                        <% else %>
+                                          <% if Favoritejob.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                            <%= link_to "",{controller: "job", action: "click_favorite_job_again", id: job[:id] }, class: "fa fa-heart like-btn-clicked pull-right" %>
+                                          <% else %>
+                                            <%= link_to "",{controller: "job", action: "click_favorite_job", id: job[:id] }, class: "fa fa-heart like-btn pull-right" %>
+                                          <% end %>
+                                        <% end %>
+                                            <div class="share pull-right">
+                                               <a class="share-click" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                <div id="foo" class="icon-share">
+                                                    <p>Share</p>
+                                                    <ul>
+                                                        <li>
+                                                          <a href="https://www.facebook.com/sharer.php?u=parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="http://twitter.com/share?text=&url=http://parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                        <li>
+                                                          <a href="https://plus.google.com/share?url=http%3A//www.parttimebee.my/job-details/<%= job[:id]%>">
+                                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                          </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="price pull-right">
+                                                RM<%= job[:salary]%>/<%=job[:per_day]%>
+                                            </span> 
+                                        </div><!-- .cost -->
+                                    </div><!-- right-box-3 -->
+                                </div><!-- .box-content -->
+                            </div><!-- .row -->
+                        </div><!-- .item -->
+                        <% end %>
+                        <div class="page-nav">
+                          <nav aria-label="Page navigation">
+                            <% number_jobs = Favoritejob.where(parttimer_id: current_user.id).count %>
+                            <% jobs = number_jobs/10 %>
+                            <% if number_jobs > 10 %>
+                              <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..jobs  %>
+                                    <li><a href="/worker-applied-job?favorite-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                            <% end %>   
+                            </nav>
+                        </div><!-- .navigation -->
+                    </div><!-- .started-jobs -->
+                </div><!-- Tab panes -->
+            </div><!-- .container -->
+        </div><!-- .content -->

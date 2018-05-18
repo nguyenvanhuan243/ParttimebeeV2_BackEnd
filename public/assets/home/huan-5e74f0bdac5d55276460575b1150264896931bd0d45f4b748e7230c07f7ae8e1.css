@@ -1,0 +1,14 @@
+.avatar-custom{
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+
+
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}

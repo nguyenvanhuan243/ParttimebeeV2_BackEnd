@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Employer Sign-up page</title>
+    <%= stylesheet_link_tag 'home/bootstrap.min' %>
+    <%= stylesheet_link_tag 'home/style' %>
+    <%= stylesheet_link_tag 'home/flexslider' %>
+    <%= stylesheet_link_tag 'home/responsive' %>
+    <!-- Responsive -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content='Search result page'/>
+</head>
+<body class="sign-up-page special-page">
+    <div class="wapper">
+        <div class="header header-small">
+            <div class="auto-container">
+                <div class="row logo-small text-center">
+                    <a href="#" title="Logo"><%= image_tag "small-logo.png", alt: "Logo" %></a>
+                    <h1 class="welcome-text">Join us now!</h1>
+                    <h2 class="note-text">Work hard, play hard</h2>
+                </div><!-- .logo-small -->
+            </div>
+        </div><!-- header-small -->
+        <div class='special-main'>  
+            <div class="auto-container">
+                <div class="special-content">
+                <!-- START FLASH -->
+                      <% if flash[:notify_created_account] %>
+                        <div class="alert alert-success">
+                            <center><%= flash[:notify_created_account] %></center>
+                        </div>
+                      <% end %>
+                      
+                      <% if flash[:email_disposable] %>
+                        <div class="alert alert-danger">
+                            <center><%= flash[:email_disposable] %></center>
+                        </div>
+                      <% end %>
+                      <% if flash[:register_fail] %>
+                        <div class="alert alert-danger">
+                            <center><%= flash[:register_fail] %></center>
+                        </div>
+                      <% end %>
+                      <% if flash[:facebook_used] %>
+                        <div class="alert alert-danger">
+                            <center><%= flash[:facebook_used]%></center>
+                        </div>
+                      <% end %>
+                    <div class="sign-up-form-content special-form-content">
+                        <%= form_for(:register, :url => {:controller => 'register', :action => 'new', :class => 'login-form'}) do |f| %>
+                            <div class="form-group">
+                                <label for="user-email">Name</label>
+                                 <%= f.text_field :name, :class=>"form-control", :required => true %>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-password">Email</label>
+                                <%= f.text_field :email, :class=>"form-control", :required => true %> 
+                            </div>
+                            <div class="form-group">
+                                <label for="user-password">Choose a password</label>
+                                <%= f.password_field :password, :class=>"form-control", :required => true,:id=>'password' %> 
+                                <p id="errorpassword"></p>
+                            </div>
+                            
+                            <div class="btn-sign-up">
+                                <%= f.submit "Sign up as part-timer", :class => "btn btn-default sign-up-part-timer", :name => "commit" %>
+                                <%= f.submit "Sign up as employer", :class => "btn btn-default sign-up-employer", :name => "commit" %>
+                            </div><!-- btn-sign-up -->
+
+                            <div class="note-sign-up">
+                                <p>By signing up, you agree to our <a href="#">term of use, privacy policy</a>,
+                                and <a href="#">cookie policy</a>.</p>
+                            </div><!-- .note-sign-up -->
+                        <% end %>
+                        <div class="or-seperate"><span>Or</span></div> 
+                        <div class="facebook-login">
+                            <a href='/auth/facebook' class="facebook-login-btn btn btn-lg"><i class="fa fa-facebook-official" aria-hidden="true"></i><span>Sign up with Facebook</span></a>
+                            <p>We’ll never post anything on Facebook without your permission.</p>
+                        </div><!-- .facebook-login -->
+                    </div><!-- .sign-up-form-content -->  
+                    <div class="new-sign-up text-center">
+                        <p>Already have an account? <a href="/login" title="Sign up" class="sign-up-btn-link">Log in</a></p>
+                    </div><!-- ..already-login -->
+                </div>
+            </div>
+        </div> 
+    </div><!-- wapper -->
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<script type="text/javascript">
+// When user type text (keypress)
+    $( '#password' ).keypress(function() {
+        var len = jQuery('#password').val().length;
+        if (len < 5){
+           jQuery('#errorpassword').html('<b style="color: red;">Password minimum is 6 characters!</b>');
+        }
+        if (len >= 20){
+            jQuery('#errorpassword').html('<b style="color: red;">Password maximum is 20 characters!</b>');
+        }
+        if (len >=5 && len < 19){
+            jQuery('#errorpassword').html('');
+        } 
+        limitText(jQuery('#password'), 19);
+    });
+    function limitText(field, maxChar){
+        var val = field.val();
+        if ( val.length >= maxChar ){
+            field.val(function() {
+                return val.substr(0, maxChar);       
+            });
+    }
+    // When user delete text using event keydown
+    $('#password').keydown(function(){
+        var len = jQuery('#password').val().length;
+        if (len > 5 && len < 21) {
+            jQuery('#errorpassword').html('');
+        }
+        if (len < 7){
+            jQuery('#errorpassword').html('<b style="color: red;">Password minimum is 6 characters!</b>');
+        }
+    });
+}
+</script>
+</body><!-- .search-result-page -->
+</html>

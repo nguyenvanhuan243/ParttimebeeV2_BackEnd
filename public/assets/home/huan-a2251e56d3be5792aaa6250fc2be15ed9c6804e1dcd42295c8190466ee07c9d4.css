@@ -1,0 +1,25 @@
+.avatar-custom{
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+.avatar-profile {
+	width: 120px;
+	height: 120px;
+}
+
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+
+
+.button-search-job-full {
+	/*Delete background for object*/
+	background: transparent;
+    border: none !important;
+}

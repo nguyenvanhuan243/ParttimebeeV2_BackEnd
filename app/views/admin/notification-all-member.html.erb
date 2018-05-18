@@ -1,0 +1,100 @@
+
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <!-- STATR ADD DISPOSABLE EMAIL -->
+                                    <!-- Using modal of bootstrap 3
+                                         + Link to ref: https://www.w3schools.com/bootstrap/bootstrap_modal.asp 
+                                     -->
+                                    <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog" style="width:55%;">
+
+                                    <!-- START MODAL CONTENT -->
+                                        <div class="modal-content">
+                                         <%= form_for(:disposableemail, :url => {:controller => 'admin', :action => 'add_disposable_email', :class => 'modal-content'}) do |f| %>
+                                            <div class="modal-header">
+                                                <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                                                <center>
+                                                     <h4 class="modal-title" id="custom-width-modalLabel">Add Disposable Emails To Your Blocking List</h4>
+                                                </center>
+                                            </div>
+                                             <div class="modal-body">
+                                                <h4>Disposable Email</h4>
+                                                <%= f.text_field :disposableEmail, :class=>"form-control", :required => true, :placeholder => "Enter your disposable email" %>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a type="button" class="btn btn-danger" data-dismiss="modal">Close</a>
+                                                <%= f.submit "Agree", :class => "btn btn-primary" %>
+                                            </div>
+                                        <% end %><!-- /.modal-content -->
+                                        </div>
+                                        <!--  END MODAL CONTENT -->
+                                     </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- END ADD DISPOSABLE EMAIL -->
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                        <tr>
+                                                           <th><center>ID</center> </th>
+                                                            <center>
+                                                                <th data-priority="3"><center>Content</center></th></center>
+                                                            <th data-priority="6"><center>Created Day</center></th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody>
+                                                <% @notifications = Notificationadmin.paginate(:per_page => 10, :page => params[:page]) %>
+                                                <% @notifications.each do |notification| %>
+                                                        <tr>
+                                                            <th><span class="co-name">  
+                                                            <center> <%= notification.id %></center>
+                                                            </span></th>
+                                                            <td><center><%= notification.content %></center>  </td>
+                                                            <td><center><%= notification.created_at.to_date %> </center> </td>
+                                                            <td> 
+                                                            </td>
+                                                        </tr> 
+                                                <% end %>     
+                                                </tbody>
+                                            </table>
+                                            <p><%= will_paginate @notifications %></p>
+                                        </div>
+                                        <%= form_for(:notification, :url => {:controller => 'notification', :action => 'send_notification', :class => 'card-box'}) do |f| %> 
+                                            <span class="input-icon icon-right" >
+                                               
+                                                <%= f.text_area :notification_message, :class=>"form-control", :rows => 2, :placeholder => "Send Notification to all member"  %>
+                                            </span>
+                                            <div class="p-t-10 pull-right">
+                                                <button class="btn btn-sm btn-primary waves-effect waves-light" >Send Notification</button>
+                                            </div>
+                                            <ul class="nav nav-pills profile-pills m-t-10">
+                                            </ul>
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <footer class="footer">
+                    2017 © Parttimebee.
+                </footer>
+
+            </div>
+            <!-- End content-page -->
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ==============================================================

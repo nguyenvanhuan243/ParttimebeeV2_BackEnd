@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>About page</title>
+
+  <!-- Stylesheets -->
+
+  <%= stylesheet_link_tag 'home/bootstrap.min' %>
+  <%= stylesheet_link_tag 'home/style' %>
+  <%= stylesheet_link_tag 'home/flexslider' %>
+  <%= stylesheet_link_tag 'home/responsive' %>
+  <!-- Responsive -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet"> 
+
+</head>
+
+<body class="about-page">
+  <div class="wapper">
+    <%= render "layouts/header"%>
+    <div class="aboutus-banner-section">
+      <h1 class="text-center aboutus-banner-title">We Make a Difference in the Life of Job</br> Seekers and Employers.</h1>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="about-main-content">
+            <div class="about-title col-lg-4 col-xs-12 col-md-4 col-sm-4">
+              <h2>Our Company</h2>
+            </div>
+            <div class="about-text col-lg-8 col-xs-12 col-md-8 col-sm-8">
+            <p>
+              We are happy to introduce ParttimeBee as the service that facilities both finding a job and hiring a talent. We help employers in finding the right talents for their short-term needs and also for their events. Candidates can also find their prospective employer for their short-term job needs here. 
+            </p>
+            <p>
+              We at ParttimeBee have developed our enormous global community. The community has many employers as its members as they are able to find talents as and when the need arise. Also, whenever there is an immediate need for a short-time job, our job seekers reach us with confidence. Their requirement is always met both for employers and employees. 
+            </p>
+            <p>
+              Whenever employers need a group of talents to plan their events, they reach us. They find the best talents from our huge database and leave us on a satisfactory note. Our team continuously strives to make the best thing happen in their life both for job seekers and recruiters. Come join us for an enthralling hiring experience.
+            </p>
+            </div>
+            <div class="col-lg-12">
+              <div class="green-box">
+               <h2>Our vision:</h2>
+                <p>Our vision is to find a job that fits your life and not a life that fits your job.</p><br>
+                <p>We always visualize smiling faces of employers by providing them with the best talents.</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="about-full-image">
+      </div>
+    </div>
+    <%= render "layouts/footer"%>
+  </div><!-- wapper -->
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<%= javascript_include_tag "home/ware" %>
+<%= javascript_include_tag "home/parttimebee-custom" %>
+</body>
+</html>

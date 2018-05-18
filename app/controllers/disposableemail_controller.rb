@@ -1,0 +1,2 @@
+class DisposableemailController < ApplicationController
+end

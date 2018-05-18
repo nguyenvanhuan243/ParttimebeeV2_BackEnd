@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>job-detail-3</title>
+    <!-- Stylesheets -->
+    <!-- Responsive -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content='Search result page'/>
+    <%= stylesheet_link_tag 'home/bootstrap.min' %>
+    <%= stylesheet_link_tag 'home/jquery.fancybox' %>
+    <%= stylesheet_link_tag 'home/select-style' %>
+    <%= stylesheet_link_tag 'home/style' %>
+    <%= stylesheet_link_tag 'home/flexslider' %>
+    <%= stylesheet_link_tag 'home/responsive' %>
+    <%= stylesheet_link_tag 'home/huan' %>
+    <%= stylesheet_link_tag 'home/chosen.min' %>
+    <%= stylesheet_link_tag 'dropify/dropify' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet">
+</head>
+<!-- START - NOTIFY SMS EMPLOYER NOT REAL -->
+<script type="text/javascript">
+    function get_phone_number_employer_not_real() {
+        return $("#phone_number_employer_not_real").val();
+    }
+    function notify_sms_not_employer() {
+        $.ajax({
+            url:'http://www.bulksms2u.com/websmsapi/ISendSMS.aspx?username=smsjt&password=smssms&message=Hi\
+                there, someone just applied your job on\
+                parttimebee.my&mobile=+841664152723&Sender=Parttimebee&type=2',
+            type:'get',
+            dataType:'html',
+            processData:false
+        });
+    }
+</script>
+<!-- END - NOTIFY SMS EMPLOYER NOT REAL -->
+
+<body class="employer-published-job-applications job-detail register-01">
+    <div class="wapper"> 
+        <%= render "layouts/header"%>   
+        <div class="all-jobs">
+            <div class="auto-container box-all-jobs">
+                <div class="container">
+                    <% @job_detail = Job.find(params[:id])%>
+                    <% job = Job.find(params[:id] )%>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 item-info">            
+                            <div class="option">
+                                <h1 class="title">
+                                    <a href="#" title="Front-end Developer"><%= job[:title]%></a>
+                                    <% @get_hour = Time.now.hour - job[:created_at].hour %>
+                                    <% @get_min = Time.now.min - job[:created_at].min%>
+                                    <% if @get_hour < 1 %>
+                                        <span class="time"><%=@get_min.to_i.abs%> minutes ago</span>
+                                    <% end %>
+                                    <% if @get_hour > 1 %>
+                                        <span class="time"><%=@get_hour.to_i.abs%> hours ago</span>
+                                    <% end %>
+                                </h1>
+                                <div class="option-top">
+                                    <div class="item-note"> 
+                                        <div class="promotion-flags">
+                                            <% if job[:on_the_spot] == "yes" %>
+                                                <a href="#" class="btn btn-spot waves-effect" title="On The Spot">On The Spot</a>
+                                            <% end %>
+                                            <% if job[:commission] == "yes"%>
+                                                <a href="#" class="btn btn-commission waves-effect" title="Commission">Commission</a>
+                                            <% end %>
+                                        </div><!-- .promotion-flags -->
+                                    </div>
+                                    <div class="tag-location">
+                                        <div class="tag-link">  
+                                            <a href="#" title="Technology">
+                                                <%= job[:category_job]%>
+                                            </a>
+                                        </div>
+                                        <div class="location-link">
+                                            <a class="fancybox" href="#inline2">
+                                                <%= job[:state]%>
+                                            </a>
+                                        </div>
+                                    </div><!-- .tag-location -->
+                                </div><!-- .option top -->
+                                <div class="option-bottom">
+                                    <div class="row">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">      
+                                            <div class="time-work">
+                                                <span>Working period: <span class="month">
+                                                    <!-- 1 Jun - 30 Jun -->
+                                                    <%= job[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= job[:working_date_to].to_date.strftime("%d %B")%>
+                                
+                                                </span></span>
+                                                <span>Working Hour: <span class="month"><%=job[:working_hour_from]%> am - <%= job[:working_hour_to]%> pm</span></span> 
+                                            </div><!-- .time work -->
+                                            <div class="time-work">
+                                                <span>Language: <span class="font-bold">
+                                                <% if job[:language_Bahasa_Malaysia] == "1" %>
+                                                    Bahasa Malaysia,
+                                                <% end %>
+                                                <% if job[:language_Chinese] == "1" %>
+                                                    Chinese,
+                                                <% end %>
+                                                <% if job[:language_English] == "1" %>
+                                                    English,
+                                                <% end %>
+                                                <% if job[:language_Tamin] == "1" %>
+                                                    Cantonese,
+                                                <% end %>
+                                                <% if job[:language_Cantonese] == "1" %>
+                                                    English,
+                                                <% end %>
+                                                <% if job[:language_Hokkien] == "1" %>
+                                                    Hokkien
+                                                <% end %>
+                                                  </span></span>
+                                            </div><!-- .time work -->
+                                            <div class="package-link">
+                                                <a href="#">Open to <span class="font-bold"><%= job[:availablefor]%></span></a>
+                                                <a href="#"><span class="font-bold"><%= job[:vacancies]%></span> vacancies available</a>
+                                                <a href="#">Pay <span class="font-bold">
+                                                    <%= job[:payment]%> 
+                                                    </span></a>
+                                            </div><!-- .package -->
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 price">    
+                                            <span class="pull-right">RM<%=job[:salary]%>/<%= job[:per_day] %> </span>
+                                        </div>
+                                    </div><!-- .row -->
+                                </div><!-- .option bottom -->
+                            </div><!-- .option -->
+                        </div><!-- .item-info -->
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 right-banner">
+                            <div class="banner-use">
+                                <% @user = User.find(job.user_id)%>
+                                <% if Profile.where(user_id: @user.id).count.positive?%>
+                                    <% @profile = Profile.where(user_id: @user.id).first%>
+                                    <% if @profile.company_logo_file_name != nil%>
+                                        <%= image_tag @profile.company_logo.url, alt: "use", :class => "avatar-custom" %>
+                                    <% else %>
+                                        <%= image_tag "default-avatar.png", alt: "use", :class => "avatar-custom" %>
+                                    <% end %>
+                                <% else %>
+                                        <%= image_tag "default-avatar.png", alt: "use", :class => "avatar-custom" %>
+                                <% end %>
+                                <div class="use-info">
+                                    <p><%= @user.full_name %></p>
+                                    <span><%= @user.jobs.count%> jobs available</span>
+                                    <!-- <a class="waves-effect fancybox" href="#inline1">See Full Detail</a> -->
+                                    <a class="waves-effect fancybox" href="/05-profile-00-01/<%=@user.id%>">See Full Detail</a>
+
+                                </div>
+                                <div id="inline1" style="display: none;">
+                                    <div class="profile-popup">
+                                    <% @user = User.first%>
+                                        <div class="popup-content">
+                                            <div class="popup-image">
+                                                <% if @user.url_avatar.blank?%>
+                                                    <%= image_tag "default-avatar.png", alt: "use", :class => "avatar-custom" %>
+                                                <% else %>
+                                                    <%= image_tag @user.url_avatar, alt: "use", :class => "avatar-custom" %>
+                                                <% end %>
+                                            </div>
+                                            <div class="popup-info">
+                                                <h4>User Name</h4>
+                                                <span><%= @user.nationality%></span>
+                                                <span>Member since <%= @user[:created_at].strftime("%d %b %Y")%></span>
+                                            </div>
+                                            <div class="jobs-available">
+                                                <span><%= @jobs_available %></span>
+                                                <h5>Jobs available</h5>
+                                            </div>
+                                            <% if Profile.where(user_id: job[:user_id]).count > 0 %>
+                                            <% @profile = Profile.where(user_id: job[:user_id]).first%>
+                                            <div>
+                                            <% unless @profile[:company_bio].blank?%>
+                                                <%= @profile[:company_bio].html_safe%>
+                                            <% end %>
+                                            </div>
+                                            <% end %>
+                                            <div class="btn-popup">
+                                                <a class="waves-effect" href="/05-profile-00-01/<%=@user.id%>">See Full Profile</a>
+                                            </div>
+                                        </div><!-- .popup body-->
+                                    </div><!-- .popup -->
+                                </div>
+                            </div><!-- .banner-use -->
+                            <div class="banner-people">
+                                <p>Part-timers who view this job</p>
+                                <% if current_user %>
+                                  <% if Viewjob.where(parttimer_id: current_user.id, job_id: job.id).count < 1%>
+                                    <% @view_job = Viewjob.new %>
+                                    <% @view_job.parttimer_id = current_user.id%>
+                                    <% @view_job.job_id = job.id %>
+                                    <% @view_job.save %>
+                                  <% end %>
+                                <% end %>
+                                <!-- Count views jobs -->
+                                <% job_view = Job.find(job.id)%>
+                                <% job_view.views = Viewjob.where(job_id: job.id).count%>
+                                <% job_view.save %>
+                                <%Viewjob.where(job_id: job.id).take(7).each do |job|%>
+                                <% if User.find(job.parttimer_id).avatar_file_name == nil %>
+                                  <%= image_tag "default-avatar.png", alt: "people", :class=> 'avatar-custom'%>
+                                <% else %>
+                                  <%= image_tag User.find(job.parttimer_id).avatar.url("medium"), alt: "people", :class=> 'avatar-custom '%>
+                                <% end %>                             
+                              <% end %>
+                              <% if Viewjob.where(job_id: job.id).count > 7%>
+                                    <span class="cover layer">+<%=Viewjob.where(job_id: job.id).count - 7%></span>
+                                <% end %>
+                            </div><!-- .people -->
+
+                            <div class="btn-link">
+                            <!-- Check if job of employer not real -->
+                                <% if job.user_id == 1%>
+                                    <ul>
+                                    <% if current_user.nil? %>
+                                       <li class="apply-now"><a class="waves-effect" href="/login">Apply Now</a></li>
+                                    <% else %>
+                                        <% if current_user[:type_user]=="parttimer"%>
+                                            <% if current_user.verify_findjob_parttimer.zero?%>
+                                              <li class="apply-now otp"><a class="waves-effect fancybox" href="#hiddenotp">Apply Now</a></li>
+                                            <% else %>
+                                              <% if Applied.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                                <li class="apply-now">
+                                                  <a class="waves-effect" href="#">Applied</a>
+                                                </li>
+                                              <% else %>
+                                                <li class="apply-now" onclick= "notify_sms_not_employer()" >
+                                                  <%= link_to "Apply Now", {controller: "applied", action: "worker_apply_job", id: job.id }, class: "waves-effect" %>
+                                                </li>
+                                              <% end %>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                </ul>
+                                <% else %>
+                                    <ul>
+                                    <% if current_user.nil? %>
+                                       <li class="apply-now"><a class="waves-effect" href="/login">Apply Now</a></li>
+                                    <% else %>
+                                        <% if current_user[:type_user]=="parttimer"%>
+                                            <% if current_user.verify_findjob_parttimer.zero?%>
+                                              <li class="apply-now otp"><a class="waves-effect fancybox" href="#hiddenotp">Apply Now</a></li>
+                                            <% else %>
+                                              <% if Applied.where(job_id: job.id, parttimer_id: current_user.id).count.positive? %>
+                                                <li class="apply-now">
+                                                  <a class="waves-effect" href="#">Applied</a>
+                                                </li>
+                                              <% else %>
+                                                <li class="apply-now" onclick= "notify_sms_employer()" >
+                                                  <%= link_to "Apply Now", {controller: "applied", action: "worker_apply_job", id: job.id }, class: "waves-effect" %>
+                                                </li>
+                                              <% end %>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+
+                                    <% @phone_number_employer = User.find(job[:user_id]).phone_number %>
+                                    <input id="phone" type="hidden" value="<%=@phone_number_employer%>">
+                                    <!-- The number of parttimer apply for the same job -->
+                                    <% if job.spending_sms == false %>
+                                        <% @number_of_apply = Applied.where(job_id: job.id, status_job: "applied", employer_id: job.user_id).count %>
+                                    <% else %>
+                                        <% @number_of_apply = 0 %>
+                                    <% end %>
+                                    <% if @number_of_apply >= 3%>
+                                        <% job.spending_sms = true%>
+                                        <% job.save %>
+                                    <% end %>
+                                    <input type="hidden" id="numberofapply" value="<%= @number_of_apply%>">
+                                    <input type="hidden" id="phone_number_employer_not_real" value="<%= job.phone_number%>">
+
+                                    
+                                    <script type="text/javascript"> 
+                                        function get_phone_number_employer(){
+                                                return $("#phone").val();
+                                            } 
+                                        function get_number_of_apply(){
+                                            return parseInt($("#numberofapply").val());
+                                            }
+                                        // var phone_number = get_phone_number(); 
+                                        function notify_sms_employer() {
+                                            $.ajax({
+                                                url:'http://www.bulksms2u.com/websmsapi/ISendSMS.aspx?username=smsjt&password=smssms&message=Hi\
+                                                    there, someone just applied your job on\
+                                                    parttimebee.my&mobile='+get_phone_number_employer()+'&Sender=Parttimebee&type=2',
+                                                type:'get',
+                                                dataType:'html',
+                                                processData:false
+                                            });
+
+                                            if(get_number_of_apply() >= 2)
+                                            {
+                                                $.ajax({
+                                                url:'http://www.bulksms2u.com/websmsapi/ISendSMS.aspx?username=smsjt&password=smssms&message=Hi there, you have 3 job applications are pending now! Login to parttimebee.my to view the application now!&mobile='+ get_phone_number_employer()+'&Sender=Parttimer&type=2',
+                                                    type:'get',
+                                                    dataType:'html',
+                                                    processData:false
+                                                });
+                                            }
+                                        }
+                                    </script>
+                                    <li class="share"><a class="share-click" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                        <div id="foo" class="icon-share">
+                                            <p>Share</p>
+                                            <ul>
+                                                <li>
+                                                  <a href="https://www.facebook.com/sharer.php?u=parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-facebook" aria-hidden="true"></i>
+                                                  </a>
+                                                </li>
+                                                <li>
+                                                  <a href="http://twitter.com/share?text=&url=http://parttimebee.my/job-details/<%= job[:id]%>"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                                  </a>
+                                                </li>
+                                                <li>
+                                                  <a href="https://plus.google.com/share?url=http%3A//www.parttimebee.my/job-details/<%= job[:id]%>">
+                                                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                  </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <% if current_user.nil?%>
+                                        <li class="heart"><a href="/login"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                    <% else %>
+                                        <% if current_user.type_user == "parttimer"%>
+                                            <% if Favoritejob.where(job_id: params[:id], parttimer_id: current_user.id).count.positive? %>
+                                                <li class="heart-clicked"><%= link_to "",{controller: "job", action: "click_favorite_job_again", id: job[:id] }, class: "fa fa-heart" %>
+                                                </li>
+                                            <% else %>
+                                                <li class="heart"><%= link_to "",{controller: "job", action: "click_favorite_job", id: job[:id] }, class: "fa fa-heart" %>
+                                                </li>
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
+                                </ul>
+                                <% end %>
+                            </div><!-- .btn-link -->
+                        </div>
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- box-search-result -->
+        </div><!-- .All Jobs -->
+
+        <!-- Near Jobs -->
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 job-details">          
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                              <h2 class="panel-title">                                
+                                  Job Details 
+                              </h2>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                <h3>About the Job</h3>
+                                <p> <%= job[:description].html_safe %> </p>
+                                <h3>Job Requirement</h3>
+                                <ul>
+                                    <%= job[:requirements].html_safe%>
+                                </ul>
+                                <h3>Salary & Benefits</h3>
+                                <ul>
+                                    <%= job[:benefits].html_safe%>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- .panel group -->
+                    </div><!-- .job details -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 sidebar">
+                        <div class="banner">
+                            <p>Banner</p>
+                        </div><!-- .banner -->
+                    </div><!-- .sidebar -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+
+            <div class="people-view">
+                <div class="container">
+                    <h3>Nearby Jobs</h3>
+                    <% array_jobs = []%>
+                    <% @jobs = Job.where(type_job: "published") %>
+                        <% @jobs.each do |job|%>
+                            <% array_jobs << job.id%>
+                        <% end %>
+                    <div class="row">
+                        <% @job1 = Job.find(array_jobs.sample)%>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="item">
+                              <div class="item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .item-thumbnail -->
+                                <div class="item-info">
+                                    <h4 class="title"><a href="/job-details/<%=@job1[:id]%>" title="Front-end Developer"><%=@job1[:title]%></a></h4>
+                                    <div class="option">
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= job[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= @job1[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                    <%= @job1[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= @job1[:working_date_to].to_date.strftime("%d %B")%>
+                                            </span></span>
+            
+                                            <p><a href="#" type="button" class="hiring"><span class="month">
+                                                <%= @job1[:vacancies]%>
+                                            </span> vacancies available</a></p>
+            
+                                        </div><!-- .time-work -->
+            
+                                    </div><!-- .option -->
+            
+                                </div><!-- .box-content -->
+                            </div><!-- .item -->
+                        </div>
+                        <%@job2 = Job.find(array_jobs.sample)%>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="item">
+                              <div class="item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .item-thumbnail -->
+            
+                                <div class="item-info">
+                                    
+                                    <h4 class="title"><a href="/job-details/<%=@job2[:id]%>" title="Front-end Developer"><%= @job2[:title]%></a></h4>
+            
+                                    <div class="option">
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= @job2[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= @job2[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+            
+                                        <div class="time-work">
+            
+                                            <span>Working period: <span class="month">
+                                                <%= @job2[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= @job2[:working_date_to].to_date.strftime("%d %B")%>
+                                            </span></span>
+            
+                                            <p><a href="#" type="button" class="hiring"><span class="month">
+                                                <%= @job2[:vacancies]%>
+                                            </span> vacancies available</a></p>
+            
+                                        </div><!-- .time-work -->
+            
+                                    </div><!-- .option -->
+            
+                                </div><!-- .box-content -->
+                            </div><!-- .item -->
+                        </div>
+                    </div><!-- .row -->
+                    <div class="row">
+                        <% @job3 = Job.find(array_jobs.sample)%>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="item">
+                              <div class="item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .item-thumbnail -->
+            
+                                <div class="item-info">
+                                    
+                                    <h4 class="title"><a href="/job-details/<%=@job3[:id]%>" title="Front-end Developer"><%=@job3[:title]%></a></h4>
+            
+                                    <div class="option">
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= @job3[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= @job3[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+            
+                                        <div class="time-work">
+            
+                                            <span>Working period: <span class="month">
+                                                    <%= @job3[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= @job3[:working_date_to].to_date.strftime("%d %B")%>
+                                            </span></span>
+            
+                                            <p><a href="#" type="button" class="hiring"><span class="month">
+                                                <%= @job3[:vacancies]%>
+                                            </span> vacancies available</a></p>
+            
+                                        </div><!-- .time-work -->
+            
+                                    </div><!-- .option -->
+            
+                                </div><!-- .box-content -->
+                            </div><!-- .item -->
+                        </div>
+                        <% @job4 = Job.find(array_jobs.sample)%>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="item">
+                              <div class="item-thumbnail">
+                                    <a href="#" title="Thumbnail" class='thumbnail-image'>
+                                        <%= image_tag "blank-image.png", alt: "Thumbnail"%>
+                                    </a>    
+                                </div><!-- .item-thumbnail -->
+                                <div class="item-info">
+                                    <h4 class="title"><a href="/job-details/<%=@job4[:id]%>" title="Front-end Developer"><%= @job4[:title]%></a></h4>
+                                    <div class="option">
+                                        <div class="tag-location">
+                                            <div class="tag-link">  
+                                                <a href="#" title="Technology">
+                                                    <%= @job4[:category_job]%>
+                                                </a>
+                                            </div>
+                                            <div class="location-link">
+                                                <a href="#" title="Petaling Jaya">
+                                                    <%= @job4[:state]%>
+                                                </a>
+                                            </div>
+                                        </div><!-- .tag-location -->
+                                        <div class="time-work">
+                                            <span>Working period: <span class="month">
+                                                    <%= @job4[:working_date_from].to_date.strftime("%d %B")%> - 
+                                                    <%= @job4[:working_date_to].to_date.strftime("%d %B")%>
+                                            </span></span>
+                                            <p><a href="#" type="button" class="hiring"><span class="month"><%=@job4[:vacancies]%></span> vacancies available</a></p>
+                                        </div><!-- .time-work -->
+                                    </div><!-- .option -->
+                                </div><!-- .box-content -->
+                            </div><!-- .item -->
+                        </div>
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .people view -->
+        </div><!-- .content -->
+        <%= render "layouts/footer"%>
+    </div><!-- wapper -->
+
+<div id="inline2" style="display: none;">
+<div class="job-details-map">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOQ9RglsBO6H7VEIj_QAgFC7prZUmiNzg
+    &q=<%=@job_detail[:state]%>" width="770" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="click-hide"></div>
+</div>
+</div>
+
+<%= javascript_include_tag "home/jquery"%>
+<%= javascript_include_tag "home/jquery.fancybox" %>
+<%= javascript_include_tag "home/parallax" %>
+<%= javascript_include_tag "home/bootstrap.min"%>
+<%= javascript_include_tag "home/jquery.flexslider"%>
+<%= javascript_include_tag "home/wave"%>
+<%= javascript_include_tag "home/moment"%>
+<%= javascript_include_tag "home/bootstrap-datetimepicker"%>
+<%= javascript_include_tag "home/bootstrap-slider"%>
+<%= javascript_include_tag "home/jquery.nice-select.min"%>
+<%= javascript_include_tag "home/jquery.countdown" %>
+<%= javascript_include_tag "home/parttimebee-custom"%>
+<%= javascript_include_tag "dropify/dropify" %>
+<%= render 'layouts/verify_phone_2_step.html.erb'%>
+<script>
+jQuery(document).ready(function() {
+    jQuery('.fancybox').fancybox();
+    jQuery(".share-click").click(function(){   
+      jQuery(".icon-share").stop().slideUp(300); 
+      jQuery(this).next(".icon-share").stop().slideToggle(300);     
+      return false;
+    });
+});
+</script>
+</body><!-- .search-result-page -->
+</html>

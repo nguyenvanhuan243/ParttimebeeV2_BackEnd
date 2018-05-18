@@ -1,0 +1,221 @@
+<div class="wapper">
+        <%= render "layouts/header"%>
+    <div class="all-jobs">
+      <div class="auto-container box-all-jobs">
+                <div class="container">
+            <h1>My Jobs</h1> 
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#all-jobs" aria-controls="all-jobs" role="tab" data-toggle="tab">All jobs <span><%= Job.where(user_id: current_user.id).count %></span></a></li>
+                        <li role="presentation"><a href="#draft" aria-controls="draft" role="tab" data-toggle="tab">Draft <span><%= Job.where(type_job: "draft", user_id: current_user.id).count%></span></a></li>
+                        <li role="presentation"><a href="#published" aria-controls="published" role="tab" data-toggle="tab">Published <span><%= Job.where(type_job: "published", user_id: current_user.id).count%></span></a></li>
+                        <li role="presentation"><a href="#expired" aria-controls="expired" role="tab" data-toggle="tab">Expired <span><%= Job.where(type_job: "expired", user_id: current_user.id).count%></span></a></li>
+                    </ul><!-- Nav tabs -->  
+                </div>
+      </div><!-- box-search-result -->
+
+    </div><!-- .All Jobs -->
+
+    <div class="content">
+      
+      <div class="my-jobs-container">
+                <div class="row my-jobs-top"> 
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 search-job">
+                        <form action=""> 
+                            <div class="form-group">
+                                <input class="form-control" type="text" value="" placeholder="Search Job" />
+                                <input type="submit" value="Search" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 sorted-by">
+                        <ul>
+                            <li>Sorted by:</li>
+                            <li class="create-time"><a class="waves-effect" href="#">Create Time</a></li>
+                            <li class="job-date"><a class="waves-effect" href="#">Job Date</a></li>
+                        </ul>
+                    </div>
+                </div><!-- .row -->
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="all-jobs">
+                        <div class="my-jobs-listing">
+                            <ul class="jobs-listing-cat">
+                                <li class="job-title">Job Title</li>
+                                <li class="create-date">Create Date</li>
+                                <li class="status">Status</li>
+                            </ul><!-- .ul -->
+                            <% jobs = Job.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 10) %>
+                            <% jobs.all.each do |job| %> 
+                                <ul>
+                                    <li class="job-title"><%= job[:title]%></li>
+                                    <li class="create-date">
+                                        <%= job[:created_at].strftime("%d %b %Y")%>
+                                    </li>
+                                    <li class="status"><%= job[:type_job]%></li>
+                                    <li class="repost-view">
+                                    <% if job[:type_job] == "draft" %>
+                                          <a href="/01-all-jobs-listing/finish-draft-job/<%= job.id %>" type="button" class="view">View</a>
+                                    <% end %>
+                                    <% if job[:type_job] == "published" %>
+                                         <a href="/01-all-jobs-listing/published-job/<%= job.id %>" type="button" class="view">View</a>
+                                    <% end %>
+                                    <% if job[:type_job] == "expired" %>
+                                        <a href="/01-all-jobs-listing/expired-job/<%= job.id %>" type="button" class="view">View</a>
+                                    <% end %>
+                                        
+                                    </li>
+                                </ul><!-- .ul -->
+                            <% end %>
+                        </div><!-- .my jobs listing -->
+                        <div class="page-nav">
+                    <nav aria-label="Page navigation">
+                        <% jobs = Job.where(user_id: current_user.id).all.count/10 %>
+                        <% number_job = Job.where(user_id: current_user.id).all %>
+                        <% if number_job.count > 10%>
+                              <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..jobs %>
+                                    <li><a href="/01-all-jobs-listing?all-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul>   
+                            <% end %>
+                    </nav>
+                  </div><!-- page-nav -->
+                    </div><!-- .all-jobs -->
+
+                    <div role="tabpanel" class="tab-pane" id="draft">
+                      <% jobs = Job.where(type_job: "draft", user_id: current_user.id).all%>
+                         <div class="my-jobs-listing">
+                            <ul class="jobs-listing-cat">
+                                <li class="job-title">Job Title</li>
+                                <li class="create-date">Create Date</li>
+                            </ul><!-- .ul -->
+                            <% jobs.paginate(:page => params[:page], :per_page => 10).each do |job| %> 
+                                <ul>
+                                    <li class="job-title"><%= job[:title]%></li>
+                                    <li class="create-date"><%= job[:created_at].strftime("%d %b %Y")%></li>
+                                    <li class="repost-view">
+                                        <a class="view" href="/01-all-jobs-listing/finish-draft-job/<%= job.id %>">View</a>
+                                    </li>
+                                </ul><!-- .ul -->
+                            <% end %>
+                        </div><!-- .my jobs listing -->
+                        <div class="page-nav">
+                          <nav aria-label="Page navigation">
+                          <% if jobs.count > 10 %>
+                            <ul class="pagination pagination-lg">
+                              <li class="sub-page-nav">
+                                <a href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                              </li>
+                              <% for i in 0..jobs/10 %>
+                                <li>
+                                  <a href="/01-all-jobs-listing?draft-jobs&page=<%=i+1%>"><%=i+1%> 
+                                  </a>
+                                </li>
+                              <% end %>
+                              <li class="sub-page-nav">
+                                <a href="#" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                            <% end %>   
+                          </nav>
+                        </div><!-- page-nav -->
+                    </div><!-- .draft -->
+                    <div role="tabpanel" class="tab-pane" id="published">
+                    <% jobs = Job.where(type_job: "published", user_id: current_user.id)%>
+                    <% jobs = jobs.paginate(:page => params[:page], :per_page => 10)%>
+                        <div class="my-jobs-listing">
+                            <ul class="jobs-listing-cat">
+                                <li class="job-title">Job Title</li>
+                                <li class="create-date">Create Date</li>
+                            </ul><!-- .ul -->
+                            <% jobs.each do |job| %> 
+                                <ul>
+                                    <li class="job-title"><%= job[:title]%></li>
+                                    <li class="create-date"><%= job[:created_at].strftime("%d %b %Y")%></li>
+                                    <li class="repost-view">
+                                        <a class="view" href="/01-all-jobs-listing/published-job/<%= job.id%>">View</a>
+                                    </li>
+                                </ul><!-- .ul -->
+                            <% end %>
+                        </div><!-- .my jobs listing -->
+                        <div class="page-nav">
+                    <nav aria-label="Page navigation">
+                       <% if jobs.count > 10 %>
+                              <ul class="pagination pagination-lg">
+                                  <li class="sub-page-nav">
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                  </li>
+                                  <% for i in 0..jobs  %>
+                                    <li><a href="/01-all-jobs-listing?published-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                                  <% end %>
+                                  <li class="sub-page-nav">
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                  </li>
+                              </ul>   
+                            <% end %>
+                    </nav>
+                  </div><!-- page-nav -->
+                    </div><!-- .published -->
+                    <div role="tabpanel" class="tab-pane" id="expired">
+                        <div class="my-jobs-listing">
+                            <ul class="jobs-listing-cat">
+                                <li class="job-title">Job Title</li>
+                                <li class="create-date">Create Date</li>
+                            </ul><!-- .ul -->
+                            <% jobs = Job.where(type_job: "expired", user_id: current_user.id).paginate(:per_page => 10, :page => params[:page])%>
+                            <% jobs.all.each do |job| %>
+                                <ul>
+                                    <li class="job-title"><%= job[:title]%></li>
+                                    <li class="create-date"><%= job[:created_at].strftime("%d %b %Y")%></li>
+                                    <li class="repost-view">
+                                        <a class="view" href="/01-all-jobs-listing/expired-job/<%=job[:id]%>">View</a>
+                                    </li>
+                                </ul><!-- .ul -->
+                            <% end %>
+                        </div><!-- .my jobs listing -->
+                        <div class="page-nav">
+                    <nav aria-label="Page navigation">
+                        <% jobs = Job.where(type_job: "expired", user_id: current_user.id).count %>
+                        <% if jobs > 10 %>
+                          <ul class="pagination pagination-lg">
+                            <li class="sub-page-nav">
+                              <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li>
+                            <% for i in 0..jobs/10  %>
+                              <li><a href="/01-all-jobs-listing?expired-jobs&page=<%=i+1%>"><%=i+1%></a></li>
+                            <% end %>
+                            <li class="sub-page-nav">
+                              <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        <% end %>   
+                    </nav>
+                  </div><!-- page-nav -->
+                    </div><!-- .expired -->
+                </div><!-- Tab panes -->
+      </div><!-- .container -->
+    </div><!-- .content -->
+    <%= render "layouts/footer"%>
+  </div><!-- wapper -->

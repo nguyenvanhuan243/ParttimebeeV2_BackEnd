@@ -1,0 +1,106 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+            <% @user = User.where(type_user: "admin").first%>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="bg-picture card-box">
+                        <div class="profile-info-name">
+                            <% if @user.url_avatar == nil %>
+                                <%= image_tag "admin/users/avatar-1.jpg", alt: "profile-image", :class => "img-thumbnail card-box" %>
+                            <% else %>
+                                <%= image_tag @user.url_avatar, alt: "profile-image", :class => "img-thumbnail card-box" %>
+                            <% end %>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <form class="form-horizontal card-box" role="form"> 
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Full Name</label>
+                                        <div class="col-md-10">
+                                            <input type="text" id="fullname" placeholder="Parttimebee" class="form-control" value="<%= @user.full_name %>"  >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label" for="example-email">Email</label>
+                                        <div class="col-md-10">
+                                            <input readonly type="email" id="example-email" name="example-email" class="form-control" value="<%= @user.email %>" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">User Type</label>
+                                        <div class="col-md-10">
+                                            <input readonly type="text" class="form-control" value="<%= @user.type_user%>" > 
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Phone NUmber</label>
+                                        <div class="col-md-10">
+                                            <input readonly type="text" class="form-control" value="<%= @user.phone_number%>" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Nationality</label>
+                                        <div class="col-md-10">
+                                            <input readonly type="text" id="nationality" class="form-control" placeholder="Malaysia" value="Malaysia">   
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Gender</label>
+                                        <div class="col-md-10">
+                                            <input type="text" readonly class="form-control" placeholder="Gender" value="Male">   
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Avatar</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="avatar" placeholder="https://avatar.com/en/avatar-male-boy-character-1606916/">   
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button  class="btn btn-primary">
+                                            Save Setting
+                                        </button>
+                                    </div> 
+                                </form>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- container -->
+    </div> <!-- content -->
+    <footer class="footer">2017 © Parttimebee.</footer>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('form').submit(function(event) {
+            $.ajax({
+                type: 'get',
+                url:'/admin/update_profile_special_account' 
+                + '?fullname=' + $("#fullname").val()
+                + '&avatar=' + $("#avatar").val()
+                + '&nationality=' + $("#nationality").val(),
+                dataType:'html',
+                processData:false
+            });
+            event.preventDefault();
+            window.alert("Your setting has been updated in successfully!");
+            window.location.reload();
+        });
+    });
+</script>
+            <!-- End content-page -->
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ==============================================================

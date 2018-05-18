@@ -1,0 +1,2 @@
+class Notificationadmin < ApplicationRecord
+end

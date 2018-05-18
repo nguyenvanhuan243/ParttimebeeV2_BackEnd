@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta property="og:url" content="https://parttimebee.my">
+  <meta property="og:title" content="Partimebee">
+  <meta property="og:description" content="Not just active talents, you can gain access to passive talents as well from our database. We will help you in finding the right talent. Irrespective of whether you look for a talent for a temporary position or permanent position, this is your right destination to find one.
+  ">
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="Ggurt/xe6IHyVWhcWm000b0tuuV55km7e4aZAftLeOtYboOtJw1VFQdUZPAcFJghRD9IiqAkEL5uQcKIflgb5w==" />
+  <meta property="fb:app_id" content="1706148389637058" />
+  <meta property="og:image" content="https://www.wired.com/wp-content/uploads/2015/07/GettyImages-474843544-1200x630.jpg" />
+  <meta property="og:type" content="article" />
+  <title>Home page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'home/bootstrap.min' %>
+  <%= stylesheet_link_tag 'home/jquery.fancybox' %>
+  <%= stylesheet_link_tag 'home/select-style' %>
+  <%= stylesheet_link_tag 'home/style' %>
+  <%= stylesheet_link_tag 'home/flexslider' %>
+  <%= stylesheet_link_tag 'home/responsive' %>
+  <%= stylesheet_link_tag 'home/chosen.min' %>
+  <%= stylesheet_link_tag 'home/huan' %>
+  <%= stylesheet_link_tag 'dropify/dropify' %>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet"> 
+  <!--Start Ads adsense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9715080153859307",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- End Ads adsense -->
+</head>
+<body class="register-01">
+  <% Job.all.each do |job|%>
+  <% if job[:working_date_to] != nil%>
+    <% if job[:working_date_to] <= Time.zone.now%>
+      <% job[:type_job] = "expired"%>
+      <% job.save %>
+    <% end %>
+  <% end %>
+  <% end %>
+  <div class="wapper">
+    <%= render "layouts/header"%>
+    <div class="home-banner-section">
+      <h1 class="text-center home-banner-title">Your Destination To Choose Active and Skilled Talents</h1>
+    </div>
+    <div class="home-top-section content"> 
+      <div class="home-second-section"> 
+        <div class="container">
+          <h3 class='title-section text-center'>Use Our Micro-targeting features to reach the right talents</h3>
+          <div class="row">
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <!-- <img src="images/popup-image.png" alt="..."> -->
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Explore passive talents</h3>
+                  <p>Not just active talents, you can gain access to passive talents as well from our database. We will help you in finding the right talent. Irrespective of whether you look for a talent for a temporary position or permanent position, this is your right destination to find one.</p> 
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Excellent platform</h3>
+                  <p>We are here to provide the excellent platform both for employers and job seekers. If you are a job seeker, looking for the best job to meet your needs either on a short-term or on a long-term basis, you can find one in this platform</p> 
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 text-center  animate fadeInUp one reach-box">
+              <div class="thumbnail">
+                <%= image_tag "popup-image.png"%>
+                <div class="caption">
+                  <h3>Easy to use</h3>
+                  <p>You can get started to work with us within just a few minutes of sign up time. All we need from you is to you is to know about your key positions if you are an employer. If you are a job seeker, just share details about your talents. Our team will work with you to meet your requirements rightly.</p> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-third-section">
+        <div id="content_box">
+          <div class="cd-background-wrapper"> 
+            <ul class="staff-list">
+              <li  class="layer" data-depth="0.2">
+                <span class="hexa" >&#x2B22;</span>
+                <span class="hexa1" >&#x2B22;</span> 
+                <span class="hexa2" >&#x2B22;</span> 
+                <span class="hexa3" >&#x2B22;</span> 
+                <span class="hexa4" >&#x2B22;</span> 
+                <span class="hexa5" >&#x2B22;</span> 
+                <span class="hexa6" >&#x2B22;</span> 
+                <span class="hexa7" >&#x2B22;</span> 
+              </li>
+            </ul>
+          </div> 
+          <div class="container home-third-content">
+            <h3 class='title-section text-center'>Find talents or jobs in any of the 15 categories below</h3>
+            <p class="sub-title-section text-center">8 categories. Thousands of jobs.</p>
+            <div class="row">
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Food & Beverages</p>
+                </div>
+              </div>  
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>BD</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Administrative</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Design</p>
+                </div>  
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Fashion</p>
+                </div>
+              </div>  
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Cinema and Video</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Games</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 box">
+                <div class="box-content">
+                  <p>Journalism</p>
+                </div>  
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+      <div class='home-four-section'>
+        <div class="container">
+          <div class='get-started-section text-center'>
+            <div class="title-btn">
+              <h3 class='title-section text-center'>Ready to Get Started?</h3>
+              <p class="sub-title-section text-center">We triple-check candidates to ensure quality! Just start with confidence.</p>
+              <p><a href="/register" class="waves-effect fancybox">Register now</a></p>
+            </div>
+            <div class="partner-logo">
+              <ul>
+                <li><%= image_tag "logo_p1.png" %></li>
+                <li><%= image_tag "logo_p2.png" %></li>
+                <li><%= image_tag "logo_p3.png" %></li>
+                <li><%= image_tag "logo_p4.png" %></li>
+                
+              </ul>
+              <p>17,000 customers and counting. Helping the very best web and mobile businesses communicate with their customers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <%= render "layouts/footer"%>
+  </div><!-- wapper -->
+<% if current_user != nil %>
+<% if current_user.type_user == "employer" %>
+  <% @employer = Profile.where(user_id: current_user.id).first %>
+  <div id="hidden-employer" style="display:none; width: 570px;">
+    <%= form_for(:completeprofile, html: {:multipart => true}, :url => {:controller => 'home', :action => 'complete_profile_employer'}) do |f| %>
+    <div class="tab-content">   
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Step 1</a></li>
+            <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
+            <li><a href="#tab4" data-toggle="tab">Step 4</a></li>
+            <li><a href="#tab5" data-toggle="tab">Step 5</a></li>
+        </ul>
+        <div class="tab-pane active" id="tab1">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>1. Upload your photo</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 1%;"></span>
+                </div>
+                
+                <div class="register-form">
+                     <div class="form-group">
+                      <% if Profile.where(user_id: session[:user_id]).count.positive?%>
+                        <% if @profile.company_logo_file_name != nil %>
+                        <% @logo = @profile.company_logo.url %>
+                        <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100",:"data-default-file" => @logo.slice(0..(@logo.index('g?'))), :"data-width" => "510"%>
+                        <% end %>
+                      <% if @profile.company_logo_file_name == nil %>
+                      <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100", :"data-width" => "510"%>
+                      <% end%> 
+                      <% else %>
+                        <%= f.file_field :companylogo,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100", :"data-width" => "510"%> 
+                      <% end %>  
+                      </div>
+                      <p>Please choose a 500 x 500 pixels company profile picture.</p>
+                      <p>Click next if you want remain using this photo as your company profile picture.</p>
+                      <div class="submit">
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                    
+                </div><!-- .register-form -->
+            </div>
+        </div><!-- .tab-1 -->
+        <div class="tab-pane" id="tab4">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>2. Enter your company basic info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 50%;"></span>
+                </div>
+                <div class="register-form">
+                         <div class="form-group">
+                            <label>Company Name</label>
+                             <%= f.text_field :companyname, :class=>"form-control", :value => @employer.company_name%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Headline(e.g. Internet and computer software)</label>
+                             <%= f.text_field :headline, :class=>"form-control", :value => @employer.headline%>
+                        </div><!-- .form-group -->
+                         <div class="form-group">
+                                <label>Short Description of Your Company</label>
+                                <%= f.text_area :description, :class=>"form-control", :rows => 5, :value => @employer.short_description %>
+                            </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Size</label>
+                            <div class="styled-select slate">
+                              <%= select_tag(:companysize, 
+                                options_for_select([ 
+                                  [Profile::EMPLOYER_SIZE[1], Profile::EMPLOYER_SIZE[1]], 
+                                  [Profile::EMPLOYER_SIZE[2], Profile::EMPLOYER_SIZE[2]], 
+                                  [Profile::EMPLOYER_SIZE[3], Profile::EMPLOYER_SIZE[3]], 
+                                  [Profile::EMPLOYER_SIZE[4], Profile::EMPLOYER_SIZE[4]], 
+                                  [Profile::EMPLOYER_SIZE[5], Profile::EMPLOYER_SIZE[5]], 
+                                ], :selected => @employer.company_size), :class=>"form-control race" ) %>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-2 -->
+         <div class="tab-pane" id="tab5">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>3. Enter your company contact</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 100%;"></span>
+                </div>
+                <div class="register-form">
+                        <div class="form-group">
+                            <label>Company Address</label>
+                             <%= f.text_field :companyaddress, :class=>"form-control", :value=> @employer.company_address%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Email</label>
+                             <%= f.email_field :companyemail, :class=>"form-control", :value=> @employer.company_email%>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Company Contact</label>
+                             <%= f.text_field :companycontact, :class=>"form-control", :value => @employer.company_contact, :placeholder => '+605344324433'%>
+                        </div><!-- .form-group -->
+                         <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <button type="submit" class="btn btn-default waves-effect">Save</button>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-3 -->
+    </div><!-- .tab-content -->
+  <% end %>
+</div>
+<% end %>
+<% if current_user.type_user == "parttimer"%>
+<div id="hidden-parttimer" style="display:none; width: 570px;">
+    <%= form_for(:completeprofile, html: {:multipart => true}, :url => {:controller => 'home', :action => 'complete_profile_parttimer'}) do |f| %>
+    <div class="tab-content">   
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Step 1</a></li>
+            <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
+            <li><a href="#tab4" data-toggle="tab">Step 4</a></li>
+            <li><a href="#tab5" data-toggle="tab">Step 5</a></li>
+        </ul>
+        <div class="tab-pane active" id="tab1">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>1. Upload your photo</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 1%;"></span>
+                </div>
+                
+                <div class="register-form">
+                     <div class="form-group">
+                        <% if current_user.avatar_file_name == nil %>
+                          <%= f.file_field :avatar,:class  => "dropify Input-Field", :accept => "image/*", :"data-height" => "100", :"data-width" => "510"%>
+                        <% end %>
+                        <% if current_user.avatar_file_name != nil %>
+                          <% @logo = current_user.avatar.url %>
+                          <%= f.file_field :avatar,:class  => "dropify Input-Field", :accept => "image/*", :"data-default-file" => @logo.slice(0..(@logo.index('g?'))), :"data-height" => "100", :"data-width" => "510"%>
+                        <% end %>           
+                      </div>
+                      <p>Please choose a 500 x 500 pixels company profile picture.</p>
+                      <p>Click next if you want remain using this photo as your company profile picture.</p>
+                      <div class="submit">
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                    
+                </div><!-- .register-form -->
+            </div>
+        </div><!-- .tab-1 -->
+        <div class="tab-pane" id="tab4">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>2. Enter your basic info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 50%;"></span>
+                </div>
+                <div class="register-form">
+                         <div class="form-group">
+                            <label>Your Date of Birth</label>
+                             <%= f.text_field :dayofbirth, :class=>"form-control", :placeholder => "MM/DD/YYYY", :value => current_user.day_of_birth.try(:strftime, "%m %d %Y at %I:%M%p"), :id => 'datetimepicker4'%>
+                        <p class='error-birthday'></p>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <div class="styled-select">
+                              <%= select_tag(:nationality, 
+                                options_for_select(
+                                  LocationParttimer::NATIONALITY.map{ |val, name| [name, val] },:selected => current_user.nationality), :class=>"chosen-select" ) %>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                            <label>Race</label>
+                            <div class="styled-select slate">
+                              <%= select_tag(:race, 
+                                options_for_select([
+                                  ['-- select one --', '-- select one --'], 
+                                  ['Malay', 'Malay'], 
+                                  ['Chinese', 'Chinese'],
+                                  ['Indian', 'Indian'],
+                                  ['Others','Others']
+                                  ], :selected => current_user.race), :class=>"form-control js-example-basic-single race" ) %>
+                            </div>
+                        </div><!-- .form-group -->
+                        <div class="form-group">
+                          <% if current_user.sex == "Female" %>
+                            <label class="radio-inline">
+                                <input type="radio" name="radio" id="male" value="Male" ><span></span> Male
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="radio" checked id="female" value="Female" ><span></span> Female
+                            </label>
+                          <% else %>
+                            <label class="radio-inline">
+                                <input type="radio" checked name="radio" id="male" value="Male"><span></span> Male
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="radio" id="female" value="Female"  ><span></span> Female
+                            </label>
+                          <% end %>
+                        </div><!-- .form-group -->
+                        
+                        <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <a class="btn btn-primary btnNext waves-effect">Next</a>
+                        </div>
+                     
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-2 -->
+         <div class="tab-pane" id="tab5">
+            <div class="register-content">
+                <div class="step-title">
+                    <h3>Tell us a little about you…</h3>
+                    <p>3. Enter your education info</p>
+                </div><!-- .step-title -->
+                <div class="rectangle">
+                    <span style="width: 100%;"></span>
+                </div>
+                <div class="register-form">
+                        <div class="form-group">
+                            <label>Education level</label>
+                            <div class="styled-select slate">
+                              <%= select_tag 'education', 
+                                options_for_select([
+                                  ['Please select your education level', 'Please select your education level'],
+                                  ['Primary', 'primary'], 
+                                  ['Secondary', 'secondary'],
+                                  ['STPM', 'stpm'],
+                                  ['Diploma','diploma'],
+                                  ['Degree or above','degree']
+                                ]), :class=>"form-control race" %>
+        
+                            </div>
+                        </div><!-- .form-group -->
+                        <!-- How to check whether checkbox is checked or not -->
+                        <div class="form-group langguage">
+                            <label>Language</label>
+                            <div class="checkbox">
+                              <label>
+                              <% if current_user.bahasa_malaysia == "yes"%>
+                                <input name="malaysia" checked="" value="malaysia" type="checkbox"><span></span> Bahasa Malaysia
+                              <% else %>
+                                <input name="malaysia" value="malaysia" type="checkbox"><span></span> Bahasa Malaysia
+                              <% end %>
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                              <% if current_user.chinese == "yes"%>
+                                <input value="chinese" checked="" name="chinese" type="checkbox"><span></span> Chinese
+                              <% else %>
+                                <input value="chinese" name="chinese" type="checkbox"><span></span> Chinese
+                              <% end %>
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                              <% if current_user.english == "yes"%>
+                                <input value="english" checked="" name="english" id="english" type="checkbox"><span></span> English
+                              <% else %>
+                                <input value="english" name="english" id="english" type="checkbox"><span></span> English
+                              <% end %>
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                  <% if current_user.tamil == "yes"%>
+                                    <input value="tamil" checked="" name ="tamil" type="checkbox"> <span></span> Tamil
+                                  <% else %>
+                                    <input value="tamil" name ="tamil" type="checkbox"> <span></span> Tamil
+                                  <% end %>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                              <% if current_user.cantonese == "yes"%>
+                                <input value="cantonese" checked="" name="cantonese" type="checkbox"><span></span> Cantonese
+                              <% else %>
+                                <input value="cantonese" name="cantonese" type="checkbox"><span></span> Cantonese
+                              <% end %>
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                              <% if current_user.hokkien == "yes"%>
+                                <input value="hokkien" checked="" name="hokkien" type="checkbox"><span></span> Hokkien
+                              <% else %>
+                                <input value="hokkien" name="hokkien" type="checkbox"><span></span> Hokkien
+                              <% end %>
+                              </label>
+                            </div>
+                        </div>
+                         <div class="submit">
+                            <a class="btn btn-primary btnPrevious">Back</a>
+                            <button type="submit" class="btn btn-default waves-effect">Save</button>
+                        </div>
+                </div><!-- .register-form -->
+            </div><!-- .rectangle -->
+        </div><!-- .tab-3 -->
+    </div><!-- .tab-content -->
+  <% end %>
+</div>
+<% end %>
+<% end %>
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<%= javascript_include_tag "home/jquery.fancybox" %>
+<%= javascript_include_tag "home/jquery.nice-select.min" %>
+<%= javascript_include_tag "home/chosen.jquery.min" %>
+<%= javascript_include_tag "home/ware" %>
+<%= javascript_include_tag "home/parallax" %>
+<%= javascript_include_tag "home/jquery.countdown" %>
+<%= javascript_include_tag "home/parttimebee-custom" %>
+<%= javascript_include_tag "home/moment" %>
+<%= javascript_include_tag "home/bootstrap-datetimepicker" %>
+<%= javascript_include_tag "dropify/dropify" %>
+<% unless flash[:complete_profile].blank?%>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      jQuery.fancybox("#formthankyou");
+      $("div").removeClass("fancybox-skin");
+    });
+  </script>
+<% end %>
+
+<%= render 'layouts/verify_phone_2_step.html.erb'%>
+          <script type="text/javascript">
+            jQuery(document).ready(function($) { 
+              jQuery('#datetimepicker4').datetimepicker({ 
+                format: 'MM/DD/YYYY'
+              });
+            });
+          </script>
+          <script type="text/javascript">
+            // Check old of users
+            jQuery('#datetimepicker4').on('dp.change', function(){ 
+              if (check_18_years_old()){
+                console.log(check_18_years_old());
+                jQuery('p.error-birthday').html('<b style="color: red;">Your old have to more than 18 years old!</b>');
+              }
+              else {
+                jQuery('p.error-birthday').html('');
+              }
+            });
+          </script>
+          <script type="text/javascript">
+            function check_18_years_old(){
+              var datetimepicker4_value;
+              var current_value;
+              var day_grap;
+              datetimepicker4_value = new Date(jQuery('#datetimepicker4').val()).getFullYear();
+              current_value = new Date(jQuery.now()).getFullYear();
+              day_grap = current_value - datetimepicker4_value;
+              if (day_grap < 18){
+                return true;
+              } 
+              return false;
+            }
+          </script>
+        <% if current_user != nil %>
+          <% current_user.save %>
+          <% if current_user.complete_profile.zero? %>
+            <script type="text/javascript">
+              jQuery(document).ready(function() {
+                setTimeout(function () {
+                  <% if current_user.type_user == 'employer' %>
+                    jQuery.fancybox('#hidden-employer');
+                  <% end %>
+                  <% if current_user.type_user == 'parttimer' %>
+                    jQuery.fancybox('#hidden-parttimer');
+                  <% end %>
+                  }, 10000);
+                  jQuery('.fancybox').fancybox();
+                });
+            </script>
+          <% end %>
+        <% end %>
+           
+        <script type="text/javascript">
+          $('.dropify').dropify();
+          $('.staff-list').parallax();
+            jQuery('.btnNext').click(function(){
+              jQuery('.nav-tabs > .active').next('li').find('a').trigger('click');
+            });
+            
+              jQuery('.btnPrevious').click(function(){
+              jQuery('.nav-tabs > .active').prev('li').find('a').trigger('click');
+            });
+            jQuery(document).ready(function() {
+              jQuery('select.race').niceSelect();      
+            });         
+        </script>
+        <script type="text/javascript">
+            function register_success(){
+                window.location.href ='/job-listing';
+            }
+        </script>
+</body>
+<div class="wapper" style="display: none;" id="formthankyou">
+        <div class="auto-container">
+            <div class="register-success" id="registersuccess">
+                <div class="success">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div><!-- .success -->
+                <div class="text-success">
+                    <h1>Thank you for updating us!</h1>
+                </div><!-- .text-success -->
+                  <div class="btn-post-jobs-now">
+                      <button onclick="register_success()" type="submit" class="btn btn-default post-jobs-now waves-effect">
+                      <% unless current_user.nil? %>
+                        <% if current_user[:type_user] == "employer"%>
+                          Close
+                        <% else %>
+                          Find Jobs Now
+                        <% end %>
+                      <% end %>
+                      </button>
+                  </div>
+            </div><!-- .notification -->
+        </div><!-- .auto-container -->
+    </div><!-- .wapper -->
+</html>

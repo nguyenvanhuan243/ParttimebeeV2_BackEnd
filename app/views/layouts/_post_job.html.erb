@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Basic info</title>
+    <!-- Stylesheets -->
+     <%= stylesheet_link_tag 'home/flexslider' %>
+     <%= stylesheet_link_tag 'home/bootstrap.min' %>
+     <%= stylesheet_link_tag 'home/style' %>
+     <%= stylesheet_link_tag 'home/select-style' %>
+     <%= stylesheet_link_tag 'home/responsive' %>
+     <%= stylesheet_link_tag 'medium-editor/medium-editor' %>
+     <%= stylesheet_link_tag 'home/huan' %>
+    <!-- Responsive -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content='Search result page'/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet">
+</head>
+<body class="post-job employer-settings">
+ <%= form_for(:job, :url => {:controller => 'job', :action => 'edit_published_job'}) do |f| %>
+
+    <div class="wapper">
+
+        <div class="tab-content">
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">Step 1</a></li>
+                <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+                <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
+                <li><a href="#tab4" data-toggle="tab">Step 4</a></li>
+                <li><a href="#tab5" data-toggle="tab">Step 5</a></li>
+            </ul><!-- .nav tab -->
+
+
+            <div class="tab-pane active" id="tab1">
+
+               <div class="header">
+                    <div class="auto-container">
+                        <div class="row"> 
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <a class="logo" href="#" title="Logo">
+                                    <%= image_tag "small-logo.png", alt: "Logo"%>
+                                </a>
+
+                            </div>
+
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">        
+
+                                <div class="step">
+
+                                    <h3>Step 1 : Basic Info</h3>
+
+                                </div>
+
+                            </div>
+
+                           <%= render 'layouts/save_and_exit'%> 
+
+                        </div><!-- row --> 
+
+                    </div>
+
+                </div><!-- header-small -->
+
+                <div class="rectangle">
+
+                    <span style="width: 1%;"></span>
+
+                </div><!-- .rectangle -->
+
+                <div class="content">
+                <% @job = Job.find(params[:id]) %>
+                    <div class="form-container">
+
+                            <!-- <div class="form-group">
+                                <label>Job Title</label>
+                                <%= f.text_field :jobtitle, :class=>"form-control",  :value => @job[:title] %>
+                                <p class="help-block">100 characters left</p>
+                            </div> --><!-- .form-group -->
+                            <div class="form-group">
+
+                                <label>Job Title</label>
+                                <%= f.text_field :jobtitle,:onkeyup=>"countChar(this)", :class=>"form-control", :value => @job[:title] %>
+                                <p class="help-block" id="charNum">100 characters left</p>
+                            </div><!-- .form-group -->
+                             <script>
+                              function countChar(val) {
+                                var len = val.value.length;
+                                if (len >= 100) {
+                                  val.value = val.value.substring(0, 100);
+                                } else {
+                                  $('#charNum').text((100 - len).toString() + ' characters left' );
+                                }
+                              };
+                            </script>
+                            <div class="form-group">
+                                        <label>Category Job</label>
+                                        <%= select_tag :categoryjob, options_for_select(Category.where.not(category_job: 'All').all.collect{ |c| [c.category_job, c.category_job] },:selected => @job[:category_job], :class => "form-control")%>
+                            </div>
+                            <div class="form-group">
+                                <label>Job Description</label>
+                                <%= f.text_area :description, :class=>"editable", :rows => 5, :value => @job[:description]  %>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>No. of vacancies</label>
+                                        <%= f.number_field :vacancies, :class=>"form-control", :placeholder => "10", :value => @job[:vacancies]  %>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Available for</label>
+                                        <%= select_tag(:available_for, options_for_select([['everyone', 'everyone'], ['only female', 'only female'], ['only male', 'only male']], :selected => @job[:availablefor]), :class=>"form-control" ) %>
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+
+                            <div class="form-group">
+
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Age from</label>
+                                         <%= select_tag :age_from, options_for_select(Age.all.collect{ |age| [age.age, age.age] },:selected => @job[:agefrom], :class => "form-control")%>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>to</label>
+                                           <%= select_tag :age_to, options_for_select(Age.all.collect{ |age| [age.age, age.age]},:selected => @job[:ageto], :class => "form-control")%>
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <label>Job Requirement</label>
+                                <%= f.text_area :requirement, :class=>"editable", :rows => 5, :value => @job[:requirements]  %>
+                            </div><!-- .form-group -->
+                            <div class="form-group langguage">
+                                <label>Language</label>
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_Bahasa_Malaysia] == "1"%>
+                                    <%= f.check_box :malaysia, {:class => "anyclass", :style => "anystyle", :checked => "checked"}%><span></span> Bahasa Malaysia
+                                    <% else %>
+                                    <%= f.check_box :malaysia, {:class => "anyclass", :style => "anystyle", :checked => ""}%><span></span> Bahasa Malaysia
+                                    <% end %>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_Chinese] == "1"%>
+                                    <%= f.check_box :chinese, {:class => "anyclass",:checked => "checked", :style => "anystyle"}%><span></span> Chinese
+                                    <% else %>
+                                    <%= f.check_box :chinese, {:class => "anyclass",:checked => "", :style => "anystyle"}%><span></span> Chinese
+                                    <% end %>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_English] == "1" %>
+                                   <%= f.check_box :english, {:class => "anyclass", :style => "anystyle", :checked => "checked"}%><span></span> English
+                                   <% else %>
+                                   <%= f.check_box :english, {:class => "anyclass", :checked => "", :style => "anystyle"}%><span></span> English
+                                   <% end %>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_Tamin] =="1"%>
+                                    <%= f.check_box :tamin, {:class => "anyclass", :style => "anystyle", :checked => "checked"}%><span></span> Tamin
+                                    <% else %>
+                                    <%= f.check_box :tamin, {:class => "anyclass", :style => "anystyle", :checked => ""}%><span></span> Tamin
+                                    <% end %>
+                                  </label>
+                                </div>
+
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_Cantonese] == "1"%>
+                                    <%= f.check_box :cantonese, {:class => "anyclass", :style => "anystyle", :checked => "checked"}%><span></span> Cantonese
+                                    <% else %>
+                                    <%= f.check_box :cantonese, {:class => "anyclass", :style => "anystyle", :checked => ""}%><span></span> Cantonese
+                                    <% end %>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <label>
+                                  <% if @job[:language_Hokkien] == "1"%>
+                                    <%= f.check_box :hokkien, {:class => "anyclass", :style => "anystyle", :checked => "checked"}%><span></span> Hokkien
+                                    <%else%>
+                                    <%= f.check_box :hokkien, {:class => "anyclass", :style => "anystyle", :checked => ""}%><span></span> Hokkien
+                                    <% end%>
+                                  </label>
+                                </div>
+                            </div><!-- .form-group -->
+
+                            <div class="rectangle-6"></div>
+
+                            <div class="submit">
+
+                                <a class="btn btn-primary btnNext waves-effect">Next</a>
+
+                            </div>
+
+                             
+
+                    </div><!-- .auto-container -->
+
+                </div><!-- .content --> 
+
+            </div><!-- .tab-1 -->
+
+            <div class="tab-pane" id="tab2">
+
+               <div class="header">
+
+                    <div class="auto-container">
+
+                        <div class="row"> 
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">            
+
+                                <a class="logo" href="#" title="Logo">
+                                    <!-- <img src="images/small-logo.png" alt="Logo"> -->
+                                     <%= image_tag "small-logo.png", alt: "Logo"%>
+                                </a>
+
+                            </div>
+
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">        
+
+                                <div class="step">
+
+                                    <h3>Step 2 : Salary</h3>
+
+                                </div>
+
+                            </div>
+                           <%= render 'layouts/save_and_exit'%>
+                        </div><!-- row --> 
+
+                    </div>
+
+                </div><!-- header-small -->
+
+                <div class="rectangle">
+
+                    <span style="width: 25%;"></span>
+
+                </div><!-- .rectangle -->
+
+                <div class="content">
+                    <div class="form-container">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Salary</label>
+                                        <div class="ringgit"> 
+                                            <%= f.text_field :salary, :class=>"form-control", 
+                                             :placeholder => "50", :value =>@job[:salary] %>
+                                            <span>ringgit</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label></label>
+                                             <%= select_tag(:perday, 
+                                            options_for_select([['per day', 'day'], ['per week', 'week'], ['per month', 'month']],:selected => @job[:per_day]), :class=>"form-control" ) %>
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+
+                            <div class="form-group">
+
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Payment</label>
+                                             <%= select_tag(:payment, 
+                                            options_for_select([['pay daily', 'daily'], 
+                                                                ['pay weekly', 'weekly'], 
+                                                                ['pay monthly', 'monthly']
+                                                                ], :selected => @job[:payment]), :class=>"form-control" ) %>
+                                        <div class="div-radio">
+                                            <label>On The Spot</label>
+                                            <% if @job[:on_the_spot] == "yes"%>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="onthespot" id="on-the-spot1" value="yes" checked><span></span> Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="onthespot" id="on-the-spot2" value="no"><span></span> No
+                                            </label>
+                                            <% else %>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="onthespot" id="on-the-spot1" value="yes"><span></span> Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="onthespot" id="on-the-spot2" value="no" checked ><span></span> No
+                                            </label>
+                                            <% end %>
+                                        </div>
+                                        <div class="div-radio">
+                                            <label>Commission</label>
+                                            <% if @job[:commission] == "yes"%>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="commission" id="commissio1" value="yes" checked><span></span> Yes
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="commission" id="commissio2" value="no" ><span></span> No
+                                                </label>
+                                            <% else %>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="commission" id="commissio1" value="yes"><span></span> Yes
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="commission" id="commissio2" value="no" checked ><span></span> No
+                                                </label>
+                                            <% end %>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <label>Benefits</label>
+                                <%= f.text_area :benefits, :class=>"editable", :rows => 5, :placeholder =>"Lunch Included, Accomodation and Transport Provided", :value => @job[:benefits]  %>
+                            </div><!-- .form-group -->
+                            <div class="rectangle-6"></div>
+                            <div class="submit">
+                                <a class="btn btn-primary btnPrevious">Back</a>
+                                <a class="btn btn-primary btnNext waves-effect">Next</a>
+                            </div>
+                       </form>              
+                    </div><!-- .auto-container -->
+                </div><!-- .content -->
+            </div><!-- .tab-2 -->
+            <div class="tab-pane" id="tab3">
+                <div class="header">
+                    <div class="auto-container">
+                        <div class="row"> 
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">            
+                                <a class="logo" href="#" title="Logo">
+                                    <%= image_tag "small-logo.png", alt: "Logo"%>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">        
+                                <div class="step">
+                                    <h3>Step 3 : Working Time</h3>
+                                </div>
+                            </div>
+                            <%= render 'layouts/save_and_exit'%>  
+                        </div><!-- row --> 
+                    </div>
+                </div><!-- header-small -->
+                <div class="rectangle">
+                    <span style="width: 50%;"></span>
+                </div><!-- .rectangle -->
+                <div class="content">
+                    <div class="form-container">
+                            <div class="form-group working-date">
+                                <div class="row">
+<!--Tut: Convert datetime to format in ruby on rails
+ -->
+<!-- https://stackoverflow.com/questions/7706657/using-strftime-on-nil-object-how-to-prevent-error -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                      <label>Working Date from</label>
+                                        <%= f.text_field :working_date_from, :class=>"form-control", :placeholder =>"Select Date", :id =>"datetimepicker4", :value => @job.working_date_from.try(:strftime, "%m %d %Y at %I:%M%p") %>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                      <label>to</label>
+                                        <%= f.text_field :working_date_to, :class=>"form-control", :placeholder =>"Select Date", :value => @job.working_date_to.try(:strftime, "%m %d %Y at %I:%M%p") ,:id => 'datetimepicker5'  %>
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+                            <div class="form-group working-hour">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                      <label>Working Hour from</label>
+                                      <%= select_tag :working_hour_from, options_for_select(Workinghour.all.collect{ |hour| [hour.working_hour, hour.working_hour] }, :selected => @job[:working_hour_from], :class => "form-control")%>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                      <label>to</label>
+                                      <%= select_tag :working_hour_to, options_for_select(Workinghour.all.collect{ |hour| [hour.working_hour, hour.working_hour] },:selected => @job[:working_hour_to] ,:class => "form-control")%>
+                                    </div>
+                                </div>
+
+                            </div><!-- .form-group -->
+
+                            <div class="rectangle-6"></div>
+
+                            <div class="submit">
+
+                                <a class="btn btn-primary btnPrevious">Back</a>
+
+                                <a class="btn btn-primary btnNext waves-effect">Next</a>
+
+                            </div>
+                    </div><!-- .auto-container -->
+
+                </div><!-- .content -->
+
+            </div><!-- .tab-3 -->
+
+            <div class="tab-pane" id="tab4">
+
+                <div class="header">
+
+                    <div class="auto-container">
+
+                        <div class="row"> 
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">  
+                                <a class="logo" href="#" title="Logo">
+                                    <%= image_tag "small-logo.png", alt: "Logo"%>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"> 
+                                <div class="step">
+                                    <h3>Step 4 : Working Location</h3>
+                                </div>
+                            </div>
+                            <%= render 'layouts/save_and_exit'%>
+                        </div><!-- row --> 
+
+                    </div>
+
+                </div><!-- header-small -->
+
+                <div class="rectangle">
+
+                    <span style="width: 75%;"></span>
+
+                </div><!-- .rectangle -->
+
+                <div class="content">
+                    <div class="form-container">
+                            <h4>Location 1</h4>
+                            <div class="form-group">
+                                <label>Working Address</label>
+                                <%= f.text_field :workingaddress, :class=>"form-control", :value => @job[:working_address] %> 
+                                <label></label>
+                                <%= f.text_field :workingaddress2, :class=>"form-control", :value => @job[:working_address2] %>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-state12">
+                                    <label>State</label>
+                                    <%= select_tag :state1, options_for_select(State.all.collect{ |c| [c.state, c.state] },:selected => @job[:state], :class => "form-control")%>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <label>City</label>
+                                    <%= select_tag :city1, options_for_select(City.all.collect{ |c| [c.name, c.name] },:selected => @job[:city], :class => "form-control")%>
+                                </div>
+                            </div>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Postcode</label>
+                                        <%= f.text_field :postcode, :class=>"form-control", :value => @job[:post_code] %>   
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+                            <div class="border-solid"></div>
+                            
+                            <h4>Location 2</h4>
+                            <div class="form-group">
+                                <label>Working Address</label>
+                                <%= f.text_field :workingaddress3, :class=>"form-control",  :value => @job[:working_address3] %> 
+                                <label></label>
+                                <%= f.text_field :workingaddress4, :class=>"form-control",  :value => @job[:working_address4] %>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-state12">
+                                    <label>State</label>
+                                    <%= select_tag :state2, options_for_select(State.all.collect{ |c| [c.state, c.state] },:selected => @job[:state2], :class => "form-control")%>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <label>City</label>
+                                    <%= select_tag :city2, options_for_select(City.all.collect{ |c| [c.name, c.name] },:selected => @job[:city2], :class => "form-control")%>
+                                </div>
+                            </div>
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label>Postcode</label>
+                                        <%= f.text_field :postcode2, :class=>"form-control",  :value => @job[:post_code2] %>   
+                                    </div>
+                                </div>
+                            </div><!-- .form-group -->
+                            <div class="border-solid"></div>
+                            
+                            <div class="add-location">
+                                <a class="waves-effect" href="#">Add Location</a>
+                            </div>
+
+                            <div class="rectangle-6"></div>
+
+                            <div class="submit">
+
+                                <a class="btn btn-primary btnPrevious">Back</a>
+
+                                <a class="btn btn-primary btnNext waves-effect">Next</a>
+
+                            </div>
+
+                    </div><!-- .auto-container -->
+
+                </div><!-- .content -->
+
+            </div><!-- .tab-4 -->
+
+            <div class="tab-pane" id="tab5">
+
+                <div class="header">
+
+                    <div class="auto-container">
+
+                        <div class="row"> 
+
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"           
+                                <a class="logo" href="#" title="Logo">
+                                     <%= image_tag "small-logo.png", alt: "Logo"%>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">        
+                                <div class="step">
+                                    <h3>Step 5 : Contact</h3>
+                                </div>
+                            </div>
+                            <%= render 'layouts/save_and_exit'%>     
+                        </div><!-- row --> 
+                    </div>
+                </div><!-- header-small -->
+                <div class="rectangle">
+                    <span style="width:100%;"></span>
+                </div><!-- .rectangle -->
+                <div class="content">
+                    <div class="form-container">
+                            <div class="form-group">
+                                <label>Contact Person</label>
+                                <%= f.text_field :contactperson, :class=>"form-control",  :placeholder => "Please Enter Your Name", :value => @job[:contact_person] %>      
+                            </div><!-- .form-group -->
+                            <div class="form-group">
+                                <label>Way of Contact</label>
+                                <%= f.text_field :wayofcontact, :class=>"form-control",  :placeholder => "Mobile Number", :value => @job[:way_of_contact] %>      
+                                <label></label>
+                                <%= f.text_field :wayofcontact2, :class=>"form-control",  :placeholder => "Email", :value => @job[:email] %>
+                            </div><!-- .form-group -->
+                            <div class="rectangle-6"></div>
+                            <div class="submit">
+                                <a class="btn btn-primary btnPrevious">Back</a>
+                                <button type="submit" class="btn btn-default waves-effect">Publish</button>
+                            </div>
+                    </div><!-- .auto-container -->
+                </div><!-- .content -->
+            </div><!-- .tab-5 -->
+        </div>
+    </div><!-- wapper -->
+<% end %>
+<!-- </form> -->
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<%= javascript_include_tag "home/jquery.validate" %>
+<%= javascript_include_tag "home/moment" %>
+<%= javascript_include_tag "home/bootstrap-datetimepicker" %>
+<%= javascript_include_tag "home/jquery.nice-select.min" %>
+<%= javascript_include_tag "home/ware" %>
+<%= javascript_include_tag "home/custom" %>
+<%= javascript_include_tag "medium-editor/medium-editor" %>
+<script type="text/javascript">
+    $("#region")[0][3].attr("selected");
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var select = "<option>Select City</option>";
+        var Johor = "<option>Batu Pahat</option><option>Johor Bahru</option><option>Kluang</option><option>Kota Tinggi</option><option>Kulai</option><option>Mersing</option><option>Muar</option><option>Pontian</option><option>Segamat</option><option>Tangkak</option>";
+        var Kedah = "<option>Baling</option><option>Bandar Baharu</option><option>Kota Setar</option><option>Kuala Muda</option><option>Kubang Pasu</option><option>Kulim</option><option>Langkawi</option><option>Padang Terap</option><option>Pendang</option><option>Pokok Sen</option><option>Sik</option><option>Yan</option>";
+        var Kelantan = "<option>Bachok</option><option>Gua Musang</option><option>Jeli</option><option>Kota Bharu</option><option>Kuala Krai</option><option>Machang</option><option>Pasir Mas</option><option>Pasir Puteh</option><option>Tanah Merah </option><option>Tumpat</option>";
+        var KualaLumpur = "<option>Bandar Tun Razak</option><option>Batu</option><option>Bukit Bintang</option><option>Cheras</option><option>Kepong</option><option>Lembah Pantai</option><option>Segambut</option><option>Seputeh</option><option>Setiawangsa</option><option>Titiwangsa</option><option>Wangsa Maju</option>";
+        var Labuan = "<option>Batu Arang</option><option>Batu Manikar</option><option>Bebuloh</option><option>Belukut</option><option>Bukit Kalam</option><option>Bukit Kuda</option><option>Durian Tunjung</option><option>Ganggarak / Merinding</option><option>Gersik / Saguking / Jawa / Parit</option><option>Kilan / Kilan Pulau Akar</option><option>Lajau</option><option>Layang-Layangan</option><option>Lubok Temiang</option><option>Nagalang / Kerupang</option><option>Pantai</option><option>Patau-Patau 1</option><option>Patau-Patau 2</option><option>Pohon Batu</option><option>Rancha-Rancha</option><option>Sungai Bangat</option><option>Sungai Bedaun / Sungai Sembilang</option><option>Sungai Buton</option><option>Sungai Keling</option><option>Sungai Labu</option><option>Sungai Lada</option><option>Sungai Miri / Pagar</option><option>Tanjung Aru</option>";
+        var Melaka = "<option>Alor Gajah</option><option>Central Malacca</option><option>Jasin</option>";
+        var NegeriSembilan = "<option>Jelebu</option><option>Jempol</option><option>Kuala Pilah</option><option>Port Dickson</option><option>Rembau</option><option>Seremban</option><option>Tampin</option>";
+        var Pahang = "<option>Bentong</option><option>Bera</option><option>Cameron Highlands</option><option>Jerantut</option><option>Kuantan</option><option>Lipis</option><option>Maran</option><option>Pekan</option><option>Raub</option><option>Rompin</option><option>Temerloh</option>";
+        var Perak = "<option>Bagan Datuk</option><option>Batang Padang</option><option>Hilir Perak</option><option>Hulu Perak</option><option>Kampar</option><option>Kerian</option><option>Kinta</option><option>Kuala Kangsar</option><option>Larut, Matang and Selama</option><option>Manjung</option><option>Muallim</option><option>Perak Tengah</option>";
+        var Perlis = "";
+        var PulauPinang = "<option>Central Seberang Perai</option><option>North Seberang Perai</option><option>Northeast Penang Island</option><option>South Seberang Perai</option><option>Southwest Penang Island</option>";
+        var Putrajaya = "";
+        var Sabah = "<option>Beaufort</option><option>Beluran</option><option>Keningau</option><option>Kinabatangan</option><option>Kota Belud</option><option>Kota Kinabalu</option><option>Kota Marudu</option><option>Kuala Penyu</option><option>Kudat</option><option>Kunak</option><option>Lahad Datu</option><option>Municipality of Sandakan</option><option>Municipality of Tawau</option><option>Nabawan</option><option>Papar</option><option>Penampang</option><option>Pitas</option><option>Putatan</option><option>Ranau</option><option>Semporna</option><option>Sipitang</option><option>Tambunan</option><option>Tenom</option><option>Tongod</option><option>Tuaran</option>";
+        var Sarawak = "<option>Asajaya</option><option>Bau</option><option>Belaga</option><option>Beluru</option><option>Betong</option><option>Bintulu</option><option>Bukit Mabong</option><option>Dalat</option><option>Daro</option><option>Julau</option><option>Kabong</option><option>Kapit</option><option>Kanowit</option><option>Kuching</option><option>Lawas</option><option>Limbang</option><option>Lubok Antu</option><option>Lundu</option><option>Marudi</option><option>Matu</option><option>Meradong</option><option>Miri</option><option>Mukah</option><option>Pakan</option><option>Pusa</option><option>Samarahan</option><option>Saratok</option><option>Sarikei</option><option>Sebauh</option><option>Selangau</option><option>Serian</option><option>Sibu</option><option>Simunjan</option><option>Song</option><option>Sri Aman</option><option>Subis</option><option>Tanjung Manis</option><option>Tatau</option><option>Tebedu</option><option>Telang Usan</option>";
+        var Selangor = "<option>Gombak</option><option>Hulu Langat</option><option>Hulu Selangor</option><option>Klang</option><option>Kuala Langat</option><option>Kuala Selangor</option><option>Petaling</option><option>Sabak Bernam</option><option>Sepang</option>";
+        var Terengganu = "<option>Besut</option><option>Dungun</option><option>Hulu Terengganu</option><option>Kemaman</option><option>Kuala Nerus</option><option>Kuala Terengganu</option><option>Marang</option><option>Setiu</option>";     
+            // $("#city").html(select);
+            $("#region").change(function() {
+            var selected = $(this).val();
+            $("#city").show();
+            if (selected == 'Johor') {
+                $("#city").html(Johor);
+            }
+            if (selected == 'Kedah') {
+                $("#city").html(Kedah);
+            }
+            if (selected == 'Kelantan') {
+                $("#city").html(Kelantan);
+            }
+            if (selected == 'Kuala Lumpur') {
+                $("#city").html(KualaLumpur);
+            }
+            if (selected == 'Labuan') {
+                $("#city").html(Labuan);
+            }
+            if (selected == 'Melaka') {
+                $("#city").html(Melaka);
+            }
+            if (selected == 'Negeri Sembilan') {
+                $("#city").html(NegeriSembilan);
+            }
+            if (selected == 'Pahang') {
+                $("#city").html(Pahang);
+            }
+            if (selected == 'Perak') {
+                $("#city").html(Perak);
+            }
+            if (selected == 'Perlis') {
+                $("#city").html(Perlis);
+            }
+            if (selected == 'Pulau Pinang') {
+                $("#city").html(PulauPinang);
+            }
+            if (selected == 'Putrajaya') {
+                $("#city").html(Putrajaya);
+            }
+            if (selected == 'Sabah') {
+                $("#city").html(Sabah);
+            }
+            if (selected == 'Sarawak') {
+                $("#city").html(Sarawak);
+            }
+            if (selected == 'Selangor') {
+                $("#city").html(Selangor);
+            }
+            if (selected == 'Terengganu') {
+                $("#city").html(Terengganu);
+            }
+            if (selected == 'Select State') {
+                $("#city").html(select);
+            }
+            $("div.removeclass").remove();
+        });
+            // $("#city2").html(select);
+            $("#region2").change(function() {
+            var selected2 = $("#region2").val();
+            $("#city2").show();
+            if (selected2 == 'Johor') {
+                $("#city2").html(Johor);
+            }
+            if (selected2 == 'Kedah') {
+                $("#city2").html(Kedah);
+            }
+            if (selected2 == 'Kelantan') {
+                $("#city2").html(Kelantan);
+            }
+            if (selected2 == 'Kuala Lumpur') {
+                $("#city2").html(KualaLumpur);
+            }
+            if (selected2 == 'Labuan') {
+                $("#city2").html(Labuan);
+            }
+            if (selected2 == 'Melaka') {
+                $("#city2").html(Melaka);
+            }
+            if (selected2 == 'Negeri Sembilan') {
+                $("#city2").html(NegeriSembilan);
+            }
+            if (selected2 == 'Pahang') {
+                $("#city2").html(Pahang);
+            }
+            if (selected2 == 'Perak') {
+                $("#city2").html(Perak);
+            }
+            if (selected2 == 'Perlis') {
+                $("#city2").html(Perlis);
+            }
+            if (selected2 == 'Pulau Pinang') {
+                $("#city2").html(PulauPinang);
+            }
+            if (selected2 == 'Putrajaya') {
+                $("#city2").html(Putrajaya);
+            }
+            if (selected2 == 'Sabah') {
+                $("#city2").html(Sabah);
+            }
+            if (selected2 == 'Sarawak') {
+                $("#city2").html(Sarawak);
+            }
+            if (selected2 == 'Selangor') {
+                $("#city2").html(Selangor);
+            }
+            if (selected2 == 'Terengganu') {
+                $("#city2").html(Terengganu);
+            }
+            if (selected2 == 'Select State') {
+                $("#city2").html(select);
+            }
+            $("div.removeclass2").remove();
+        });
+    });
+</script>
+<script>
+
+jQuery(document).ready(function($) { 
+jQuery('#datetimepicker4').datetimepicker({ 
+                format: 'MM/DD/YYYY'
+            });
+jQuery('#datetimepicker5').datetimepicker({ 
+              format: 'MM/DD/YYYY'
+            });
+  jQuery('.btnNext').click(function(){
+      jQuery('.nav-tabs > .active').next('li').find('a').trigger('click');
+
+    });
+      jQuery('.btnPrevious').click(function(){
+
+      jQuery('.nav-tabs > .active').prev('li').find('a').trigger('click');
+
+    });
+    jQuery(document).ready(function() {
+      jQuery('select:not(.ignore)').niceSelect();      
+      FastClick.attach(document.body);
+    });    
+});
+</script>
+
+<script type="text/javascript">
+  var editor = new MediumEditor('.editable', {
+    toolbar: {
+        /* These are the default options for the toolbar,
+        if nothing is passed this is what is used */
+        allowMultiParagraphSelection: true,
+        buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3','unorderedlist'],
+        diffLeft: 0,
+        diffTop: -10,
+        firstButtonClass: 'medium-editor-button-first',
+        lastButtonClass: 'medium-editor-button-last',
+        relativeContainer: null,
+        standardizeSelectionStart: false,
+        static: false,
+        /* options which only apply when static is true */
+        align: 'center',
+        sticky: false,
+        updateOnEmptySelection: false
+    }
+  });
+</script>
+
+
+</body><!-- .search-result-page -->
+
+</html>

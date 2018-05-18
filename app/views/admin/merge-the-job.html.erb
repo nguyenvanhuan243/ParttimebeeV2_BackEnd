@@ -1,0 +1,62 @@
+<!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                        <tr>
+                                                           <center> <th>ID</th></center>
+                                                           <center> <th>Name of employer</th></center>
+                                                            <th data-priority="1">Title</th>
+                                                            <th data-priority="1">Type Job</th>
+                                                            <th data-priority="1">Vacancies</th>
+                                                            <th data-priority="1">Vacancies Start</th>
+                                                            <th data-priority="1">Category job</th>
+                                                            <th data-priority="1">Employer Real</th>
+                                                            <center><th data-priority="6">Action</th></center>
+                                                        </tr>    
+                                                </thead>
+                                                <tbody>
+                                                <% @jobs = Job.where(employer_real: false).paginate(:per_page => 10, :page => params[:page]) %>
+                                                <% @jobs.each do |job| %> 
+                                                    <tr>
+                                                        <th><span class="co-name"><%= job.id %></span></th>
+                                                        <td> <%= User.find(job.user_id).full_name %> </td>
+                                                        <td> <%= job.title %> </td>
+                                                        <td> <%= job.type_job %> </td>
+                                                        <td> <%= job.vacancies %> </td>
+                                                        <td> <%= job.vacancies_start %> </td>
+                                                        <td> <%= job.employer_real %> </td>
+                                                        <td> <%= job.category_job %> </td>
+                                                        <td> 
+                                                            <a href="/admin/manage-merge-the-job/<%= job.id %>" type="button" class="btn btn-primary waves-effect w-md waves-light m-b-5">Edit jobs</a>
+                                                        </td>
+                                                    </tr> 
+                                                <% end %>     
+                                                </tbody>
+                                            </table>
+                                            <p><%= will_paginate @jobs %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                    </div> <!-- container -->
+                </div> <!-- content -->
+                <footer class="footer">
+                    2017 © Parttimebee.
+                </footer>
+            </div>
+            <!-- End content-page -->
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->

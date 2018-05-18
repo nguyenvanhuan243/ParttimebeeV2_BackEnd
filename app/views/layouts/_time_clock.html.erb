@@ -1,0 +1,10 @@
+<div class="clock">
+    <% @get_hour = Time.now.hour - job[:created_at].hour %>
+    <% @get_min = Time.now.min - job[:created_at].min%>
+    <% if @get_hour < 1 %>
+        <span class="time-add pull-right"><%=@get_min.to_i.abs%> minutes ago</span>
+    <% end %>
+    <% if @get_hour >= 1 %>
+        <span class="time-add pull-right"><%=@get_hour.to_i.abs%> hours ago</span>
+    <% end %>
+</div>

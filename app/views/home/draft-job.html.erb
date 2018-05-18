@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Employer draft job</title>
+	<!-- Responsive -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="description" content='Search result page'/>
+	<!-- Stylesheets -->
+	<%= stylesheet_link_tag 'home/flexslider' %>
+    <%= stylesheet_link_tag 'home/bootstrap.min' %>
+    <%= stylesheet_link_tag 'home/style' %>
+    <%= stylesheet_link_tag 'home/responsive' %>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900|Montserrat:400,700" rel="stylesheet">
+</head>
+<body class="employer-published-job-applications  draft-job">
+	<div class="wapper">
+		<%= render "layouts/header"%>
+		<div class="all-jobs">
+			<div class="auto-container box-all-jobs">
+
+                <div class="container">
+
+                    <div class="breadcrumbs">
+
+                        <ul>
+
+                            <li><a href="/01-all-jobs-listing">My jobs</a></li>
+
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+
+                            <li><a href="/02-draft-jobs-00-listing">Published jobs</a></li>
+
+                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+
+                            <li>Front-end Developer</li>
+
+                        </ul>
+
+                    </div><!-- .breadcrumbs -->
+
+    				<div class="row">
+    					<% @job = Job.find(params[:id])%>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 item-info">			
+
+							<div class="option">
+
+                                <h1 class="title">
+
+                                    <a href="#" title="Front-end Developer">
+                                    	<%= @job[:title]%>
+                                    </a>
+
+                                    <span class="time">
+                                    	<%= @job[:created_at].strftime("%d %b %Y")%>
+                                    </span>
+
+                                </h1>
+
+                                <div class="option-top">
+
+    								<div class="item-note">	
+
+    									<div class="promotion-flags">
+    										<a href="#" class="btn btn-verified waves-effect" title="Verified Employer">Verified Employer</a>
+    										<a href="#" class="btn btn-spot" title="On The Spot">On The Spot</a>
+    										<a href="#" class="btn btn-commission" title="Commission">Commission</a>
+    									</div><!-- .promotion-flags -->
+    								</div>
+    								<div class="tag-location">
+    									<div class="tag-link">	
+    										<a href="#" title="Technology">Technology</a>
+    									</div>
+    									<div class="location-link">
+    										<a href="#" title="Petaling Jaya">Petaling Jaya</a>
+    									</div>
+    								</div><!-- .tag-location -->
+                                </div><!-- .option top -->
+                                <div class="option-bottom">
+                                    <div class="row">
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">		
+                                            <div class="time-work">
+                                                <span>Working period: <span class="month">
+                                                	<%= @job[:working_date_from]%> - <%= @job[:working_date_to]%>
+                                                </span></span>
+
+                                                <span>Working Hour: <span class="month">
+                                                	<%=@job[:working_hour_from]%> - <%=@job[:working_hour_to]%>
+                                                </span></span> 
+                                            </div><!-- .time work -->
+                                            <div class="time-work">
+                                                <span class="font-bold">
+                                                        <% if @job[:language_Bahasa_Malaysia] == 1%>
+                                                            Bahasa Malaysia,
+                                                        <% end %>
+                                                        <% if @job[:language_Chinese] == 1%>
+                                                            Chinese,
+                                                        <% end %>
+                                                        <% if @job[:language_English] == 1%>
+                                                            English,
+                                                        <% end %>
+                                                        <% if @job[:language_Cantonese] == 1%>
+                                                            Cantonese,
+                                                        <% end %>
+                                                        <% if @job[:language_Tamin] == 1%>
+                                                            Tamin,
+                                                        <% end %>
+                                                        <% if @job[:language_Hokkien] == 1%>
+                                                            Hokkien
+                                                        <% end %>
+                                                    </span>
+                                            </div><!-- .time work -->
+                                            <div class="package-link">
+                                                <a href="#">Open to <span class="font-bold"><%= @job[:availablefor] %></span></a>
+                                                <a href="#"><span class="font-bold"><%= @job[:vacancies] %></span> vacancies available</a>
+                                                <a href="#">Pay <span class="font-bold"><%= @job[:payment]%></span></a>
+                                            </div><!-- .package -->
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 price">	
+                                            <span class="pull-right">RM.<%= @job[:salary]%>/<%=@job[:per_day]%> </span>
+                                        </div>
+                                    </div><!-- .row -->
+                                </div><!-- .option bottom -->
+							</div><!-- .option -->
+                        </div><!-- .item-info -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 edit">
+                            <a class="waves-effect" href="/01-all-jobs-listing/finish-draft-job/<%= @job[:id] %>">Finish Your Post</a>
+                        </div>
+                    </div><!-- .row -->
+                </div><!-- .container -->
+			</div><!-- box-search-result -->
+		</div><!-- .All Jobs -->
+		<div class="content">
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 job-details">			
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                          <div class="panel panel-default">
+
+                            <div class="panel-heading" role="tab" id="headingOne">
+
+                              <h2 class="panel-title">
+
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                                  Job Details <span></span>
+                                </a>
+
+                              </h2>
+
+                            </div>
+
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+
+                              <div class="panel-body">
+
+                                <h3>About the Job</h3>
+                                <p>
+                                	<%= @job[:description].html_safe%>
+                                </p>
+                                <h3>Job Requirement</h3>
+                                <ul>
+                                	<%= @job[:requirements].html_safe%>
+                                </ul>
+                                <h3>Salary & Benefits</h3>
+                                <ul>
+                                    <%= @job[:benefits].html_safe%>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- .panel group -->
+                    </div><!-- .job details -->
+                </div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .content -->
+		<%= render "layouts/footer"%>
+	</div><!-- wapper -->
+<%= javascript_include_tag "home/jquery" %>
+<%= javascript_include_tag "home/bootstrap.min" %>
+<%= javascript_include_tag "home/jquery.flexslider" %>
+<%= javascript_include_tag "home/parallax" %>
+<%= javascript_include_tag "home/parttimebee-custom" %>
+<%= javascript_include_tag "home/ware" %>
+</body><!-- .search-result-page -->
+</html>
