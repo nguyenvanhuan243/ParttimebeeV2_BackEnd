@@ -33,7 +33,7 @@
 # end
 
 Admin.create!(email: 'parttimebee.my@gmail.com', 
-							password: 'parttimebee.my', 
+							password: Digest::MD5.hexdigest('parttimebee.my'), 
 							token_admin: SecureRandom.urlsafe_base64)
 User.create!(email: 'parttimebee.my@gmail.com', type_user: 'admin', password: 'parttimebee.my')
 # 20.times do |i|
