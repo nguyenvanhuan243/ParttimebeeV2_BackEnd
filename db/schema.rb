@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20170810025912) do
     t.string   "language_Cantonese",                     default: "0",   null: false
     t.string   "language_Hokkien",                       default: "0",   null: false
     t.string   "per_day"
-    t.string   "salary"
+    t.integer  "salary"
     t.string   "payment"
     t.string   "on_the_spot"
     t.string   "commission"
