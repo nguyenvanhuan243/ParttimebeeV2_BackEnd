@@ -13,10 +13,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def_param_group :user do
-    param :user, Hash, :required => true, :action_aware => true do
-      param :email, String, "Email of the user", :required => true
-      param :password, String, "Password of the user", :required => true
-    end
+    param :email, String, "Email of the user", :required => true
+    param :password, String, "Password of the user", :required => true
   end
 
   api :POST, '/v1/users', 'Create a new user'
@@ -33,6 +31,6 @@ class Api::V1::UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.permit(:email, :password)
   end
 end
