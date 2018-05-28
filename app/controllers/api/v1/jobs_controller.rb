@@ -1,7 +1,8 @@
 class Api::V1::JobsController < ApplicationController
   api :GET, '/v1/jobs', 'Show all jobs'
   def index
-    render json: Job.all
+    jobs = params[:limit] ? Job.limit(params[:limit]) : Job.all
+    render json: jobs
   end
   
   api :GET, '/v1/jobs/:id', 'Get a specify user'

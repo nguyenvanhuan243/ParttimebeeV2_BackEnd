@@ -1,7 +1,7 @@
 class Job < ApplicationRecord
 
   has_many :favoritejobs
-  belongs_to :users
+  belongs_to :user
   has_many :viewjobs, dependent: :destroy
   has_many :favoritejobs
 
