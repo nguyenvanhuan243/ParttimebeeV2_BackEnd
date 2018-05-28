@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :jobs
       resources :users
+      resources :sessions
     end
   end
+  post '/api/v1/users/login' => 'sessions#create'
 
   resources :user do
     member do
