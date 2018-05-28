@@ -25,6 +25,8 @@ gem 'gemoji'
 gem 'koala'
 gem 'rubocop', '~> 0.39.0'
 gem 'will_paginate', '~> 3.1'
+# Using rack-cors to fix cross domain: https://rubygems.org/gems/rack-cors/versions/0.4.0
+gem 'rack-cors', :require => 'rack/cors'
 # Geme to login with facebook app
 gem 'omniauth-facebook'
 # Use mysql as the database for Active Record

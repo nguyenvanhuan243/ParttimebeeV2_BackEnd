@@ -16,7 +16,13 @@ module Partimebee
 	# config.assets.paths << Rails.root.join("app", "assets", "fonts") 
   config.assets.paths << Rails.root.join("app", "assets", "fonts", "fontsadmin")
   config.assets.paths << Rails.root.join("app", "assets", "fonts", "dropify")
-	config.assets.paths << Rails.root.join("app", "assets", "fonts", "home")
+  config.assets.paths << Rails.root.join("app", "assets", "fonts", "home")
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
   end
 
 end
