@@ -28,3 +28,16 @@ How to add otp
 - add class register-01 to tag "body"
 - add class "otp" class "fancybox"
 - add id "#hiddenotp"
+
+<!-- How to fix cross domain -->
+1. Add gem to your Gemfile.
+  `gem 'rack-cors', :require => 'rack/cors'`
+2. Update your config/application.rb file by adding this:
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
+3. Install
+ `bundle install`
