@@ -10,14 +10,12 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "400x400>", thumb: "200x200>" }, default_url: "/images/:style/missing.png"
   # Explicitly do not validate
   do_not_validate_attachment_file_type :avatar
-
   before_create :confirmation_token  
-
   before_create { generate_token(:auth_token_reset) }
-
   has_many :jobs, dependent: :destroy
-
   has_many :notifications
+  has_many :notifications
+  validates :email, uniqueness: true
 
 	def self.from_omniauth(auth)
     id_user = User.last.id + 1 
