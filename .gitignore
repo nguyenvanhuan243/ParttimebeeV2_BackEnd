@@ -80,3 +80,7 @@ pickle-email-*.html
 xerial*.*
 Gemfile.lock
 package-lock.json
+.byebug_history
+config/database.yml
+doc/api_swagger.yml
+

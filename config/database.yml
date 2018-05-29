@@ -15,9 +15,9 @@ default: &default
   # encoding: utf8
   pool: 5
   username: root
-  password: rails1234
+  password: 
   localhost: 127.0.0.1
-  #socket: /opt/lampp/var/mysql/mysql.sock
+  socket: /opt/lampp/var/mysql/mysql.sock
   encoding: utf8mb4
   collation: utf8mb4_unicode_ci
 
