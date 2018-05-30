@@ -83,4 +83,5 @@ package-lock.json
 .byebug_history
 config/database.yml
 doc/api_swagger.yml
+database.yml
 

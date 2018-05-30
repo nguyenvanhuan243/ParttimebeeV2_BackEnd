@@ -33,6 +33,7 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :working_address
       t.string :working_address2
       t.string :state
+      t.string :status
       t.string :city
       t.string :post_code
 
