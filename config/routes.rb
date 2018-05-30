@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :jobs
       resources :users
+      get '/users/:id/jobs', to: 'users#get_jobs'
       resources :sessions
     end
   end
   post '/api/v1/users/login' => 'sessions#create'
+  get '/api/v1/users/:id/jobs' => 'users#get_jobs'
 
   resources :user do
     member do

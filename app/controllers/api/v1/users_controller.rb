@@ -28,6 +28,16 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  api :GET, 'v1/users/:id/jobs', 'get jobs'
+  def get_jobs
+    @user = User.find_by_id(params[:id])
+    if @user
+      render json: @user.jobs
+    else 
+      render json: nil 
+    end
+  end
+
   private
   
   def user_params
