@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :users
       get '/users/:id/jobs', to: 'users#get_jobs'
       resources :sessions
+      resources :searches
     end
   end
   post '/api/v1/users/login' => 'sessions#create'
