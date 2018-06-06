@@ -11,6 +11,24 @@ class Api::V1::JobsController < ApplicationController
     render json: Job.find_by(id: params[:id])
   end
 
+  api :POST, '/v1/jobs', 'Create a new job'
+  def create
+    job = Job.new
+    job[:user_id] = params[:user_id]
+    job[:title] = params[:title]
+    job[:category] = params[:category]
+    job[:description] = params[:description]
+    job[:salary] = params[:salary]
+    job[:salary_type] = params[:salaryType]
+    job[:salary_state] = params[:salaryState]
+    job[:city] = params[:city]
+    if job.save
+      render json: job, status: :created, location: job
+    else
+      render json: job.errors, status: :unprocessable_entity
+    end
+  end
+
   api :DELETE, '/v1/jobs/:id', 'Delete a specify job'
   def destroy
     job = Job.find_by_id(params[:id])
