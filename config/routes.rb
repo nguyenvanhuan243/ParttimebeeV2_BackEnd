@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :jobs
       resources :users
       get '/users/:id/jobs', to: 'users#get_jobs'
+      post '/users/reset-password',to: 'users#send_email_reset_password'
       resources :sessions
       resources :searches
     end
