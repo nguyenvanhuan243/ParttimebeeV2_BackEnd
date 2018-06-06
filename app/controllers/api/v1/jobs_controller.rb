@@ -22,6 +22,7 @@ class Api::V1::JobsController < ApplicationController
     job[:salary_type] = params[:salaryType]
     job[:salary_state] = params[:salaryState]
     job[:city] = params[:city]
+    job[:job_type] = 'pending'
     if job.save
       render json: job, status: :created, location: job
     else

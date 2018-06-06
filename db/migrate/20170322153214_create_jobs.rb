@@ -9,7 +9,7 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :salary_type
       t.string :salary_state
       t.string :city
-      t.string :type_job
+      t.string :job_type
       t.integer :vacancies 
       t.string :availablefor 
       t.string :agefrom 
