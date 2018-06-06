@@ -39,6 +39,12 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  api :POST, 'v1/users/reset-password', 'Send email to reset password'
+  def send_email_reset_password
+    user = User.find_by_email(user_params[:email])
+    user.send_password_reset
+  end
+
   private
   
   def user_params
