@@ -15,7 +15,7 @@
 		user_id: 2,
 		title: Faker::Address.city,
 		company_name: Faker::Address.community,
-		type_job: 'going',
+		job_type: 'going',
 	);
 end
 
@@ -24,7 +24,7 @@ end
 		user_id: 2,
 		title: Faker::Address.city,
 		company_name: Faker::Address.community,
-		type_job: 'pending',
+		job_type: 'pending',
 	);
 end
 
@@ -33,7 +33,7 @@ end
 		user_id: 2,
 		title: Faker::Address.city,
 		company_name: Faker::Address.community,
-		type_job: 'expired',
+		job_type: 'expired',
 	);
 end
 
