@@ -72,42 +72,22 @@ ActiveRecord::Schema.define(version: 20170810025912) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "category"
-    t.text     "description",        limit: 65535
+    t.text     "description",     limit: 65535
     t.integer  "salary"
     t.string   "salary_type"
     t.string   "salary_state"
     t.string   "city"
-    t.string   "type_job"
-    t.integer  "vacancies"
-    t.string   "availablefor"
-    t.string   "agefrom"
-    t.string   "ageto"
-    t.integer  "number_of_location",               default: 1,     null: false
-    t.text     "requirements",       limit: 65535
-    t.string   "payment"
-    t.string   "on_the_spot"
-    t.string   "commission"
-    t.text     "benefits",           limit: 65535
-    t.datetime "working_date_from"
-    t.datetime "working_date_to"
-    t.string   "working_hour_from"
-    t.string   "working_hour_to"
-    t.string   "state"
-    t.string   "status"
-    t.string   "post_code"
-    t.string   "contact_person"
-    t.string   "way_of_contact"
-    t.string   "email"
-    t.string   "current_tab_active"
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.integer  "awarded_job",                      default: 0,     null: false
-    t.integer  "vacancies_start",                  default: 0
-    t.boolean  "spending_sms",                     default: false, null: false
-    t.boolean  "employer_real",                    default: false, null: false
+    t.string   "job_type"
+    t.text     "requirements",    limit: 65535
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.integer  "awarded_job",                   default: 0,     null: false
+    t.integer  "vacancies_start",               default: 0
+    t.boolean  "spending_sms",                  default: false, null: false
+    t.boolean  "employer_real",                 default: false, null: false
     t.string   "phone_number"
     t.string   "company_name"
-    t.integer  "views",                            default: 0,     null: false
+    t.integer  "views",                         default: 0,     null: false
   end
 
   create_table "location_parttimers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
