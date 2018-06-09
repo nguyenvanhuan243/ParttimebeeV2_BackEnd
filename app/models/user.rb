@@ -43,7 +43,7 @@ class User < ApplicationRecord
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
     save!
-    ModelMailer.password_reset(self).deliver
+    RegisterMailer.password_reset(self).deliver
   end
 
   def generate_token(column)
