@@ -174,7 +174,7 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.action_mailer.default_url_options = { :host => "parttimebee.my" }
+  config.action_mailer.default_url_options = { :host => "api.parttimebee.my" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :authentication => :plain,
