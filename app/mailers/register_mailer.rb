@@ -1,5 +1,5 @@
 class RegisterMailer < ApplicationMailer
-  
+  layout false 
 # Reset your password
   def password_reset(user)
     @user = user
