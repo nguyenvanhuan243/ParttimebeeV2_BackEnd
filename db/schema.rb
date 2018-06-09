@@ -176,61 +176,38 @@ ActiveRecord::Schema.define(version: 20170810025912) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string   "user_name",                                 default: "User Name",  null: false
+    t.string   "user_name",               default: "User Name",  null: false
     t.string   "full_name"
     t.string   "password"
-    t.string   "first_name",                                default: "Last Name",  null: false
-    t.string   "last_name",                                 default: "First Name", null: false
+    t.string   "first_name",              default: "Last Name",  null: false
+    t.string   "last_name",               default: "First Name", null: false
     t.string   "email"
     t.string   "phone_number"
     t.string   "phone_number_change"
-    t.integer  "activated",                                 default: 0,            null: false
-    t.integer  "blocked",                                   default: 0,            null: false
+    t.integer  "activated",               default: 0,            null: false
+    t.integer  "blocked",                 default: 0,            null: false
     t.datetime "day_of_birth"
     t.string   "address"
     t.string   "type_user"
-    t.integer  "verified_phone",                            default: 0,            null: false
-    t.integer  "verified_employer",                         default: 0,            null: false
-    t.integer  "complete_profile",                          default: 0,            null: false
-    t.integer  "verify_postjob_employer",                   default: 0,            null: false
-    t.integer  "verify_findjob_parttimer",                  default: 0,            null: false
-    t.integer  "time_login",                                default: 0,            null: false
-    t.string   "nationality"
-    t.string   "race"
-    t.string   "education"
-    t.string   "sex"
-    t.string   "bahasa_malaysia"
-    t.string   "chinese"
-    t.string   "english"
-    t.string   "tamil"
-    t.string   "cantonese"
-    t.string   "hokkien"
-    t.text     "introduce_yourself",          limit: 65535
-    t.string   "working_location"
-    t.string   "ifmalaysian"
-    t.string   "preferred_working_location1"
-    t.string   "preferred_working_location2"
-    t.string   "preferred_working_location3"
-    t.integer  "profile_id"
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",                                                       null: false
-    t.datetime "updated_at",                                                       null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "email_confirmed",                           default: false
+    t.boolean  "email_confirmed",         default: false
     t.string   "confirm_token"
     t.string   "auth_token_reset"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "url_avatar"
     t.string   "address_special_account"
-    t.integer  "otp_time",                                  default: 0,            null: false
+    t.integer  "otp_time",                default: 0,            null: false
   end
 
   create_table "viewjobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|

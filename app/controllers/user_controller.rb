@@ -5,7 +5,7 @@ class UserController < ApplicationController
 		session[:user_id] = user.id
     user.activated = 1
 		user.email_activate
-    ModelMailer.wellcome_register(user).deliver
+		ModelMailer.wellcome_register(user).deliver
 		redirect_to url
 	end
 end
