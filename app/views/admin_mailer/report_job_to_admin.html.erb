@@ -1,6 +1,20 @@
-<h1>
-  Report job Notification
-  <a href="https://api.parttimebee.my/login"
-    Access to admin page to remove this job!
+
+<h3>
+  Hello Edison Chan. Having a job has been reported in your system. Please review it remove that job.
+</h3>
+<h4>
+  This is job information!
+</h4>
+<h4>
+  <b>
+    Report Type: <%= @report_content[:report_type] %>
+  </b>
+</h4>
+<h4>
+  Job detail: <a href="https://parttimebee.my/test/job-detail/<%= @report_content[:job_id] %>">
+    Click to view job
   </a>
-</h1>
+</h4>
+<a href="https://api.parttimebee.my/login"
+  Access to admin page to remove this job!
+</a>

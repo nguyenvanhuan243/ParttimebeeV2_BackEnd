@@ -6,7 +6,8 @@ class AdminMailer < ApplicationMailer
     mail :to => @admin.email, :subject => 'Confirm reset password'
   end
 
-  def report_job_to_admin
+  def report_job_to_admin(report_content)
+    @report_content = report_content
     mail :to => 'parttimebee.my@gmail.com', :subject => 'Report Job Notification'
   end
 

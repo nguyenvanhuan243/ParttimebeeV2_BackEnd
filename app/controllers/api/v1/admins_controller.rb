@@ -7,7 +7,11 @@ class Api::V1::AdminsController < ApplicationController
 
   api :POST, '/v1/admins', 'Send report job to admin'
   def create
-    AdminMailer.report_job_to_admin.deliver
+    report_content = {
+      report_type: params[:report_type],
+      job_id: params[:job_id]
+    }
+    AdminMailer.report_job_to_admin(report_content).deliver
     render json: {
       success: true,
       sent: true
