@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post '/users/reset-password',to: 'users#send_email_reset_password'
       resources :sessions
       resources :searches
+      resources :admins
     end
   end
   post '/api/v1/users/login' => 'sessions#create'
