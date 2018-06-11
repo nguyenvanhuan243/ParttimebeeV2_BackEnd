@@ -10,7 +10,7 @@
 # 	address: 'Binh Duong', phone_number: '01664152723', activated: 0, blocked: 0, verified_phone: 0, day_of_birth: '24/03/1995');
 # end
 
-100.times do |i|
+10.times do |i|
 	Job.create!(
 		user_id: 2,
 		title: Faker::Address.city,
@@ -19,7 +19,7 @@
 	);
 end
 
-100.times do |i|
+10.times do |i|
 	Job.create!(
 		user_id: 2,
 		title: Faker::Address.city,
@@ -28,7 +28,7 @@ end
 	);
 end
 
-100.times do |i|
+10.times do |i|
 	Job.create!(
 		user_id: 2,
 		title: Faker::Address.city,
@@ -41,10 +41,4 @@ Admin.create!(
 	email: 'parttimebee.my@gmail.com',
 	password: Digest::MD5.hexdigest('parttimebee.my'),
 	token_admin: SecureRandom.urlsafe_base64
-);
-
-User.create!(
-	email: 'parttimebee.my@gmail.com',
-	type_user: 'admin',
-	password: 'parttimebee.my'
 );
