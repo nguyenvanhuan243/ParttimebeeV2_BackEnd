@@ -29,13 +29,13 @@
                                                 <% @jobs.each do |job| %> 
                                                     <tr>
                                                         <th><span class="co-name"><%= job.id %></span></th>
-                                                        <td> <%= User.find(job.user_id).full_name %> </td>
+                                                        <td> <%= User.find_by_id(job.user_id) && User.find_by_id(job.user_id).full_name %> </td>
                                                         <td> <%= job.title %> </td>
-                                                        <td> <%= job.type_job %> </td>
-                                                        <td> <%= job.vacancies %> </td>
-                                                        <td> <%= job.vacancies_start %> </td>
-                                                        <td> <%= job.employer_real %> </td>
-                                                        <td> <%= job.category_job %> </td>
+                                                        <td> <%= job.job_type %> </td>
+                                                        <td> vacancies </td>
+                                                        <td> vacancies </td>
+                                                        <td> vacancies </td>
+                                                        <td> vacancies </td>
                                                         <td> 
                                                             <%= link_to "Delete Job", {controller: "admin", action: "delete_job_employer", id: job.id }, class: "btn btn-danger waves-effect w-md waves-light m-b-5", method: :delete, confirm: "Are you sure?" %>
                                                         </td>

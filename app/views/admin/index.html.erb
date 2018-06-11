@@ -29,7 +29,7 @@
                                                 <% @jobs.each do |job| %> 
                                                     <tr>
                                                         <th><span class="co-name"><%= job.id %></span></th>
-                                                        <td> <%= User.find(job.user_id).full_name %> </td>
+                                                        <td> <%= User.find_by_id(job.user_id) && User.find_by_id(job.user_id).full_name %> </td>
                                                         <td> <%= job.title %> </td>
                                                         <td> <%= job.job_type %> </td>
                                                         <td> job 1 </td>
