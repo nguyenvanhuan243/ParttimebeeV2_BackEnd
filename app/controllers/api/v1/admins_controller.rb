@@ -1,11 +1,13 @@
 class Api::V1::AdminsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
-  # def_param_group :user do
-  #   param :report_type, String, "Type of report", :required => true
-  # end
+  def_param_group :admin do
+    param :report_type, String, "This is report type", :required => true
+    param :job_id, String, "This is job id", :required => true
+  end
 
   api :POST, '/v1/admins', 'Send report job to admin'
+  param_group :admin
   def create
     report_content = {
       report_type: params[:report_type],
@@ -18,9 +20,9 @@ class Api::V1::AdminsController < ApplicationController
     }, status: :created
   end
 
-  # private
+  private
   
-  # def admin_params
-  #   params.permit(:report_type)
-  # end
+  def admin_params
+    params.permit(:report_type, :job_id)
+  end
 end
