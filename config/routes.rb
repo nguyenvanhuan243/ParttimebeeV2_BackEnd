@@ -22,7 +22,6 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
-  get '/admin', to: 'admin#index'
   get '/admin', to: 'admin#manage-jobs-employer'
   get '/admin/import-file', to: 'admin#import-file'
   get '/', to: 'home#index'

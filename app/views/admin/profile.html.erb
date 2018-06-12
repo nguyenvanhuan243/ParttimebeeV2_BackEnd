@@ -1,150 +1,151 @@
 ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
-                        <% @user = User.find(params[:id])%>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="bg-picture card-box">
-                                    <div class="profile-info-name">
-                                        <% if @user.avatar_file_name == nil %>
-                                            <%= image_tag "avatar-image.png", alt: "profile-image", :class => "img-thumbnail card-box" %>
-                                        <% else %>
-                                            <%= image_tag @user.avatar.url("original"), alt: "profile-image", :class => "img-thumbnail card-box" %>
-                                        <% end %>
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <form class="form-horizontal card-box" role="form"> 
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">Full Name</label>
-                                                    <div class="col-md-10">
-                                                        <input readonly type="text" class="form-control" value="<%= @user.full_name %>"  >
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label" for="example-email">Email</label>
-                                                    <div class="col-md-10">
-                                                        <input readonly type="email" id="example-email" name="example-email" class="form-control" value="<%= @user.email %>" >
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">Verified By Phone</label>    
-                                                            <div class="col-md-10">
-                                                            <% if @user.verified_phone == 1 %>
-                                                                <input readonly type="text" class="form-control" value="Verified" readonly>
-                                                            <% end %>
-                                                            <% if @user.verified_phone == 0 %>
-                                                                <input readonly type="text" class="form-control" value="Not Verify" readonly>
-                                                            <% end %>
-                                                            </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">User Type</label>
-                                                    <div class="col-md-10">
-                                                        <input readonly type="text" class="form-control" value="<%= @user.type_user%>" > 
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">Phone NUmber</label>
-                                                    <div class="col-md-10">
-                                                        <input readonly type="text" class="form-control" value="<%= @user.phone_number%>" >
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">Complete profile</label>
-                                                    <div class="col-md-10">
-                                                    <% if @user[:complete_profile] == 1%>
-                                                        <input readonly type="text" class="form-control" placeholder="completed" >
-                                                    <% else %>
-                                                        <input readonly type="text" class="form-control" placeholder="Not complete">
-                                                    <% end %>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-2 control-label">Created day</label>
-                                                    <div class="col-md-10">
-                                                        <input readonly type="text" class="form-control" placeholder="completed" value="<%= @user.created_at.strftime("%d-%m-%Y %I:%M%p") %>" >
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div><!-- end col -->
-                                    </div><!-- end row -->
-
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                                <p>Send notification to specify user.</p>
-                                <%= form_for(:notification, :url => {:controller => 'notification', :action => 'send_notification_member', :class => 'card-box'}) do |f| %> 
-                                            <span class="input-icon icon-right" >
-                                               
-                                                <%= f.text_area :notification_member, :class=>"form-control", :rows => 2, :placeholder => "Send Notification to specify member"  %>
-                                            </span>
-                                            <div class="p-t-10 pull-right">
-                                                <button class="btn btn-sm btn-primary waves-effect waves-light" >Send Notification</button>
-                                            </div>
-                                            <ul class="nav nav-pills profile-pills m-t-10">
-                                            </ul>
-                                        <% end %>
-
-                                <!--/ meta -->
-                                <% if @user[:type_user] == "employer"%>
-                                <p>Send sms to notify employer review awarding job.</p>
-                                <form method="post" class="card-box">
-                                    <% @user = User.find(params[:id]) %> 
-                                    <span class="input-icon icon-right" >
-                                        <textarea rows="2" id="textname" class="form-control" placeholder="Send Notification to specific member">RMO.OO Parttimebee::you have some pending applicant is waiting your confirmation, login to http://parttimebee.my go view the applicant now.</textarea>
-                                    </span>
-                                    <input class="phone" type="hidden" value="<%= @user[:phone_number]%>">
-                                    <script type="text/javascript">
-                                    function get_text(){
-                                        var text;
-                                        text = document.getElementById('textname').value;
-                                        return text;
-                                      }
-                                      function get_phone_number(){
-                                        var phone;
-                                        phone = document.getElementsByClassName("phone")[0].value;
-                                        return phone;
-                                      }
-                                    </script>
-                                    <script type="text/javascript">                         
-                                       function admin_send_sms_to_employer() {
-                                            if (confirm('Do you want to send sms?')){
-                                                $.ajax({
-                                                url:'http://www.bulksms2u.com/websmsapi/ISendSMS.aspx?username=smsjt&password=smssms&message='+ get_text() +'&mobile=' + get_phone_number() + '&Sender=Parttimebee&type=2',
-                                                type:'get',
-                                                dataType:'html',
-                                                processData:false,
-                                                success:function (data) {
-                                                    container.append(data);
-                                                    $(".shadow").hide();
-                                                    $("#ajax_loader").hide();
-                                                }
-                                            });
-                                            }else{
-                                                return;
-                                            }    
-                                        }
-                                    </script>
-                                    <div class="p-t-10 pull-right">
-                                        <a class="btn btn-sm btn-primary waves-effect waves-light" onclick="admin_send_sms_to_employer()" >Send</a>
-                                    </div>
-                                    <ul class="nav nav-pills profile-pills m-t-10">
-                                    </ul>
-                                </form>
-                                <% end %>
-                            </div>
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+   <!-- Start content -->
+   <div class="content">
+      <div class="container">
+         <% @user = User.find(params[:id])%>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="bg-picture card-box">
+                  <div class="profile-info-name">
+                     <% if @user.avatar_file_name == nil %>
+                     <%= image_tag "avatar-image.png", alt: "profile-image", :class => "img-thumbnail card-box" %>
+                     <% else %>
+                     <%= image_tag @user.avatar.url("original"), alt: "profile-image", :class => "img-thumbnail card-box" %>
+                     <% end %>
+                     <div class="row">
+                        <div class="col-lg-8">
+                           <form class="form-horizontal card-box" role="form">
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">Full Name</label>
+                                 <div class="col-md-10">
+                                    <input readonly type="text" class="form-control" value="<%= @user.full_name %>"  >
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label" for="example-email">Email</label>
+                                 <div class="col-md-10">
+                                    <input readonly type="email" id="example-email" name="example-email" class="form-control" value="<%= @user.email %>" >
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">Verified By Phone</label>    
+                                 <div class="col-md-10">
+                                    <% if @user.verified_phone == 1 %>
+                                    <input readonly type="text" class="form-control" value="Verified" readonly>
+                                    <% end %>
+                                    <% if @user.verified_phone == 0 %>
+                                    <input readonly type="text" class="form-control" value="Not Verify" readonly>
+                                    <% end %>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">User Type</label>
+                                 <div class="col-md-10">
+                                    <input readonly type="text" class="form-control" value="<%= @user.type_user%>" > 
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">Phone NUmber</label>
+                                 <div class="col-md-10">
+                                    <input readonly type="text" class="form-control" value="<%= @user.phone_number%>" >
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">Complete profile</label>
+                                 <div class="col-md-10">
+                                    <% if @user[:complete_profile] == 1%>
+                                    <input readonly type="text" class="form-control" placeholder="completed" >
+                                    <% else %>
+                                    <input readonly type="text" class="form-control" placeholder="Not complete">
+                                    <% end %>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="col-md-2 control-label">Created day</label>
+                                 <div class="col-md-10">
+                                    <input readonly type="text" class="form-control" placeholder="completed" value="<%= @user.created_at.strftime("%d-%m-%Y %I:%M%p") %>" >
+                                 </div>
+                              </div>
+                           </form>
                         </div>
-                    </div> <!-- container -->
-                </div> <!-- content -->
-                <footer class="footer">
-                    2017 © Parttimebee.
-                </footer>
+                        <!-- end col -->
+                     </div>
+                     <!-- end row -->
+                     <div class="clearfix"></div>
+                  </div>
+               </div>
+               <p>Send notification to specify user.</p>
+               <%= form_for(:notification, :url => {:controller => 'notification', :action => 'send_notification_member', :class => 'card-box'}) do |f| %> 
+               <span class="input-icon icon-right" >
+               <%= f.text_area :notification_member, :class=>"form-control", :rows => 2, :placeholder => "Send Notification to specify member"  %>
+               </span>
+               <div class="p-t-10 pull-right">
+                  <button class="btn btn-sm btn-primary waves-effect waves-light" >Send Notification</button>
+               </div>
+               <ul class="nav nav-pills profile-pills m-t-10">
+               </ul>
+               <% end %>
+               <!--/ meta -->
+               <% if @user[:type_user] == "employer"%>
+               <p>Send sms to notify employer review awarding job.</p>
+               <form method="post" class="card-box">
+                  <% @user = User.find(params[:id]) %> 
+                  <span class="input-icon icon-right" >
+                  <textarea rows="2" id="textname" class="form-control" placeholder="Send Notification to specific member">RMO.OO Parttimebee::you have some pending applicant is waiting your confirmation, login to http://parttimebee.my go view the applicant now.</textarea>
+                  </span>
+                  <input class="phone" type="hidden" value="<%= @user[:phone_number]%>">
+                  <script type="text/javascript">
+                     function get_text(){
+                         var text;
+                         text = document.getElementById('textname').value;
+                         return text;
+                       }
+                       function get_phone_number(){
+                         var phone;
+                         phone = document.getElementsByClassName("phone")[0].value;
+                         return phone;
+                       }
+                  </script>
+                  <script type="text/javascript">                         
+                     function admin_send_sms_to_employer() {
+                          if (confirm('Do you want to send sms?')){
+                              $.ajax({
+                              url:'http://www.bulksms2u.com/websmsapi/ISendSMS.aspx?username=smsjt&password=smssms&message='+ get_text() +'&mobile=' + get_phone_number() + '&Sender=Parttimebee&type=2',
+                              type:'get',
+                              dataType:'html',
+                              processData:false,
+                              success:function (data) {
+                                  container.append(data);
+                                  $(".shadow").hide();
+                                  $("#ajax_loader").hide();
+                              }
+                          });
+                          }else{
+                              return;
+                          }    
+                      }
+                  </script>
+                  <div class="p-t-10 pull-right">
+                     <a class="btn btn-sm btn-primary waves-effect waves-light" onclick="admin_send_sms_to_employer()" >Send</a>
+                  </div>
+                  <ul class="nav nav-pills profile-pills m-t-10">
+                  </ul>
+               </form>
+               <% end %>
             </div>
-            <!-- End content-page -->
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ==============================================================
+         </div>
+      </div>
+      <!-- container -->
+   </div>
+   <!-- content -->
+   <footer class="footer">
+      2017 © Parttimebee.
+   </footer>
+</div>
+<!-- End content-page -->
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ==============================================================

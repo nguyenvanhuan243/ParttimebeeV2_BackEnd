@@ -1,132 +1,116 @@
-============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box">
-                                    <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
-                                    <div class="modal-dialog" style="width:55%;">
-
-                                    <!-- START MODAL CONTENT -->
-                                        <div class="modal-content">
-                                         <%= form_for(:categoryjob, :url => {:controller => 'admin', :action => 'add_category_job', :class => 'modal-content'}) do |f| %>
-                                            <div class="modal-header">
-                                                <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
-                                                <center>
-                                                     <h4 class="modal-title" id="custom-width-modalLabel">Add Category Job To Your Category Job List</h4>
-                                                </center>
-                                               
-                                            </div>
-                                             <div class="modal-body">
-                                                <h4>Category Job</h4>
-                                                <%= f.text_field :category, :class=>"form-control", :required => true, :placeholder => "Enter your Category Job" %>
-                                            </div>                    
-                                            <div class="modal-footer">
-                                                <a type="button" class="btn btn-danger" data-dismiss="modal">Close</a>
-                                                <%= f.submit "Agree", :class => "btn btn-primary" %>
-                                            </div>
-                                        <% end %><!-- /.modal-content -->
-                                        </div>
-                                        <!--  END MODAL CONTENT -->
-
-
-                                     </div><!-- /.modal-dialog -->
-                                    </div><!-- /.modal -->
-
-                                    <!-- END ADD DISPOSABLE EMAIL -->
-
-
-
-                                    <div class="table-rep-plugin">
-                                        <div class="table-responsive" data-pattern="priority-columns">
-
-                                         <!-- START FLASH -->
-                                              <% if flash[:add_disposable_email] %>
-                                                <div class="alert alert-danger">
-                                                    <center>
-                                                    <%= flash[:add_disposable_email] %>
-                                                    </center>
-                                                </div>
-                                              <% end %>
-                                              <script>
-                                                  window.setTimeout(function() {
-                                                        $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                                                                $(this).remove(); 
-                                                              });
-                                                        }, 4000);  
-                                              </script>
-                                        <!-- END FLASH -->
-
-                                            <table id="tech-companies-1" class="table  table-striped">
-                                                <thead>
-                                                        <tr>
-                                                           <center>
-                                                           		<th>
-                                                           			ID
-                                                           		</th>
-                                                           	</center>
-                                                            <center>
-                                                                <th data-priority="3">
-                                                                	Category Job
-                                                                </th>
-                                                            </center>
-                                                            <th data-priority="6">Created Day</th>
-                                                            <center><th data-priority="6">Action</th></center>
-                                                        </tr>
-                                                    
-                                                </thead>
-
-                                                <tbody>
-                                                <% @categories = Category.paginate(:per_page => 10, :page => params[:page]) %>
-                                                <% @categories.each do |category| %> 
-                                                    <tr>
-                                                        <th><span class="co-name">
-                                                        		<%= category.id %>		
-                                                        	</span>
-                                                        </th>
-                                                        <td> 
-                                                        	<%= category.category_job %> 
-                                                        </td>
-                                                        <td> 
-                                                        	<%= category.created_at %>
-                                                        </td>
-                                                        <td> 
-                                                               <%= link_to "Delete", {controller: "admin", action: "delete_category_job", id: category.id }, class: "btn btn-danger waves-effect w-md waves-light m-b-5" %>
-                                                        </td>
-                                                    </tr> 
-                                                <% end %>     
-                                                </tbody>
-                                            </table>
-                                            <center>
-                                                <a class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Add Category Job</a>
-                                            </center>
-                                            <p><%= will_paginate @categories %></p>
-                                        </div>
-                                    </div>
-                                </div>
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+       <div class="container">
+          <div class="row">
+             <div class="col-sm-12">
+                <div class="card-box">
+                   <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                      <div class="modal-dialog" style="width:55%;">
+                         <!-- START MODAL CONTENT -->
+                         <div class="modal-content">
+                            <%= form_for(:categoryjob, :url => {:controller => 'admin', :action => 'add_category_job', :class => 'modal-content'}) do |f| %>
+                            <div class="modal-header">
+                               <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                               <center>
+                                  <h4 class="modal-title" id="custom-width-modalLabel">Add Category Job To Your Category Job List</h4>
+                               </center>
                             </div>
-                        </div>
-                        <!-- End row -->
-
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
-
-                <footer class="footer">
-                    2017 © Parttimebee.
-                </footer>
-
-            </div>
-
-            
-            <!-- End content-page -->
-
-
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ==============================================================
+                            <div class="modal-body">
+                               <h4>Category Job</h4>
+                               <%= f.text_field :category, :class=>"form-control", :required => true, :placeholder => "Enter your Category Job" %>
+                            </div>
+                            <div class="modal-footer">
+                               <a type="button" class="btn btn-danger" data-dismiss="modal">Close</a>
+                               <%= f.submit "Agree", :class => "btn btn-primary" %>
+                            </div>
+                            <% end %><!-- /.modal-content -->
+                         </div>
+                         <!--  END MODAL CONTENT -->
+                      </div>
+                      <!-- /.modal-dialog -->
+                   </div>
+                   <!-- /.modal -->
+                   <!-- END ADD DISPOSABLE EMAIL -->
+                   <div class="table-rep-plugin">
+                      <div class="table-responsive" data-pattern="priority-columns">
+                         <!-- START FLASH -->
+                         <% if flash[:add_disposable_email] %>
+                         <div class="alert alert-danger">
+                            <center>
+                               <%= flash[:add_disposable_email] %>
+                            </center>
+                         </div>
+                         <% end %>
+                         <script>
+                            window.setTimeout(function() {
+                                  $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                          $(this).remove(); 
+                                        });
+                                  }, 4000);  
+                         </script>
+                         <!-- END FLASH -->
+                         <table id="tech-companies-1" class="table  table-striped">
+                            <thead>
+                               <tr>
+                                  <center>
+                                     <th>
+                                        ID
+                                     </th>
+                                  </center>
+                                  <center>
+                                     <th data-priority="3">
+                                        Category Job
+                                     </th>
+                                  </center>
+                                  <th data-priority="6">Created Day</th>
+                                  <center>
+                                     <th data-priority="6">Action</th>
+                                  </center>
+                               </tr>
+                            </thead>
+                            <tbody>
+                               <% @categories = Category.paginate(:per_page => 10, :page => params[:page]) %>
+                               <% @categories.each do |category| %> 
+                               <tr>
+                                  <th><span class="co-name">
+                                     <%= category.id %>		
+                                     </span>
+                                  </th>
+                                  <td> 
+                                     <%= category.category_job %> 
+                                  </td>
+                                  <td> 
+                                     <%= category.created_at %>
+                                  </td>
+                                  <td> 
+                                     <%= link_to "Delete", {controller: "admin", action: "delete_category_job", id: category.id }, class: "btn btn-danger waves-effect w-md waves-light m-b-5" %>
+                                  </td>
+                               </tr>
+                               <% end %>     
+                            </tbody>
+                         </table>
+                         <center>
+                            <a class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Add Category Job</a>
+                         </center>
+                         <p><%= will_paginate @categories %></p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!-- End row -->
+       </div>
+       <!-- container -->
+    </div>
+    <!-- content -->
+    <footer class="footer">
+       2017 © Parttimebee.
+    </footer>
+ </div>
+ <!-- End content-page -->
+ <!-- ============================================================== -->
+ <!-- End Right content here -->
+ <!-- ==============================================================

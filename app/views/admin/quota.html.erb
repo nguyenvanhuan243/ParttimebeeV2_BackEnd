@@ -1,89 +1,78 @@
-============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box">
-                                    <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
-                                    <div class="modal-dialog" style="width:55%;">
-
-                                    <!-- START MODAL CONTENT -->
-                                        <div class="modal-content">
-                                            <%= form_for(:quotajob, :url => {:controller => 'admin', :action => 'quota_job', :class => 'modal-content'}) do |f| %>
-                                                    <div class="modal-header">
-                                                        <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
-                                                        <center>
-                                                             <h4 class="modal-title" id="custom-width-modalLabel">Add Quota Job</h4>
-                                                        </center>   
-                                                    </div>
-                                                    <div class="modal-body">
-                                                    <% if Quotajob.count.positive?%>
-                                                        <%= f.number_field :quota, :class=>"form-control", :required => true, :placeholder => "Enter your Quota Job", :value => Quotajob.first.quota %>
-                                                    <% else %>
-                                                        <%= f.number_field :quota, :class=>"form-control", :required => true, :placeholder => "Enter your Quota Job" %>
-                                                    <% end %>
-                                                    </div>                    
-                                                    <div class="modal-footer">
-                                                        <a type="button" class="btn btn-danger" data-dismiss="modal">Close</a>
-                                                        <%= f.submit "Agree", :class => "btn btn-primary" %>
-                                                    </div>
-                                            <% end %><!-- /.modal-content -->
-                                        </div>
-                                        <!--  END MODAL CONTENT -->
-                                     </div><!-- /.modal-dialog -->
-                                    </div><!-- /.modal -->
-
-                                    <!-- END ADD DISPOSABLE EMAIL -->
-
-
-
-                                    <div class="table-rep-plugin">
-                                        <div class="table-responsive" data-pattern="priority-columns">
-                                         <!-- START FLASH -->
-                                              <% if flash[:add_quota_job] %>
-                                                <div class="alert alert-success">
-                                                    <center>
-                                                    <%= flash[:add_quota_job] %>
-                                                    </center>
-                                                </div>
-                                              <% end %>
-                                              <script>
-                                                  window.setTimeout(function() {
-                                                        $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                                                                $(this).remove(); 
-                                                              });
-                                                        }, 10000);  
-                                              </script>
-                                        <!-- END FLASH -->
-                                            <center>
-                                                <a class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Add Quota Job</a>
-                                            </center>
-                                        </div>
-                                    </div>
-                                </div>
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+       <div class="container">
+          <div class="row">
+             <div class="col-sm-12">
+                <div class="card-box">
+                   <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                      <div class="modal-dialog" style="width:55%;">
+                         <!-- START MODAL CONTENT -->
+                         <div class="modal-content">
+                            <%= form_for(:quotajob, :url => {:controller => 'admin', :action => 'quota_job', :class => 'modal-content'}) do |f| %>
+                            <div class="modal-header">
+                               <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                               <center>
+                                  <h4 class="modal-title" id="custom-width-modalLabel">Add Quota Job</h4>
+                               </center>
                             </div>
-                        </div>
-                        <!-- End row -->
-
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
-
-                <footer class="footer">
-                    2017 © Parttimebee.
-                </footer>
-
-            </div>
-
-            
-            <!-- End content-page -->
-
-
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ==============================================================
+                            <div class="modal-body">
+                               <% if Quotajob.count.positive?%>
+                               <%= f.number_field :quota, :class=>"form-control", :required => true, :placeholder => "Enter your Quota Job", :value => Quotajob.first.quota %>
+                               <% else %>
+                               <%= f.number_field :quota, :class=>"form-control", :required => true, :placeholder => "Enter your Quota Job" %>
+                               <% end %>
+                            </div>
+                            <div class="modal-footer">
+                               <a type="button" class="btn btn-danger" data-dismiss="modal">Close</a>
+                               <%= f.submit "Agree", :class => "btn btn-primary" %>
+                            </div>
+                            <% end %><!-- /.modal-content -->
+                         </div>
+                         <!--  END MODAL CONTENT -->
+                      </div>
+                      <!-- /.modal-dialog -->
+                   </div>
+                   <!-- /.modal -->
+                   <!-- END ADD DISPOSABLE EMAIL -->
+                   <div class="table-rep-plugin">
+                      <div class="table-responsive" data-pattern="priority-columns">
+                         <!-- START FLASH -->
+                         <% if flash[:add_quota_job] %>
+                         <div class="alert alert-success">
+                            <center>
+                               <%= flash[:add_quota_job] %>
+                            </center>
+                         </div>
+                         <% end %>
+                         <script>
+                            window.setTimeout(function() {
+                                  $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                          $(this).remove(); 
+                                        });
+                                  }, 10000);  
+                         </script>
+                         <!-- END FLASH -->
+                         <center>
+                            <a class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Add Quota Job</a>
+                         </center>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <!-- End row -->
+       </div>
+       <!-- container -->
+    </div>
+    <!-- content -->
+    <footer class="footer">
+       2017 © Parttimebee.
+    </footer>
+ </div>
+ <!-- End content-page -->
+ <!-- ============================================================== -->
+ <!-- End Right content here -->
+ <!-- ==============================================================
