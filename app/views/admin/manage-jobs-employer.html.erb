@@ -35,7 +35,8 @@
 															<td> <%= job.salary_type %> </td>
 															<td> <%= job.salary_state %> </td>
 															<td> 
-																<%= link_to "Delete", { controller: "admin",
+																<%= link_to "Delete", {
+																	controller: "admin",
 																	action: "delete_job_employer",
 																	id: job.id },
 																	class: "btn btn-danger waves-effect w-md waves-light m-b-5",
