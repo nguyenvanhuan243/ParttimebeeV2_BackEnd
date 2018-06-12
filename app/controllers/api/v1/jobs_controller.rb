@@ -24,7 +24,7 @@ class Api::V1::JobsController < ApplicationController
     job[:city] = params[:city]
     job[:job_type] = 'pending'
     if job.save
-      render json: job, status: :created, location: job
+      render json: job, status: :created
     else
       render json: job.errors, status: :unprocessable_entity
     end
