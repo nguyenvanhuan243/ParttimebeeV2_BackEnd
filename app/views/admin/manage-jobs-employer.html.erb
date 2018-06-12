@@ -12,39 +12,39 @@
 										<div class="table-responsive" data-pattern="priority-columns">
 											 <table id="tech-companies-1" class="table  table-striped">
 													<thead>
-														 <tr>
-																<th>ID</th>
-																<th data-priority="1">Title</th>
-																<th data-priority="1">Job Type</th>
-																<th data-priority="1">Category</th>
-																<th data-priority="1">Salary</th>
-																<th data-priority="1">Salary Type</th>
-																<th data-priority="1">Salary State</th>
-																<th data-priority="6">Action</th>
-														 </tr>
+														<tr>
+															<th>ID</th>
+															<th data-priority="1">Title</th>
+															<th data-priority="1">Job Type</th>
+															<th data-priority="1">Category</th>
+															<th data-priority="1">Salary</th>
+															<th data-priority="1">Salary Type</th>
+															<th data-priority="1">Salary State</th>
+															<th data-priority="6">Action</th>
+														</tr>
 													</thead>
 													<tbody>
-														 <% jobs = Job.paginate(:per_page => 10, :page => params[:page]) %>
-														 <% jobs.each do |job| %> 
-														 <tr>
-																<td><span class="co-name"><%= job.id %></span></td>
-																<td> <%= job.title %> </td>
-																<td> <%= job.job_type %> </td>
-																<td> <%= job.category %> </td>
-																<td> <%= job.salary %> </td>
-																<td> <%= job.salary_type %> </td>
-																<td> <%= job.salary_state %> </td>
-																<td> 
-																	<%= link_to "Delete", { controller: "admin",
-																		action: "delete_job_employer", 
-																		id: job.id },
-																		class: "btn btn-danger waves-effect w-md waves-light m-b-5",
-																		method: :delete,
-																		confirm: "Are you sure?"
-																	%>
-																</td>
-														 </tr>
-														 <% end %>     
+														<% jobs = Job.paginate(:per_page => 10, :page => params[:page]) %>
+														<% jobs.each do |job| %> 
+														<tr>
+															<td><span class="co-name"><%= job.id %></span></td>
+															<td> <%= job.title %> </td>
+															<td> <%= job.job_type %> </td>
+															<td> <%= job.category %> </td>
+															<td> <%= job.salary %> </td>
+															<td> <%= job.salary_type %> </td>
+															<td> <%= job.salary_state %> </td>
+															<td> 
+																<%= link_to "Delete", { controller: "admin",
+																	action: "delete_job_employer",
+																	id: job.id },
+																	class: "btn btn-danger waves-effect w-md waves-light m-b-5",
+																	method: :delete,
+																	confirm: "Are you sure?"
+																%>
+															</td>
+														</tr>
+														<% end %>
 													</tbody>
 											 </table>
 											 <p><%= will_paginate jobs %></p>
