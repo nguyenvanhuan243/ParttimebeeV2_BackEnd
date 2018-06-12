@@ -11,6 +11,17 @@ class Api::V1::JobsController < ApplicationController
     render json: Job.find_by(id: params[:id])
   end
 
+  api :GET, '/v1/jobs/:id/increase-view', 'Increase job view'
+  def increase_view
+    job = Job.find_by_id(params[:id])
+    job.views += 1
+    job.save
+    render json: {
+      success: true
+    },
+    status: 200
+  end
+
   api :POST, '/v1/jobs', 'Create a new job'
   def create
     job = Job.new
