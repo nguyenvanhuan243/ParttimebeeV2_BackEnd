@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     end
   end
   post '/api/v1/users/login' => 'sessions#create'
-  get '/api/v1/users/:id/jobs' => 'users#get_jobs'
 
   resources :user do
     member do
