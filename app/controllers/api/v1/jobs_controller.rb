@@ -17,7 +17,9 @@ class Api::V1::JobsController < ApplicationController
     job.views += 1
     job.save
     render json: {
-      success: true
+      job_id: job.id,
+      success: true,
+      views: job.views
     },
     status: 200
   end
