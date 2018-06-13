@@ -90,6 +90,12 @@ class AdminController < ApplicationController
     redirect_to :back
   end
 
+  def approve_job
+    job = Job.find_by_id(params[:id])
+    job.job_type = 'going'
+    job.save
+    redirect_to :back
+  end
 
   def quota_job
     if Quotajob.count.positive?

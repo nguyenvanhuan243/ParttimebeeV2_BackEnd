@@ -29,19 +29,34 @@
 														<tr>
 															<td><span class="co-name"><%= job.id %></span></td>
 															<td> <%= job.title %> </td>
-															<td> <%= job.job_type %> </td>
+															<td>
+																<% if job[:job_type] == 'going' %>
+																	<span class="label label-success">
+																		<%= job.job_type %>
+																	</span>
+																<% end %>
+																<% if job[:job_type] == 'pending' %>
+																<span class="label label-danger">
+																		<%= job.job_type %>
+																	</span>
+																<% end %>
+															</td>
 															<td> <%= job.category %> </td>
 															<td> <%= job.salary %> </td>
 															<td> <%= job.salary_type %> </td>
 															<td> <%= job.salary_state %> </td>
 															<td> 
 																<%= link_to "Delete", {
-																	controller: "admin",
-																	action: "delete_job_employer",
-																	id: job.id },
-																	class: "btn btn-danger waves-effect w-md waves-light m-b-5",
-																	method: :delete,
-																	confirm: "Are you sure?"
+																	:controller => "admin",
+																	:action => "delete_job_employer",
+																	:id => job.id 
+																},:class => "btn btn-danger waves-effect w-md waves-light m-b-5"
+																%>
+																<%= link_to "Approve", {
+																	:controller => "admin",
+																	:action => "approve_job",
+																	:id => job.id 
+																},:class => "btn btn-success waves-effect w-md waves-light m-b-5"
 																%>
 															</td>
 														</tr>
