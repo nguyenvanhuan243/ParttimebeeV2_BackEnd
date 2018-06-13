@@ -85,8 +85,8 @@ class AdminController < ApplicationController
   end
 
 
-  def delete_job_employer
-    Job.find(params[:id]).destroy
+  def delete_job
+    Job.find_by_id(params[:id]).destroy
     redirect_to :back
   end
 
