@@ -46,18 +46,18 @@
 															<td> <%= job.salary_type %> </td>
 															<td> <%= job.salary_state %> </td>
 															<td> 
-																<%= link_to "Delete", {
-																	:controller => "admin",
-																	:action => "delete_job",
-																	:id => job.id 
-																},:class => "btn btn-danger waves-effect w-md waves-light m-b-5"
+																<%= link_to "Delete",
+																	url_for(:action => 'delete_job', :controller => 'admin', :id => job.id ),
+																	method: :delete,
+																	data: { confirm: "Are you sure?" },
+																	:class => "btn btn-danger waves-effect w-md waves-light m-b-5"
 																%>
-																<%= link_to "Approve", {
-																	:controller => "admin",
-																	:action => "approve_job",
-																	:id => job.id 
-																},:class => "btn btn-success waves-effect w-md waves-light m-b-5"
-																%>
+																<%= link_to "Approve",
+																	url_for(:action => 'approve_job', :controller => 'admin', :id => job.id ),
+																	method: :delete,
+																	data: { confirm: "Are you sure?" },
+																	:class => "btn btn-success waves-effect w-md waves-light m-b-5"
+																%>		
 															</td>
 														</tr>
 														<% end %>

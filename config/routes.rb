@@ -36,8 +36,8 @@ Rails.application.routes.draw do
   get '/admin/manage-jobs-special-account', to: 'admin#job-special-account'
   get '/admin/manage-merge-the-job', to: 'admin#merge-the-job'
   get '/admin/manage-merge-the-job/:id', to: 'admin#details-job'
-  match '/admin/delete-jobs-employer', to: 'admin#delete_job_employer', via: [:get, :post]
-  match '/admin/approve', to: 'admin#approve_job', via: [:get, :post]
+  get '/admin/delete-job', to: 'admin#delete_job'
+  get '/admin/approve', to: 'admin#approve_job'
   match '/admin/update_profile_special_account', to: 'admin#update_profile_special_account', via: [:get, :post]
   match '/admin/update-avatar-special-account', to: 'admin#update_avatar_special_account', via: [:get, :post]
   match '/admin/merge_the_job', to: 'admin#merge_the_job', via: [:get, :post]
