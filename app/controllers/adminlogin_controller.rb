@@ -9,6 +9,9 @@ class AdminloginController < ApplicationController
       Digest::MD5.hexdigest(params[:adminlogin][:password_admin]) == admin.password
       session[:token] = admin.token_admin
       redirect_to '/admin'
+    else
+      flash[:admin_login_fail] = 'Your email or password is wrong. Please try again!'
+      redirect_to :back
     end
   end
 
