@@ -79,81 +79,96 @@
          <div class="left side-menu">
             <div class="sidebar-inner slimscrollleft">
                <!-- User -->
-               <div class="user-box">
-                  <div class="user-img">
-                     <%= image_tag "admin/users/avatar-1.jpg", class: "img-circle img-thumbnail img-responsive", alt: "user-img", title: "Mat Helme" %>
-                     <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
-                  </div>
-                  <h5><a href="#">Admin System</a> </h5>
-                  <ul class="list-inline">
-                     <li>
-                        <%= link_to " Logout", {controller: "adminlogin", action: 'logout'}, :class => "text-custom zmdi zmdi-power" %>
-                     </li>
-                  </ul>
-               </div>
+                <div class="user-box">
+                    <div class="user-img">
+                        <%= image_tag "admin/users/avatar-1.jpg", class: "img-circle img-thumbnail img-responsive", alt: "user-img", title: "Mat Helme" %>
+                        <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+                    </div>
+                    <h5><a href="#">Admin System</a> </h5>
+                    <ul class="list-inline">
+                        <li>
+                            <%= link_to " Logout", {controller: "adminlogin", action: 'logout'}, :class => "text-custom zmdi zmdi-power" %>
+                        </li>
+                    </ul>
+                </div>
                <!-- End User -->
                <!--- Sidemenu -->
-               <div id="sidebar-menu">
-                  <ul>
-                     <li>
-                        <a href="/admin/manage-jobs-employer" class="waves-effect active"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
-                     </li>
-                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> User management </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li>
-                               <a href="/admin/blocking">
-                                    Blocking
-                                </a>
-                            </li>
-                            <li>
-                               <a href="/admin/user-detail">
-                                    User Detail
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/blocking-email-list">
-                                    Blocking Email List
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/delete-user">
-                                    User Delete
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/admin/update-profile-special-account">
-                                    Update profile special account
-                                </a>
-                            </li>
-                        </ul>
-                     </li>
-                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-text"></i><span> Send Notifications </span> </a>
-                        <ul class="list-unstyled">
-                           <li><a href="/admin/notification-all-member">Send All member</a></li>
-                        </ul>
-                     </li>
-                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Manage Jobs </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                           <li><a href="/admin/manage-jobs-employer">Delete jobs Employer</a></li>
-                           <li><a href="/admin/manage-merge-the-job">Merge the jobs</a></li>
-                           <li><a href="/admin/manage-jobs-special-account">Job of special account</a></li>
-                        </ul>
-                     </li>
-                     <li>
-                        <a href="/admin/category-job" class="waves-effect"><i class="zmdi zmdi-email"></i><span class="label label-purple pull-right"></span><span> Category Job </span></a>
-                     </li>
-                     <li>
-                        <a href="/admin/quota-job" class="waves-effect"><i class="zmdi zmdi-email"></i><span class="label label-purple pull-right"></span><span> Quota Apply Jobs </span></a>
-                     </li>
-                     <li>
-                        <a href="/admin/import-file" class="waves-effect"><i class="fa fa-file-excel-o"></i><span class="label label-purple pull-right"></span><span> Import File Jobs </span></a>
-                     </li>
-                  </ul>
-                  <div class="clearfix"></div>
-               </div>
+                <div id="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="/admin/manage-jobs-employer" class="waves-effect active"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> User management </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li>
+                                <a href="/admin/blocking">
+                                        Blocking
+                                    </a>
+                                </li>
+                                <li>
+                                <a href="/admin/user-detail">
+                                        User Detail
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/admin/blocking-email-list">
+                                        Blocking Email List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/admin/delete-user">
+                                        User Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect">
+                                <i class="zmdi zmdi-collection-text"></i>
+                                <span> Send Notifications </span>
+                            </a>
+                            <ul class="list-unstyled">
+                            <li><a href="/admin/notification-all-member">Send All member</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect">
+                                <i class="zmdi zmdi-view-list"></i>
+                                <span> Manage Jobs </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/admin/manage-jobs-employer">Delete jobs Employer</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/manage-jobs-special-account">
+                                        Job of special account
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li>
+                        <a href="/admin/category-job" class="waves-effect">
+                            <i class="zmdi zmdi-email"></i>
+                            <span class="label label-purple pull-right"></span>
+                            <span> Category Job </span>
+                        </a>
+                        </li> -->
+                        <!-- <li>
+                            <a href="/admin/quota-job" class="waves-effect">
+                                <i class="zmdi zmdi-email"></i>
+                                <span class="label label-purple pull-right"></span>
+                                <span> Quota Apply Jobs </span>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="/admin/import-file" class="waves-effect"><i class="fa fa-file-excel-o"></i><span class="label label-purple pull-right"></span><span> Import File Jobs </span></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
                <!-- Sidebar -->
                <div class="clearfix"></div>
             </div>

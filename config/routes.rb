@@ -97,7 +97,7 @@ Rails.application.routes.draw do
   match '/admin/notification-all-member/send-notification', to: 'notification#send_notification',via: [:get, :post]
   match '/admin/notification-specify-member/send-notification/:id', to: 'notification#send_notification_member',via: [:get, :post]
   get '/admin/delete-user', to: 'admin#delete-user'
-  match '/admin/delele/:id', to: 'admin#delete_user', via: [:get, :post]
+  get '/admin/delele', to: 'admin#delete_user'
   get '/admin/sweet-alert', to: 'admin#sweet-alert'
   get '/worker-profile-popup', to: 'home#worker-profile-popup'
   get '/employer-published-job-applications', to: 'home#employer-published-job-applications'
@@ -153,8 +153,6 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  root to: "home#show"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
 
