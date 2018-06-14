@@ -90,7 +90,7 @@ Rails.application.routes.draw do
   match '/admin-login/:id/new-password', to: 'adminlogin#update_password_reset', via: [:get, :post]
   get '/user/:id/new-password', to: 'login#new-password'
   match '/user/:id/new-password', to: 'login#update_password_reset', via: [:get, :post]
-  get '/admin/details-user', to: 'admin#details-user'
+  get '/admin/user-detail', to: 'admin#user-detail'
   get '/admin/details-user/profile/:id', to: 'admin#profile'
   get '/admin/notification-all-member', to: 'admin#notification-all-member'
   get '/admin/notification-all-member/send-notification', to: 'admin#send-notification'

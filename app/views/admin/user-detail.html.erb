@@ -1,0 +1,77 @@
+<div class="content-page">
+    <div class="content">
+       <div class="container">
+          <div class="row">
+             <div class="col-sm-12">
+                <div class="card-box">
+                   <div class="table-rep-plugin">
+                        <div class="table-responsive" data-pattern="priority-columns">
+                            <table id="tech-companies-1" class="table  table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th data-priority="3">Email</th>
+                                        <th data-priority="1">Phone Number</th>
+                                        <th data-priority="3">Active</th>
+                                        <th data-priority="3">Status Account</th>
+                                        <th data-priority="6">Birthday</th>
+                                        <th data-priority="6">Created day</th>
+                                        <th data-priority="6">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% users = User.paginate(:per_page => 10, :page => params[:page]) %>
+                                    <% users.each do |user| %> 
+                                        <tr>
+                                            <td>
+                                                <%= user.id %>
+                                            </td>
+                                            <td>
+                                                <%= user.email %>
+                                            </td>
+                                            <td>
+                                                <%= user.phone_number %>
+                                            </td>
+                                            <td>
+                                                <%= user.activated == 0 ? 'Activated' : 'Not Active' %>
+                                            </td>
+                                            <td>
+                                                <% if user.blocked == 1 %>
+                                                    <span class="label label-danger">
+                                                        Blocked
+                                                    </span>
+                                                <% else %>
+                                                    <span class="label label-success">
+                                                        Opening
+                                                    </span>
+                                                <% end %>
+                                            </td>
+                                            <td>
+                                                <%= user.day_of_birth %>
+                                            </td>
+                                            <td>
+                                                <%= user.created_at.strftime("%d-%m-%Y %I:%M%p") %>
+                                            </td>
+                                            <td> 
+                                                <a href="/admin/details-user/profile/<%= user.id %>"
+                                                    type="button"
+                                                    class="btn btn-success waves-effect w-md waves-light m-b-5">
+                                                    Show Detail
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <% end %>     
+                                </tbody>
+                            </table>
+                        <p><%= will_paginate users %></p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <footer class="footer">
+       2017 © Parttimebee.
+    </footer>
+</div>
