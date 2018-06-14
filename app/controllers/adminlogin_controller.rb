@@ -23,7 +23,7 @@ class AdminloginController < ApplicationController
     if admin.nil?
       flash[:send_password_fail] = "Can't send email reset password, try again!"
     else
-      admin.send_password_reset
+      admin.password_reset(admin).deliver
       flash[:send_password_reset_success] = 'Check your email to confirm reset password!'
     end
     redirect_to :back
