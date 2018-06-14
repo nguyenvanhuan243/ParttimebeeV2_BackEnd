@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :notifications
   has_many :notifications
   validates :email, uniqueness: true
+  has_many :feedbacks
 
 	def self.from_omniauth(auth)
     id_user = User.last.id + 1 
