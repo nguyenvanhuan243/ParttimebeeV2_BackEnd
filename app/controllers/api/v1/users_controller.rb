@@ -49,6 +49,7 @@ class Api::V1::UsersController < ApplicationController
   def destroy
     user = User.find_by_id(params[:id])
     if user
+      AdminMailer.notify_user_delete_account().deliver
       user.destroy
       render json: {
         success: true,
