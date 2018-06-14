@@ -11,7 +11,8 @@ class AdminMailer < ApplicationMailer
     mail :to => 'parttimebee.my@gmail.com', :subject => 'Report Job Notification'
   end
 
-  def notify_user_delete_account
+  def notify_user_delete_account(feedback)
+    @feedback = feedback
     mail :to => 'parttimebee.my@gmail.com', :subject => 'User Delete Account'
   end
 

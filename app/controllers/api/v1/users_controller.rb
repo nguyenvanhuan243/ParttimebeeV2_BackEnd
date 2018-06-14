@@ -48,8 +48,9 @@ class Api::V1::UsersController < ApplicationController
   api :DELETE, 'v1/users/:id', 'Delete a user from User table'
   def destroy
     user = User.find_by_id(params[:id])
+    feedback = user.feedbacks.last
     if user
-      AdminMailer.notify_user_delete_account().deliver
+      AdminMailer.notify_user_delete_account(feedback).deliver
       user.destroy
       render json: {
         success: true,
