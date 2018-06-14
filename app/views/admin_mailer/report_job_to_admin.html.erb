@@ -11,10 +11,29 @@
   </b>
 </h4>
 <h4>
-  Job detail: <a href="https://parttimebee.my/test/job-detail/<%= @report_content[:job_id] %>">
-    Click to view job
-  </a>
+  <% if Rails.env == "development" %>
+    Job detail: <a href="http://localhost:3001/test/job-detail/<%= @report_content[:job_id] %>">
+      Click to view job
+    </a>
+  <% end %>
+  <% if Rails.env == "production" %>
+    Job detail: <a href="https://parttimebee.my/test/job-detail/<%= @report_content[:job_id] %>">
+      Click to view job
+    </a>
+  <% end %>
 </h4>
-<a href="https://api.parttimebee.my/login"
-  Access to admin page to remove this job!
-</a>
+<% if Rails.env == "development" %>
+  Admin Page:
+  <a href="http://localhost:3000/admin">
+    Access to admin page to remove this job!
+  </a>
+<% end %>
+<% if Rails.env == "production" %>
+  Admin Page:
+  <a href="https://api.parttimebee.my/admin">
+    Access to admin page to remove this job!
+  </a>
+<% end %>
+<br>
+<br>
+<br>
