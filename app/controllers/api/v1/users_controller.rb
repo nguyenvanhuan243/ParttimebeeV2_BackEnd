@@ -45,6 +45,22 @@ class Api::V1::UsersController < ApplicationController
     user.send_password_reset
   end
 
+  api :DELETE, 'v1/users/:id', 'Delete a user from User table'
+  def destroy
+    user = User.find_by_id(params[:id])
+    if user
+      user.destroy
+      render json: {
+        success: true,
+      }, status: 200
+    else
+      render json: {
+        success: false,
+        message: 'Cant delete user from parttimebee'
+      }, status: 401
+    end
+  end
+
   private
   
   def user_params
