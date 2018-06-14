@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :sessions
       resources :searches
       resources :admins
+      resources :feedbacks
     end
   end
   post '/api/v1/users/login' => 'sessions#create'
