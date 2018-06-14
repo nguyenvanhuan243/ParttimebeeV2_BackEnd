@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  api :GET, 'v1/users/:id/jobs', 'get jobs'
+  api :GET, '/v1/users/:id/jobs', 'get jobs'
   def get_jobs
     @user = User.find_by_id(params[:id])
     if @user
@@ -39,13 +39,13 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  api :POST, 'v1/users/reset-password', 'Send email to reset password'
+  api :POST, '/v1/users/reset-password', 'Send email to reset password'
   def send_email_reset_password
     user = User.find_by_email(user_params[:email])
     user.send_password_reset
   end
 
-  api :DELETE, 'v1/users/:id', 'Delete a user from User table'
+  api :DELETE, '/v1/users/:id', 'Delete a user from User table'
   def destroy
     user = User.find_by_id(params[:id])
     feedback = user.feedbacks.last
@@ -63,7 +63,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  api :PUT, 'v1/users/:id', 'Update user profile'
+  api :PUT, '/v1/users/:id', 'Update user profile'
   def update
     user = User.find_by_id(params[:id])
     user.email = params[:email]
