@@ -1,2 +1,0 @@
-class Quotajob < ApplicationRecord
-end
