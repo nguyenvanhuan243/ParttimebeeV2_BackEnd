@@ -68,13 +68,13 @@ class Api::V1::UsersController < ApplicationController
     user = User.find_by_id(params[:id])
     user.email = params[:email]
     user.password = params[:password]
-    user.confirm_password = params[:confirm_password]
-    user.contact_name = params[:contact_name]
-    user.company_name = params[:company_name]
+    user.confirm_password = params[:confirmPassword]
+    user.contact_name = params[:contactName]
+    user.company_name = params[:companyName]
     user.address = params[:address]
     user.phone_number = params[:phone]
     user.website = params[:website]
-    user.company_description = params[:company_description]
+    user.company_description = params[:companyDescription]
     if user.save
       render json: {
         success: true
