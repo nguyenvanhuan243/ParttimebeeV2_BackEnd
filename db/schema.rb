@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(version: 20180615143722) do
     t.string   "last_name",                            default: "First Name", null: false
     t.integer  "activated",                            default: 0,            null: false
     t.integer  "blocked",                              default: 0,            null: false
+    t.string   "password_reset_token"
+    t.string   "password_reset_sent_at"
+    t.string   "auth_token_reset"
     t.datetime "day_of_birth"
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
@@ -86,9 +89,6 @@ ActiveRecord::Schema.define(version: 20180615143722) do
     t.datetime "avatar_updated_at"
     t.boolean  "email_confirmed",                      default: false
     t.string   "confirm_token"
-    t.string   "auth_token_reset"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
   end
 
 end

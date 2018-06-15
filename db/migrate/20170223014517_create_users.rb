@@ -16,6 +16,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :last_name,                :null => false, :default => 'First Name'
       t.integer :activated,               :null => false, :default => 0
       t.integer :blocked,                 :null => false, :default => 0
+      t.string :password_reset_token
+      t.string :password_reset_sent_at
+      t.string :auth_token_reset
       t.datetime :day_of_birth
       t.timestamps
     end
