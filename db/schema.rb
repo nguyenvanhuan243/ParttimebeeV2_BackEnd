@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180614103422) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string   "user_name",              default: "User Name",  null: false
+    t.string   "user_name",                            default: "User Name",  null: false
     t.string   "full_name"
     t.string   "email"
     t.string   "password"
@@ -73,19 +73,19 @@ ActiveRecord::Schema.define(version: 20180614103422) do
     t.string   "address"
     t.string   "phone_number"
     t.string   "website"
-    t.string   "company_description"
-    t.string   "first_name",             default: "Last Name",  null: false
-    t.string   "last_name",              default: "First Name", null: false
-    t.integer  "activated",              default: 0,            null: false
-    t.integer  "blocked",                default: 0,            null: false
+    t.text     "company_description",    limit: 65535
+    t.string   "first_name",                           default: "Last Name",  null: false
+    t.string   "last_name",                            default: "First Name", null: false
+    t.integer  "activated",                            default: 0,            null: false
+    t.integer  "blocked",                              default: 0,            null: false
     t.datetime "day_of_birth"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "email_confirmed",        default: false
+    t.boolean  "email_confirmed",                      default: false
     t.string   "confirm_token"
     t.string   "auth_token_reset"
     t.string   "password_reset_token"

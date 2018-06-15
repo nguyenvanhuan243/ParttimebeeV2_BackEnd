@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :address
       t.string :phone_number
       t.string :website
-      t.string :company_description
+      t.text :company_description
       t.string :first_name,               :null => false, :default => 'Last Name'
       t.string :last_name,                :null => false, :default => 'First Name'
       t.integer :activated,               :null => false, :default => 0
