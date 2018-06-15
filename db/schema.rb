@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20180615143722) do
     t.string   "salary_state"
     t.string   "city"
     t.string   "job_type"
-    t.string   "views"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "views",                      default: 0, null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
