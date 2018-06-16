@@ -47,6 +47,23 @@ class Api::V1::JobsController < ApplicationController
     end
   end
 
+  api :PUT, '/v1/jobs/:id', 'Update job with specify id'
+  def update
+    job = Job.find_by_id(params[:id])
+    job[:title] = params[:title]
+    job[:category] = params[:category]
+    job[:description] = params[:description]
+    job[:salary] = params[:salary]
+    job[:salary_type] = params[:salaryType]
+    job[:salary_state] = params[:salaryState]
+    job[:city] = params[:city]
+    if job.save
+      render json: job, status: :created
+    else
+      render json: job.errors, status: :unprocessable_entity
+    end
+  end
+
   api :DELETE, '/v1/jobs/:id', 'Delete a specify job'
   def destroy
     job = Job.find_by_id(params[:id])
