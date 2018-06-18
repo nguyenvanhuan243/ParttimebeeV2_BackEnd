@@ -10,6 +10,7 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :salary_state
       t.string :city
       t.string :job_type
+      t.string :company_name
       t.integer :views, :null => false, :default => 0
 
       t.timestamps

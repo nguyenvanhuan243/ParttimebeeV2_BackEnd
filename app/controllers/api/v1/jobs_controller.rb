@@ -11,7 +11,7 @@ class Api::V1::JobsController < ApplicationController
     job = Job.find_by(id: params[:id])
     render json: {
       job: job,
-      user_id: job.user.id
+      user: job.user
     }
   end
 
@@ -30,6 +30,7 @@ class Api::V1::JobsController < ApplicationController
 
   api :POST, '/v1/jobs', 'Create a new job'
   def create
+    user = User.find_by_id(params[:user_id])
     job = Job.new
     job[:user_id] = params[:user_id]
     job[:title] = params[:title]
@@ -39,6 +40,7 @@ class Api::V1::JobsController < ApplicationController
     job[:salary_type] = params[:salaryType]
     job[:salary_state] = params[:salaryState]
     job[:city] = params[:city]
+    job[:company_name] = user.company_name
     if params[:button_is_submited] == 'Preview'
       job[:job_type] = 'preview'
     else

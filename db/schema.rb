@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180615143722) do
     t.string   "salary_state"
     t.string   "city"
     t.string   "job_type"
+    t.string   "company_name"
     t.integer  "views",                      default: 0, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
