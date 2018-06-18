@@ -66,6 +66,11 @@ class Api::V1::UsersController < ApplicationController
   api :PUT, '/v1/users/:id', 'Update user profile'
   def update
     user = User.find_by_id(params[:id])
+    jobs = user.jobs
+    jobs.each do |job|
+      job.company_name = params[:companyName]
+      job.save
+    end
     user.email = params[:email]
     user.password = params[:password]
     user.confirm_password = params[:confirmPassword]
