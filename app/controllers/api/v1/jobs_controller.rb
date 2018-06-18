@@ -8,7 +8,11 @@ class Api::V1::JobsController < ApplicationController
   
   api :GET, '/v1/jobs/:id', 'Get a specify job'
   def show
-    render json: Job.find_by(id: params[:id])
+    job = Job.find_by(id: params[:id])
+    render json: {
+      job: job,
+      user_id: job.user.id
+    }
   end
 
   api :GET, '/v1/jobs/:id/increase-view', 'Increase job view'
