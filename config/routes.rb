@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
   post '/api/v1/users/login' => 'sessions#create'
   get '/api/v1/jobs/:id/increase-view' => 'api/v1/jobs#increase_view'
+  post '/api/v1/users/update-password' => 'api/v1/users#update_password'
 
   resources :user do
     member do

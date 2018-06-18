@@ -5,6 +5,11 @@ class RegisterMailer < ApplicationMailer
     @user = user
     mail :to => @user.email, subject: 'Reset your password'
   end
+
+  def password_updated(user)
+    @user = user
+    mail :to => @user.email, subject: 'Password has been updated'
+  end
   
 end
   
