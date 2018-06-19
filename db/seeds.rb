@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' Laravel',
@@ -21,7 +21,7 @@
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' Ruby on rails',
@@ -36,7 +36,7 @@ end
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' ReactJS',
@@ -51,7 +51,7 @@ end
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' ReactJS',
@@ -66,7 +66,7 @@ end
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' ReactJS',
@@ -81,7 +81,7 @@ end
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + ' ReactJS',
@@ -96,7 +96,7 @@ end
 	);
 end
 
-1000.times do |i|
+100.times do |i|
 	Job.create!(
 		user_id: 1,
 		title: Faker::Address.city + 'ReactJS',
