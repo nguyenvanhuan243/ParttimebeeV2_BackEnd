@@ -2,7 +2,7 @@ class Api::V1::JobsController < ApplicationController
   skip_before_filter :verify_authenticity_token  
   api :GET, '/v1/jobs', 'Show all jobs'
   def index
-    jobs = params[:limit] ? Job.limit(params[:limit]) : Job.all
+    jobs = params[:limit] ? Job.limit(params[:limit]).order(:created_at => :desc) : Job.all.order(:created_at => :desc)
     render json: jobs
   end
   
