@@ -34,6 +34,150 @@ end
 		salary_type: 'Per month',
 		company_name: 'Vinasoftdev',
 		city: 'Binh Duong',
+		created_at: Date.today - 1
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today - 1
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 10
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 11
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 12
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 13
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 14
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 15
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today + 16
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Home',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
 		created_at: Date.today
 	);
 end
@@ -151,6 +295,199 @@ end
 end
 
 # Event
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today - 1
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Laravel',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		salary: 100,
+		salary_state: 'Johor',
+		salary_type: 'Per month',
+		company_name: 'Vinasoftdev',
+		city: 'Binh Duong',
+		created_at: Date.today
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' Ruby on rails',
+		job_type: 'going',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 2
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 3
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 4
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 5
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 6
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + 'ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 7
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + 'ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Event & Exhibition',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 8
+	);
+end
+
+# Education
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + ' ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Education',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 6
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + 'ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Education',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 7
+	);
+end
+
+40.times do |i|
+	Job.create!(
+		user_id: 1,
+		title: Faker::Address.city + 'ReactJS',
+		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
+		job_type: 'going',
+		category: 'Education',
+		salary: 300,
+		salary_state: 'Melaka',
+		salary_type: 'Per day',
+		company_name: 'Fiopay',
+		city: 'Binh Duong',
+		created_at: Date.today - 8
+	);
+end
+
 40.times do |i|
 	Job.create!(
 		user_id: 1,
