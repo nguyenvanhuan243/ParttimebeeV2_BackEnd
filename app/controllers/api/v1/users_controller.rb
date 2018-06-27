@@ -68,19 +68,20 @@ class Api::V1::UsersController < ApplicationController
     user = User.find_by_id(params[:id])
     jobs = user.jobs
     jobs.each do |job|
-      job.company_name = params[:companyName]
+      job.company_name = params[:profile][:companyName]
       job.save
     end
-    user.email = params[:email]
-    user.password = params[:password]
-    user.confirm_password = params[:confirmPassword]
-    user.contact_name = params[:contactName]
-    user.company_name = params[:companyName]
-    user.address = params[:address]
-    user.phone_number = params[:phone]
-    user.website = params[:website]
-    user.company_description = params[:companyDescription]
-    user.avatar = params[:avatar]
+    user.email = params[:profile][:email]
+    user.password = params[:profile][:password]
+    user.confirm_password = params[:profile][:confirmPassword]
+    user.contact_name = params[:profile][:contactName]
+    user.company_name = params[:profile][:companyName]
+    user.address = params[:profile][:address]
+    user.phone_number = params[:profile][:phone]
+    user.website = params[:profile][:website]
+    user.company_description = params[:profile][:companyDescription]
+    user.avatar = params[:profile][:avatar]
+    user.url_avatar = request.base_url + user.avatar.url(:medium)
     if user.save
       render json: {
         success: true
