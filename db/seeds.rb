@@ -8,7 +8,7 @@
 
 5.times do |i|
 	Job.create!(
-		user_id: 3,
+		user_id: 1,
 		title: Faker::Address.city + ' Laravel',
 		job_type: 'going',
 		category: 'Home',
