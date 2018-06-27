@@ -80,6 +80,7 @@ class Api::V1::UsersController < ApplicationController
     user.phone_number = params[:phone]
     user.website = params[:website]
     user.company_description = params[:companyDescription]
+    user.avatar = params[:avatar]
     if user.save
       render json: {
         success: true
@@ -102,6 +103,6 @@ class Api::V1::UsersController < ApplicationController
   private
   
   def user_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :avatar)
   end
 end
