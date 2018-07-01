@@ -10,8 +10,7 @@ class Api::V1::JobsController < ApplicationController
   def show
     job = Job.find_by(id: params[:id])
     render json: {
-      job: job,
-      user: job.user
+      job: job
     }
   end
 
