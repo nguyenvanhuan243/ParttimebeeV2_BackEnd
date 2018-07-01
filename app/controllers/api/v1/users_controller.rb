@@ -80,7 +80,9 @@ class Api::V1::UsersController < ApplicationController
     user.phone_number = params[:profile][:phone]
     user.website = params[:profile][:website]
     user.company_description = params[:profile][:companyDescription]
-    user.avatar = params[:profile][:avatar]
+    if params[:profile][:avatar] != 'undefined'
+      user.avatar = params[:profile][:avatar]
+    end
     user.url_avatar = request.base_url + user.avatar.url(:medium)
     if user.save
       render json: {
