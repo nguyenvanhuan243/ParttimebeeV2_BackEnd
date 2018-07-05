@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :users
       get '/users/:id/jobs', to: 'users#get_jobs'
       post '/users/reset-password',to: 'users#send_email_reset_password'
+      post '/users/check-user-exist', to: 'users#check_user_exist'
       resources :sessions
       resources :searches
       resources :admins

@@ -103,6 +103,22 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  api :POST, '/v1/users/check-user-exist', 'Check user exist in database with email'
+  def check_user_exist
+    user = User.where(email: params[:email]).first
+    if user.present?
+      render json: {
+        success: true,
+        status: 200
+      }
+    else
+      render json: {
+        success: false,
+        status: 404
+      }
+    end
+  end
+
   private
   # Strong parameter
   def user_params
