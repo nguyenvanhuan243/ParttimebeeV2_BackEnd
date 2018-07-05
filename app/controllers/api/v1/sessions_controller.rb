@@ -20,7 +20,7 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   private
-  
+  # Strong parameters.
   def login_params
     params.permit(:email, :password)
   end

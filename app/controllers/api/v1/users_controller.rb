@@ -104,7 +104,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
-  
+  # Strong parameter
   def user_params
     params.permit(:email, :password, :avatar)
   end

@@ -20,7 +20,7 @@ class Api::V1::FeedbacksController < ApplicationController
   end
 
   private
-  
+  # Strong parameters
   def feedbacks_params
     params.permit(:report_type, :job_id)
   end

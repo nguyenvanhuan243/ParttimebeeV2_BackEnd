@@ -21,7 +21,7 @@ class Api::V1::AdminsController < ApplicationController
   end
 
   private
-  
+  # Strong parameters.
   def admin_params
     params.permit(:report_type, :job_id)
   end
