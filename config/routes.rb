@@ -29,11 +29,8 @@ Rails.application.routes.draw do
   get '/admin/import-file', to: 'admin#import-file'
   get '/admin/category-job', to: 'admin#category-job'
   get '/admin/manage-jobs-employer', to: 'admin#manage-jobs-employer'
-  get '/admin/manage-merge-the-job', to: 'admin#merge-the-job'
-  get '/admin/manage-merge-the-job/:id', to: 'admin#details-job'
   get '/admin/delete-job', to: 'admin#delete_job'
   get '/admin/approve', to: 'admin#approve_job'
-  match '/admin/merge_the_job', to: 'admin#merge_the_job', via: [:get, :post]
   get '/admin/blocking-email-list', to: 'admin#blocking-email-list'
   match '/admin/blocking-email-list', to: 'admin#add_disposable_email', via: [:get, :post]
   match '/admin/category-job', to: 'admin#add_category_job', via: [:get, :post]
