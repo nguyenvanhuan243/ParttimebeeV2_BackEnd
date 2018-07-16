@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get 'signout', to: 'sessions#destroy', as: 'signout'
   
-  root to: 'home#index'
+  # root to: 'home#index'
 end
 
 
