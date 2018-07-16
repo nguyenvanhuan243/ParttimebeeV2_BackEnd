@@ -15,12 +15,8 @@ class AdminController < ApplicationController
   end
   
   def block_and_unblock_user
-  	user = User.find(params[:id])
-    if user[:blocked] == 0
-      user[:blocked]  = 1
-    else
-      user[:blocked]  = 0
-    end
+    user = User.find_by(id: params[:id])
+    user.blocked = user.blocked.zero? ? 1 : 0
     user.save
     redirect_to :back
   end
@@ -52,11 +48,11 @@ class AdminController < ApplicationController
     @category = Category.new
     @category.category_job = params[:categoryjob][:category] 
     Category.all.each do |iteam|
-       if iteam.category_job == params[:categoryjob][:category]
-          flash[:add_disposable_email] = "This Category has been added in your category list!" 
-          redirect_to :back
-          return
-       end
+      if iteam.category_job == params[:categoryjob][:category]
+        flash[:add_disposable_email] = "This Category has been added in your category list!" 
+        redirect_to :back
+        return
+      end
     end
     @category.save
     swap_job (Category.all)
