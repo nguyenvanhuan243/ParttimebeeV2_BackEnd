@@ -7,18 +7,19 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :jobs
       resources :users
-      get '/users/:id/jobs', to: 'users#get_jobs'
-      post '/users/reset-password',to: 'users#send_email_reset_password'
-      post '/users/check-user-exist', to: 'users#check_user_exist'
       resources :sessions
       resources :searches
       resources :admins
       resources :feedbacks
+      get '/users/:id/jobs', to: 'users#get_jobs'
+      post '/users/reset-password',to: 'users#send_email_reset_password'
+      post '/users/check-user-exist', to: 'users#check_user_exist'
+      post '/users/login' => 'sessions#create'
+      get '/jobs/:id/increase-view' => 'jobs#increase_view'
+      post '/users/update-password' => 'users#update_password'
+      post '/disposable-email/check' => 'disposable_email#check_disposable_email'
     end
   end
-  post '/api/v1/users/login' => 'sessions#create'
-  get '/api/v1/jobs/:id/increase-view' => 'api/v1/jobs#increase_view'
-  post '/api/v1/users/update-password' => 'api/v1/users#update_password'
 
   resources :user do
     member do
