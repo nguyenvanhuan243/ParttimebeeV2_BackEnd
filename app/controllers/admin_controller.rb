@@ -35,10 +35,15 @@ class AdminController < ApplicationController
     Disposableemail.find(params[:id]).destroy
     redirect_to :back
   end
+
   def delete_user
-    User.find(params[:id]).destroy
+    user = User.find_by(id: params[:id])
+    if user.present?
+      user.destroy
+    end
     redirect_to :back
   end
+
   def delete_category_job
     Category.find(params[:id]).destroy
     redirect_to :back
