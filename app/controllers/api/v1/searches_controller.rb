@@ -3,8 +3,10 @@ class Api::V1::SearchesController < ApplicationController
   api :GET, '/v1/search', 'Search jobs with keyword'
   def index
     if params[:search]
-      jobs = Job.where(['title LIKE ?', "%#{params[:search]}%"])
+      render json: Job.where(['title LIKE ?', "%#{params[:search]}%"])
     end
-    render json: jobs
+    if params[:city]
+      render json: Job.where(city: params[:city])
+    end
   end
 end
