@@ -616,7 +616,7 @@
 # 	);
 # end
 
-5.times do |i|
+8.times do |i|
 	Job.create!(
 		user_id: 3,
 		title: Faker::Address.city + 'Python',
@@ -633,7 +633,7 @@
 end
 
 # Education
-5.times do |i|
+7.times do |i|
 	Job.create!(
 		user_id: 3,
 		title: Faker::Address.city + ' ReactJS',
@@ -649,7 +649,7 @@ end
 	);
 end
 
-5.times do |i|
+6.times do |i|
 	Job.create!(
 		user_id: 3,
 		title: Faker::Address.city + 'Ruby on rails',
