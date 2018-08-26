@@ -17,7 +17,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 1
 # 	);
 # end
@@ -33,7 +33,7 @@
 # # 		salary_state: 'Johor',
 # # 		salary_type: 'Per month',
 # # 		company_name: 'Vinasoftdev',
-# # 		city: 'Binh Duong',
+# # 		city: 'Binh An',
 # # 		created_at: Date.today - 1
 # # 	);
 # # end
@@ -49,7 +49,7 @@
 # 		salary_state: 'Negeri',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 1
 # 	);
 # end
@@ -65,7 +65,7 @@
 # 		salary_state: 'Selangor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 5
 # 	);
 # end
@@ -81,7 +81,7 @@
 # 		salary_state: 'Kuala Lumpur',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 11
 # 	);
 # end
@@ -97,7 +97,7 @@
 # 		salary_state: 'Perlis',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 12
 # 	);
 # end
@@ -113,7 +113,7 @@
 # 		salary_state: 'Sabah',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 13
 # 	);
 # end
@@ -129,7 +129,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 14
 # 	);
 # end
@@ -145,7 +145,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 15
 # 	);
 # end
@@ -161,7 +161,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today + 16
 # 	);
 # end
@@ -177,7 +177,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today
 # 	);
 # end
@@ -193,7 +193,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 2
 # 	);
 # end
@@ -209,7 +209,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 3
 # 	);
 # end
@@ -225,7 +225,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 4
 # 	);
 # end
@@ -241,7 +241,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 5
 # 	);
 # end
@@ -257,7 +257,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 6
 # 	);
 # end
@@ -273,7 +273,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 7
 # 	);
 # end
@@ -289,7 +289,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 8
 # 	);
 # end
@@ -306,7 +306,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 1
 # 	);
 # end
@@ -322,7 +322,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today
 # 	);
 # end
@@ -338,7 +338,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 2
 # 	);
 # end
@@ -354,7 +354,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 3
 # 	);
 # end
@@ -370,7 +370,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 4
 # 	);
 # end
@@ -386,7 +386,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 5
 # 	);
 # end
@@ -402,7 +402,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 6
 # 	);
 # end
@@ -418,7 +418,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 7
 # 	);
 # end
@@ -434,7 +434,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 8
 # 	);
 # end
@@ -451,7 +451,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 6
 # 	);
 # end
@@ -467,7 +467,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 7
 # 	);
 # end
@@ -483,7 +483,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 8
 # 	);
 # end
@@ -499,7 +499,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 1
 # 	);
 # end
@@ -515,7 +515,7 @@
 # 		salary_state: 'Johor',
 # 		salary_type: 'Per month',
 # 		company_name: 'Vinasoftdev',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today
 # 	);
 # end
@@ -531,7 +531,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 2
 # 	);
 # end
@@ -547,7 +547,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 3
 # 	);
 # end
@@ -563,7 +563,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 4
 # 	);
 # end
@@ -579,7 +579,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 5
 # 	);
 # end
@@ -595,7 +595,7 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 6
 # 	);
 # end
@@ -611,14 +611,14 @@
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 7
 # 	);
 # end
 
 8.times do |i|
 	Job.create!(
-		user_id: 3,
+		user_id: 1,
 		title: Faker::Address.city + 'Python',
 		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
 		job_type: 'going',
@@ -627,7 +627,7 @@
 		salary_state: 'Negeri',
 		salary_type: 'Per day',
 		company_name: 'Fiopay',
-		city: 'Binh Duong',
+		city: 'Binh An Binh Long',
 		created_at: Date.today - 8
 	);
 end
@@ -635,7 +635,7 @@ end
 # Education
 7.times do |i|
 	Job.create!(
-		user_id: 3,
+		user_id: 1,
 		title: Faker::Address.city + ' ReactJS',
 		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
 		job_type: 'going',
@@ -644,14 +644,14 @@ end
 		salary_state: 'Melaka',
 		salary_type: 'Per day',
 		company_name: 'Fiopay',
-		city: 'Binh Long',
+		city: 'Binh An',
 		created_at: Date.today - 6
 	);
 end
 
 6.times do |i|
 	Job.create!(
-		user_id: 3,
+		user_id: 1,
 		title: Faker::Address.city + 'Ruby on rails',
 		description: '<div data-contents="true"><ul class="public-DraftStyleDefault-ul" data-offset-key="b39pj-0-0"><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="b39pj-0-0"><div data-offset-key="b39pj-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="b39pj-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="57l51-0-0"><div data-offset-key="57l51-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="57l51-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9pk95-0-0"><div data-offset-key="9pk95-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9pk95-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="4qjlo-0-0"><div data-offset-key="4qjlo-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="4qjlo-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="9u2fs-0-0"><div data-offset-key="9u2fs-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="9u2fs-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span></div></li><li class="public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR" data-block="true" data-editor="6ae3v" data-offset-key="q65b-0-0"><div data-offset-key="q65b-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="q65b-0-0"><span data-text="true">Write clean, modular, robust code to implement the desired requirements with little or no supervision.</span></span><span data-offset-key="q65b-0-1"><span data-text="true">',
 		job_type: 'going',
@@ -676,7 +676,7 @@ end
 # 		salary_state: 'Melaka',
 # 		salary_type: 'Per day',
 # 		company_name: 'Fiopay',
-# 		city: 'Binh Duong',
+# 		city: 'Binh An',
 # 		created_at: Date.today - 8
 # 	);
 # end
@@ -686,6 +686,12 @@ Admin.create!(
 	password: Digest::MD5.hexdigest('parttimebee.my'),
 	token_admin: SecureRandom.urlsafe_base64
 );
+
+8.times do |i|
+  Message.create!(
+    message: 'Message'
+  );
+end
 
 # 200.times do |i|
 # 	User.create!(
