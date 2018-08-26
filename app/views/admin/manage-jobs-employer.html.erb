@@ -50,7 +50,8 @@
 																	url_for(:action => 'delete_job', :controller => 'admin', :id => job.id ),
 																	method: :delete,
 																	data: { confirm: "Are you sure?" },
-																	:class => "btn btn-danger waves-effect w-md waves-light m-b-5"
+                                  :class => "btn btn-danger waves-effect w-md waves-light m-b-5",
+                                  :onclick => "return confirm('Do you want to delete this job?')"
 																%>
 																<% if job.job_type == 'going' %>
 																	<button disabled class="btn btn-success waves-effect w-md waves-light m-b-5">
