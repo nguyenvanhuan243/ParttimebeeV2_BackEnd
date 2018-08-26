@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Employer Login page</title>
-  <!-- Stylesheets -->
-  <%= stylesheet_link_tag 'home/bootstrap.min' %>
-  <%= stylesheet_link_tag 'home/style' %>
-  <%= stylesheet_link_tag 'home/flexslider' %>
-  <%= stylesheet_link_tag 'home/responsive' %>
-  <!-- Responsive -->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta name="description" content='Search result page'/>
-</head>
-<body class="login-page special-page">
-
-  <div class="wapper">
-    <div class="header header-small">
-     <div class="auto-container">
-      <div class="row logo-small text-center">
-        <a href="#" title="Logo"><%= image_tag "small-logo.png", alt: "Logo" %></a>
-        <h1 class="welcome-text">Welcome Back</h1>
-        <h2 class="note-text">Work hard, play hard</h2>
+  <head>
+    <meta charset="utf-8">
+    <title>Employer Login page</title>
+    <%= stylesheet_link_tag 'home/bootstrap.min' %>
+    <%= stylesheet_link_tag 'home/style' %>
+    <%= stylesheet_link_tag 'home/flexslider' %>
+    <%= stylesheet_link_tag 'home/responsive' %>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content='Search result page'/>
+  </head>
+  <body class="login-page special-page">
+    <div class="wapper">
+      <div class="header header-small">
+      <div class="auto-container">
+        <div class="row logo-small text-center">
+          <a href="#" title="Logo"><%= image_tag "small-logo.png", alt: "Logo" %></a>
+          <h1 class="welcome-text">Welcome Back</h1>
+          <h2 class="note-text">Work hard, play hard</h2>
+        </div>
       </div>
-     </div>
+      </div>
+      <%= yield %>
     </div>
-    <%= yield %>
-  </div><!-- wapper -->
-<%= javascript_include_tag "home/jquery" %>
-<%= javascript_include_tag "home/bootstrap.min" %>
-<%= javascript_include_tag "home/jquery.flexslider" %>
-<%= javascript_include_tag "home/jquery.validate" %>
-<%= javascript_include_tag "home/custom" %>
-</body><!-- .search-result-page -->
+    <%= javascript_include_tag "home/jquery" %>
+    <%= javascript_include_tag "home/bootstrap.min" %>
+    <%= javascript_include_tag "home/jquery.flexslider" %>
+    <%= javascript_include_tag "home/jquery.validate" %>
+    <%= javascript_include_tag "home/custom" %>
+  </body>
 </html>
