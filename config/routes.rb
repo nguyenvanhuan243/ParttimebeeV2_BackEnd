@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get '/admin/delete-job', to: 'admin#delete_job'
   get '/admin/approve', to: 'admin#approve_job'
   get '/admin/blocking-email-list', to: 'admin#blocking-email-list'
+  get '/admin/account-management', to: 'admin#account-management'
   match '/admin/blocking-email-list', to: 'admin#add_disposable_email', via: [:get, :post]
   match '/admin/category-job', to: 'admin#add_category_job', via: [:get, :post]
   match '/admin/quota-job', to: 'admin#quota_job', via: [:get, :post]

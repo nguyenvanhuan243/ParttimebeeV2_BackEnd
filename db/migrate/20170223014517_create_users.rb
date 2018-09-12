@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password
       t.string :confirm_password
       t.string :contact_name
-      t.string :company_name,             :null => false, :default => 'Company Name'
+      t.string :company_name
       t.string :address,                  :null => false, :default => 'Address'
       t.string :phone_number,             :null => false, :default => 'Phone'
       t.string :website,                  :null => false, :default => 'Website'

@@ -1,0 +1,49 @@
+<div class="content-page">
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card-box">
+            <div class="table-rep-plugin">
+              <div class="table-responsive" data-pattern="priority-columns">
+                <table id="tech-companies-1" class="table  table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th data-priority="1">
+                        Message
+                      </th>
+                      <th>
+                        Created Day
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% messages = Message.paginate(:per_page => 10, :page => params[:page]) %>
+                    <% messages.each do |message| %> 
+                    <tr>
+                      <td>
+                        <span class="co-name">
+                          <%= message.id %>
+                        </span>
+                      </td>
+                      <td>
+                        <%= message.message %>
+                      </td>
+                      <td>
+                        <%= message.created_at %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                <p><%= will_paginate messages %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">2017 © Parttimebee.</footer>
+</div>
