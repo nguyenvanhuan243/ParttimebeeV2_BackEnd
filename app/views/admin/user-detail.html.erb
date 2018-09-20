@@ -12,7 +12,7 @@
                                         <th>ID</th>
                                         <th data-priority="3">Email</th>
                                         <th data-priority="1">Phone Number</th>
-                                        <th data-priority="3">Active</th>
+                                        <th data-priority="3">Email Confirmation</th>
                                         <th data-priority="3">Status Account</th>
                                         <th data-priority="6">Birthday</th>
                                         <th data-priority="6">Created day</th>
@@ -20,7 +20,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% users = User.paginate(:per_page => 10, :page => params[:page]) %>
+                                    <% users = User.where(email_confirmed: 1).paginate(:per_page => 10, :page => params[:page]) %>
                                     <% users.each do |user| %> 
                                         <tr>
                                             <td>
@@ -33,7 +33,7 @@
                                                 <%= user.phone_number %>
                                             </td>
                                             <td>
-                                                <%= user.activated == 0 ? 'Activated' : 'Not Active' %>
+                                                <%= user.email_confirmed %>
                                             </td>
                                             <td>
                                                 <% if user.blocked == 1 %>
