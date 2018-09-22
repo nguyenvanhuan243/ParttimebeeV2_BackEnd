@@ -109,7 +109,8 @@ class Api::V1::UsersController < ApplicationController
     if user.present?
       render json: {
         success: true,
-        status: 200
+        status: 200,
+        user: user
       }
     else
       render json: {
