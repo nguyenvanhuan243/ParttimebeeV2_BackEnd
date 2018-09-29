@@ -124,8 +124,12 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  api :POST, '/v1/users/check-current-password', 'Check current password correct or not'
+  def check_current_password
+    render json: User.find_by_password(Digest::MD5.hexdigest(params[:currentPassword])).present?
+  end
+
   private
-  # Strong parameter
   def user_params
     params.permit(:email, :password, :avatar)
   end
