@@ -22,6 +22,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.default_avatar = UserService.new.get_default_avatar
+    @user.password = Digest::MD5.hexdigest(user_params[:password])
     if @user.save
       ModelMailer.email_verification(@user).deliver
       render json: @user, status: :created, location: @user

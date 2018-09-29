@@ -9,18 +9,16 @@ class Api::V1::SessionsController < ApplicationController
   api :POST, '/v1/sessions/', 'Login user'
   param_group :session
   def create
-    email = login_params[:email]
-    password = login_params[:password]
-    @user = User.find_by(email: email)
-    if @user
-      render json: { success: true, user: @user }, status: 200
+    password = Digest::MD5.hexdigest(login_params[:password])
+    user = User.where(email: login_params[:email], password: password).first
+    if user.save
+      render json: { success: true, user: user }, status: 200
     else 
       render json: { success: false, user: nil }, status: 404
     end
   end
 
   private
-  # Strong parameters.
   def login_params
     params.permit(:email, :password)
   end
