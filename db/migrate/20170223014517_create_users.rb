@@ -20,6 +20,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password_reset_sent_at
       t.string :auth_token_reset
       t.string :url_avatar
+      t.string :default_avatar
       t.datetime :day_of_birth
       t.timestamps
     end

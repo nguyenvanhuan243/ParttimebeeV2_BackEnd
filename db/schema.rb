@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180826031623) do
     t.string   "password_reset_sent_at"
     t.string   "auth_token_reset"
     t.string   "url_avatar"
+    t.string   "default_avatar"
     t.datetime "day_of_birth"
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false

@@ -21,6 +21,7 @@ class Api::V1::UsersController < ApplicationController
   param_group :user
   def create
     @user = User.new(user_params)
+    @user.default_avatar = UserService.new.get_default_avatar
     if @user.save
       ModelMailer.email_verification(@user).deliver
       render json: @user, status: :created, location: @user
