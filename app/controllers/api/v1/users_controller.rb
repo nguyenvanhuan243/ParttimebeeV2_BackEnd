@@ -96,7 +96,7 @@ class Api::V1::UsersController < ApplicationController
   api :PUT, '/v1/users/update-password', 'Update password user'
   def update_password
     user = User.find_by_password_reset_token(params[:token])
-    user.password = params[:newPassword]
+    user.password = Digest::MD5.hexdigest(params[:newPassword])
     if user.save
       RegisterMailer.password_updated(user).deliver
       render json: {
