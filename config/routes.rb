@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       get '/users/:id/jobs', to: 'users#get_jobs'
       post '/users/reset-password',to: 'users#send_email_reset_password'
       post '/users/check-user-exist', to: 'users#check_user_exist'
+      post '/users/check-current-password', to: 'users#check_current_password'
+      post '/users/check-user-password', to: 'users#check_user_password'
       post '/users/login' => 'sessions#create'
       get '/jobs/:id/increase-view' => 'jobs#increase_view'
       post '/users/update-password' => 'users#update_password'
