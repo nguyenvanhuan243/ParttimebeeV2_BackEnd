@@ -73,11 +73,13 @@ class Api::V1::UsersController < ApplicationController
       job.company_name = params[:profile][:companyName]
       job.save
     end
-    new_password = Digest::MD5.hexdigest(params[:profile][:password])
-    confirm_password = Digest::MD5.hexdigest(params[:profile][:confirmPassword])
+    if !params[:profile][:password].nil? && !params[:profile][:confirmPassword].nil?
+      new_password = Digest::MD5.hexdigest(params[:profile][:password])
+      confirm_password = Digest::MD5.hexdigest(params[:profile][:confirmPassword])
+      user.password = confirm_password
+      user.confirm_password = params[:profile][:confirmPassword]
+    end
     user.email = params[:profile][:email]
-    user.password = confirm_password
-    user.confirm_password = params[:profile][:confirmPassword]
     user.contact_name = params[:profile][:contactName]
     user.company_name = params[:profile][:companyName]
     user.address = params[:profile][:address]
