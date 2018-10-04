@@ -105,7 +105,12 @@ class Api::V1::UsersController < ApplicationController
       RegisterMailer.password_updated(user).deliver
       render json: {
         success: true,
+        user: user
       }, status: 200
+    else
+      render json: {
+        success: false
+      }
     end
   end
 
