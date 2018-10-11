@@ -135,7 +135,17 @@ class Api::V1::UsersController < ApplicationController
   def check_user_password
     user = User.find_by_email(params[:email]) 
     password = Digest::MD5.hexdigest(params[:password])
-    render json: { success: (user.password == password) }
+    if user.present?
+      if user.password == password
+        render json: {
+          success: true
+        }
+      else
+        render json: {
+          success: false
+        }
+      end
+    end
   end
 
   api :POST, '/v1/users/check-current-password', 'Check current password correct or not'
