@@ -127,4 +127,8 @@ class AdminController < ApplicationController
     job.employer_real = true
     job.save
   end
+
+  def set_time_expired_job
+    return true
+  end
 end
