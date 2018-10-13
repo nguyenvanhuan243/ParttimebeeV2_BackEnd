@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   match '/admin/blocking/:id', to: 'admin#block_and_unblock_user', via: [:get, :post]
   get '/logout', to: 'sessions#destroy'
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  get '/admin/set-time-expire-job', to: 'admin#set-time-expire-job'
   
   # root to: 'home#index'
 end
