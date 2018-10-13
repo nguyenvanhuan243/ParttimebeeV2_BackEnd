@@ -153,6 +153,25 @@ class Api::V1::UsersController < ApplicationController
     render json: User.find_by_password(Digest::MD5.hexdigest(params[:currentPassword])).present?
   end
 
+  api :POST, 'v1/users/show-user-with-job-id', 'Show user info with job id'
+  def show_user_with_job_id
+    job = Job.find_by_id(params[:jobId])
+    if job.present?
+      user = job.user
+      render json: {
+        success: true,
+        url_avatar: user.url_avatar,
+        default_avatar: user.default_avatar
+      }
+    else
+      render json: {
+        success: false,
+        message: "Can't find user with job id = #{params[:jobId]}",
+        status: :unprocessable_entity
+      }
+    end
+  end
+
   private
   def user_params
     params.permit(:email, :password, :avatar)

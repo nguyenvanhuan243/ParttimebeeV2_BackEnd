@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
 
 	def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get '/jobs/:id/increase-view' => 'jobs#increase_view'
       post '/users/update-password' => 'users#update_password'
       post '/disposable-email/check' => 'disposable_email#check_disposable_email'
+      post '/users/show-user-with-job-id' => 'users#show_user_with_job_id'
     end
   end
 
