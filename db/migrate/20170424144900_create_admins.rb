@@ -5,6 +5,7 @@ class CreateAdmins < ActiveRecord::Migration[5.0]
     	t.string :password
       t.string :token_admin
       t.string :auth_token
+      t.integer :expire_job_time, :null => false, :default => 0
       t.timestamps
     end
   end

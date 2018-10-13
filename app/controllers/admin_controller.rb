@@ -128,7 +128,12 @@ class AdminController < ApplicationController
     job.save
   end
 
-  def set_time_expired_job
-    return true
+  def set_expire_job_time
+    if params[:admin][:expire_job_time].to_i < 1000000
+      admin = Admin.first
+      admin.expire_job_time = params[:admin][:expire_job_time]
+      admin.save
+    end
+    redirect_to :back
   end
 end

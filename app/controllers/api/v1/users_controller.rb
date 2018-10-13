@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_filter :verify_authenticity_token    
+  skip_before_filter :verify_authenticity_token
+  before_action :set_expire_job_time
   api :GET, '/v1/users', 'Show users list'
   def index
     render json: User.all
@@ -170,6 +171,11 @@ class Api::V1::UsersController < ApplicationController
         status: :unprocessable_entity
       }
     end
+  end
+
+  def set_expire_job_time
+    job_service = JobService.new
+    job_service.set_expire_job_time
   end
 
   private

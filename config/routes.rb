@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get '/admin/set-time-expire-job', to: 'admin#set-time-expire-job'
+  post '/admin/set-time-expire-job', to: 'admin#set_expire_job_time'
   
   # root to: 'home#index'
 end
