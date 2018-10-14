@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
   def create
     password = Digest::MD5.hexdigest(login_params[:password])
     user = User.where(email: login_params[:email], password: password).first
-    if user.save
+    if user.present?
       render json: { success: true, user: user }, status: 200
     else 
       render json: { success: false, user: nil }, status: 404
