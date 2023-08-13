@@ -42,6 +42,7 @@ gem 'turbolinks', '~> 5'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development, :test do
