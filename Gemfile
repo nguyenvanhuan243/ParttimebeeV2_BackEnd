@@ -1,6 +1,5 @@
-
 source 'https://rubygems.org'
-
+ruby "2.6.8"
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -10,7 +9,7 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'emoji'
 gem 'rotp'
-gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'rails-assets-sweetalert2'
 gem 'sweet-alert2-rails'
 gem "select2-rails"
 gem 'searchkick'
