@@ -14,8 +14,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def_param_group :user do
-    param :email, String, "Email of the user", :required => true
-    param :password, String, "Password of the user", :required => true
+    param :email, String, 'Email of the user', required: true
+    param :password, String, 'Password of the user', required: true
   end
 
   api :POST, '/v1/users', 'Create a new user'
@@ -37,8 +37,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     if @user
       render json: @user.jobs
-    else 
-      render json: nil 
+    else
+      render json: nil
     end
   end
 
@@ -56,7 +56,7 @@ class Api::V1::UsersController < ApplicationController
       AdminMailer.notify_user_delete_account(feedback).deliver
       user.destroy
       render json: {
-        success: true,
+        success: true
       }, status: 200
     else
       render json: {
@@ -134,7 +134,7 @@ class Api::V1::UsersController < ApplicationController
 
   api :POST, '/v1/users/check-user-password', 'Check user password'
   def check_user_password
-    user = User.find_by_email(params[:email]) 
+    user = User.find_by_email(params[:email])
     password = Digest::MD5.hexdigest(params[:password])
     if user.present?
       if user.password == password
@@ -179,6 +179,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.permit(:email, :password, :avatar)
   end

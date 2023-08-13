@@ -1,7 +1,6 @@
 class Api::V1::FeedbacksController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
-
   api :POST, '/v1/feedbacks', 'Create a new feedback'
   def create
     feedback = Feedback.new
@@ -20,6 +19,7 @@ class Api::V1::FeedbacksController < ApplicationController
   end
 
   private
+
   # Strong parameters
   def feedbacks_params
     params.permit(:report_type, :job_id)

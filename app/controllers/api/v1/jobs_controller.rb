@@ -1,11 +1,11 @@
 class Api::V1::JobsController < ApplicationController
-  skip_before_filter :verify_authenticity_token  
+  skip_before_filter :verify_authenticity_token
   api :GET, '/v1/jobs', 'Show all jobs'
   def index
-    jobs = params[:limit] ? Job.limit(params[:limit]).order(:created_at => :desc) : Job.all.order(:created_at => :desc)
+    jobs = params[:limit] ? Job.limit(params[:limit]).order(created_at: :desc) : Job.all.order(created_at: :desc)
     render json: jobs
   end
-  
+
   api :GET, '/v1/jobs/:id', 'Get a specify job'
   def show
     job = Job.find_by(id: params[:id])
@@ -24,7 +24,7 @@ class Api::V1::JobsController < ApplicationController
       success: true,
       views: job.views
     },
-    status: 200
+           status: 200
   end
 
   api :POST, '/v1/jobs', 'Create a new job'
@@ -40,11 +40,11 @@ class Api::V1::JobsController < ApplicationController
     job[:salary_state] = params[:salaryState]
     job[:city] = params[:city]
     job[:company_name] = user.company_name
-    if params[:button_is_submited] == 'Preview'
-      job[:job_type] = 'preview'
-    else
-      job[:job_type] = 'pending'
-    end
+    job[:job_type] = if params[:button_is_submited] == 'Preview'
+                       'preview'
+                     else
+                       'pending'
+                     end
     if job.save
       render json: job, status: :created
     else
@@ -77,12 +77,12 @@ class Api::V1::JobsController < ApplicationController
       render json: {
         success: true
       },
-      status: 200
+             status: 200
     else
       render json: {
         fail: true
       },
-      status: 404
+             status: 404
     end
   end
 end

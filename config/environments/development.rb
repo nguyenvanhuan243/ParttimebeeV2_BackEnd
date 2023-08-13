@@ -7,7 +7,6 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -15,7 +14,6 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.active_record.default_timezone = :local
   config.time_zone = 'Bangkok'
-
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -35,9 +33,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   # config.action_mailer.default_url_option = {:host =>"localhost:3000"}
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
-
-
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   config.action_mailer.perform_caching = false
 
@@ -119,24 +115,19 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
-  :port => 587,
-  :domain => "parttimebee.my",
-  :user_name => "postmaster@parttimebee.my",
-  :password => "f5a5964fe5225ab8d9ea7e0d09181985"
+    authentication: :plain,
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: 'parttimebee.my',
+    user_name: 'postmaster@parttimebee.my',
+    password: 'f5a5964fe5225ab8d9ea7e0d09181985'
   }
 
-# Paperclip config:
-Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
-Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
+  # Paperclip config:
+  Paperclip.options[:image_magick_path] = '/opt/ImageMagick/bin'
+  Paperclip.options[:command_path] = '/opt/ImageMagick/bin'
 
-
-
-# Facebook ENV
-ENV['FACEBOOK_KEY'] = '1706148389637058'
-ENV['FACEBOOK_SECRET'] = 'acadbb864b010457ad3781c8320bfb5d'
+  # Facebook ENV
+  ENV['FACEBOOK_KEY'] = '1706148389637058'
+  ENV['FACEBOOK_SECRET'] = 'acadbb864b010457ad3781c8320bfb5d'
 end
-
-
-

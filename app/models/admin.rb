@@ -1,5 +1,4 @@
 class Admin < ApplicationRecord
-
   validates :email, presence: true
   validates :email, uniqueness: true
 
@@ -20,5 +19,4 @@ class Admin < ApplicationRecord
       self[column] = SecureRandom.urlsafe_base64
     end while Admin.exists?(column => self[column])
   end
-
 end

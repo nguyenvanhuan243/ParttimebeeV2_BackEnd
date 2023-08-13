@@ -52,7 +52,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -80,7 +80,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
@@ -139,7 +139,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -167,28 +167,28 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.
-  config.action_mailer.default_url_options = { :host => "https://api.parttimebee.my" }
+  config.action_mailer.default_url_options = { host: 'https://api.parttimebee.my' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
-  :port => 587,
-  :domain => "parttimebee.my",
-  :user_name => "postmaster@parttimebee.my",
-  :password => "f5a5964fe5225ab8d9ea7e0d09181985"
+    authentication: :plain,
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: 'parttimebee.my',
+    user_name: 'postmaster@parttimebee.my',
+    password: 'f5a5964fe5225ab8d9ea7e0d09181985'
 
-}
-# Paperclip config:
-Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
-Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
-# Facebook ENV
-ENV['FACEBOOK_KEY'] = '1706148389637058'
-ENV['FACEBOOK_SECRET'] = 'd6c7ec5e2a84e3518c307fb6bccc0591'
+  }
+  # Paperclip config:
+  Paperclip.options[:image_magick_path] = '/opt/ImageMagick/bin'
+  Paperclip.options[:command_path] = '/opt/ImageMagick/bin'
+  # Facebook ENV
+  ENV['FACEBOOK_KEY'] = '1706148389637058'
+  ENV['FACEBOOK_SECRET'] = 'd6c7ec5e2a84e3518c307fb6bccc0591'
 end

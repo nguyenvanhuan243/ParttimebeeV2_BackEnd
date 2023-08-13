@@ -5,11 +5,11 @@ class JobService
     unless expire_job_time.zero?
       going_pending_jobs = Job.where.not(job_type: 'expired')
       going_pending_jobs.each do |job|
-        if (Time.current - job.created_at).to_i/86400 > expire_job_time
+        if (Time.current - job.created_at).to_i / 86_400 > expire_job_time
           job.job_type = 'expired'
           job.save
         end
       end
     end
-	end
+  end
 end

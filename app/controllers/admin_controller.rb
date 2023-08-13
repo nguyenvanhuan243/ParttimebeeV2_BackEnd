@@ -1,19 +1,16 @@
 class AdminController < ApplicationController
-
   before_action :check_admin
-  
+
   def check_admin
-    if session[:token] != Admin.first.token_admin
-      redirect_to '/admin-login'
-    end
+    redirect_to '/admin-login' if session[:token] != Admin.first.token_admin
   end
 
   def import_job
     Job.import(params[:import][:file])
-    flash[:import_job_successfully] = 'Import job to your database in successfully!' 
+    flash[:import_job_successfully] = 'Import job to your database in successfully!'
     redirect_to :back
   end
-  
+
   def block_and_unblock_user
     user = User.find_by(id: params[:id])
     user.blocked = user.blocked.zero? ? 1 : 0
@@ -38,9 +35,7 @@ class AdminController < ApplicationController
 
   def delete_user
     user = User.find_by(id: params[:id])
-    if user.present?
-      user.destroy
-    end
+    user.destroy if user.present?
     redirect_to :back
   end
 
@@ -51,16 +46,15 @@ class AdminController < ApplicationController
 
   def add_category_job
     @category = Category.new
-    @category.category_job = params[:categoryjob][:category] 
+    @category.category_job = params[:categoryjob][:category]
     Category.all.each do |iteam|
-      if iteam.category_job == params[:categoryjob][:category]
-        flash[:add_disposable_email] = "This Category has been added in your category list!" 
-        redirect_to :back
-        return
-      end
+      next unless iteam.category_job == params[:categoryjob][:category]
+      flash[:add_disposable_email] = 'This Category has been added in your category list!'
+      redirect_to :back
+      return
     end
     @category.save
-    swap_job (Category.all)
+    swap_job Category.all
     redirect_to :back
   end
 
@@ -71,20 +65,18 @@ class AdminController < ApplicationController
   # Constant
 
   # Make sure Others always is last element in array
-  def swap_job (category)
+  def swap_job(category)
     categories = category
     category_last = Category.last
     categories.each do |category|
-      if category[:category_job] == 'Others'
-        category[:category_job] = category_last[:category_job]
-        category_last[:category_job] = 'Others'
-        category.save
-        category_last.save
-        break
-      end
+      next unless category[:category_job] == 'Others'
+      category[:category_job] = category_last[:category_job]
+      category_last[:category_job] = 'Others'
+      category.save
+      category_last.save
+      break
     end
   end
-
 
   def delete_job
     Job.find_by_id(params[:id]).destroy
@@ -99,12 +91,12 @@ class AdminController < ApplicationController
   end
 
   def quota_job
-    if Quotajob.count.positive?
-      quota = Quotajob.first
-    else
-      quota = Quotajob.new
-    end
-    flash[:add_quota_job] = "Add quota job in successfully!"
+    quota = if Quotajob.count.positive?
+              Quotajob.first
+            else
+              Quotajob.new
+            end
+    flash[:add_quota_job] = 'Add quota job in successfully!'
     quota.quota = params[:quotajob][:quota]
     quota.save
     redirect_to :back
@@ -114,12 +106,9 @@ class AdminController < ApplicationController
     special_account = User.first
     special_account.full_name = params[:fullname]
     special_account.nationality = params[:nationality]
-    unless params[:avatar].blank?
-      special_account.url_avatar = params[:avatar]
-    end
+    special_account.url_avatar = params[:avatar] unless params[:avatar].blank?
     special_account.save
   end
-
 
   def merge_the_job
     job = Job.find(params[:job_id])
@@ -129,7 +118,7 @@ class AdminController < ApplicationController
   end
 
   def set_expire_job_time
-    if params[:admin][:expire_job_time].to_i < 1000000
+    if params[:admin][:expire_job_time].to_i < 1_000_000
       admin = Admin.first
       admin.expire_job_time = params[:admin][:expire_job_time]
       admin.save
