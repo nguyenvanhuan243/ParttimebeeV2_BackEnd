@@ -85,4 +85,4 @@ config/database.yml
 doc/api_swagger.yml
 database.yml
 db/schema.rb
-env
+.env
