@@ -5,8 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: code_academy_dev
-  # url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 test:
   <<: *default
