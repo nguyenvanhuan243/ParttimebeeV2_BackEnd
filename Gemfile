@@ -8,7 +8,7 @@ end
 
 gem 'rails', '~> 5.0.1'
 gem 'rotp'
-gem 'rails-assets-sweetalert2'
+# gem 'rails-assets-sweetalert2'
 gem 'sweet-alert2-rails'
 gem "select2-rails"
 gem 'phonelib'
