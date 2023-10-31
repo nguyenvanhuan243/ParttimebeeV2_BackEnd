@@ -1,4 +1,0 @@
-post_code_telegram_worker:
-  cron: "* * * * *"
-  class: "Telegram::PostCodeTelegramWorker"
-  queue: default
